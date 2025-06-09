@@ -16,7 +16,8 @@ git -C $RepoDir pull --quiet
 Copy-Item -Path $SourceFile -Destination $TargetFile -Force
 
 # If there’s no change, stop here
-if (-not (git -C $RepoDir status --porcelain).Trim()) {
+$status = git -C $RepoDir status --porcelain
+if (-not $status) {
     Write-Host 'No changes – nothing to commit.'
     exit
 }
