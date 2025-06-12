@@ -344,7 +344,7 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Trans-Nerolidol (%) Vape Cartridge",
+    "TestTypeName": "CBD (%) Stability T0",
     "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -353,70 +353,7 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Terpinolene (%) Vape Cartridge",
-    "TestResultLevel": 0.09,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Linalool (%) Vape Cartridge",
-    "TestResultLevel": 0.28,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Eucalyptol (%) Vape Cartridge",
-    "TestResultLevel": 0.05,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Caryophyllene Oxide (%) Vape Cartridge",
-    "TestResultLevel": 0.1,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Beta-Pinene (%) Vape Cartridge",
-    "TestResultLevel": 0.16,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Beta-Myrcene (%) Vape Cartridge",
-    "TestResultLevel": 1.08,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
-    "TestResultLevel": 1.01,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
+    "TestTypeName": "CBDA (%) Stability T0",
     "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -425,70 +362,7 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
-    "TestResultLevel": 0.29,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
-    "TestResultLevel": 0.34,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "CBG (%) Vape Cartridge",
-    "TestResultLevel": 2.15,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "THCA (%) Vape Cartridge",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-    "TestResultLevel": 81.25,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "CBN (%) Vape Cartridge",
+    "TestTypeName": "CBN (%) Stability T0",
     "TestResultLevel": 1.73,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -497,7 +371,16 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "CBDA (%) Vape Cartridge",
+    "TestTypeName": "Delta-9 THC (%) Stability T0",
+    "TestResultLevel": 81.25,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Delta-8 THC (%) Stability T0",
     "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -506,7 +389,7 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "CBD (%) Vape Cartridge",
+    "TestTypeName": "THCA (%) Stability T0",
     "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -524,7 +407,7 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "THCA (%) Stability T0",
+    "TestTypeName": "CBD (%) Vape Cartridge",
     "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -533,7 +416,7 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Delta-8 THC (%) Stability T0",
+    "TestTypeName": "CBDA (%) Vape Cartridge",
     "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -542,16 +425,7 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Delta-9 THC (%) Stability T0",
-    "TestResultLevel": 81.25,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "CBN (%) Stability T0",
+    "TestTypeName": "CBN (%) Vape Cartridge",
     "TestResultLevel": 1.73,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -560,7 +434,16 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "CBDA (%) Stability T0",
+    "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+    "TestResultLevel": 81.25,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
     "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -569,7 +452,7 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "CBD (%) Stability T0",
+    "TestTypeName": "THCA (%) Vape Cartridge",
     "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -578,7 +461,16 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Trans-Nerolidol (%) Additional",
+    "TestTypeName": "CBG (%) Vape Cartridge",
+    "TestResultLevel": 2.15,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
     "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -587,8 +479,8 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Terpinolene (%) Additional",
-    "TestResultLevel": 0.09,
+    "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
+    "TestResultLevel": 0.34,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
     "LabFacilityName": "Green Analytics"
@@ -596,8 +488,8 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Linalool (%) Additional",
-    "TestResultLevel": 0.28,
+    "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
+    "TestResultLevel": 0.29,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
     "LabFacilityName": "Green Analytics"
@@ -605,8 +497,8 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Eucalyptol (%) Additional",
-    "TestResultLevel": 0.05,
+    "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
+    "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
     "LabFacilityName": "Green Analytics"
@@ -614,34 +506,7 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Caryophyllene Oxide (%) Additional",
-    "TestResultLevel": 0.1,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Beta-Pinene (%) Additional",
-    "TestResultLevel": 0.16,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Beta-Myrcene (%) Additional",
-    "TestResultLevel": 1.08,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-08-11",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 7037602,
-    "ProductName": "2g All in One",
-    "TestTypeName": "Beta-Caryophyllene (%) Additional",
+    "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
     "TestResultLevel": 1.01,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -650,7 +515,61 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Alpha-Terpinene (%) Additional",
+    "TestTypeName": "Beta-Myrcene (%) Vape Cartridge",
+    "TestResultLevel": 1.08,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Beta-Pinene (%) Vape Cartridge",
+    "TestResultLevel": 0.16,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Caryophyllene Oxide (%) Vape Cartridge",
+    "TestResultLevel": 0.1,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Eucalyptol (%) Vape Cartridge",
+    "TestResultLevel": 0.05,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Linalool (%) Vape Cartridge",
+    "TestResultLevel": 0.28,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Terpinolene (%) Vape Cartridge",
+    "TestResultLevel": 0.09,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Trans-Nerolidol (%) Vape Cartridge",
     "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -659,8 +578,8 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Alpha-Pinene (%) Additional",
-    "TestResultLevel": 0.29,
+    "TestTypeName": "Alpha-Bisabolol (%) Additional",
+    "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
     "LabFacilityName": "Green Analytics"
@@ -677,7 +596,88 @@
   {
     "PackageId": 7037602,
     "ProductName": "2g All in One",
-    "TestTypeName": "Alpha-Bisabolol (%) Additional",
+    "TestTypeName": "Alpha-Pinene (%) Additional",
+    "TestResultLevel": 0.29,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Alpha-Terpinene (%) Additional",
+    "TestResultLevel": 0.0,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Beta-Caryophyllene (%) Additional",
+    "TestResultLevel": 1.01,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Beta-Myrcene (%) Additional",
+    "TestResultLevel": 1.08,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Beta-Pinene (%) Additional",
+    "TestResultLevel": 0.16,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Caryophyllene Oxide (%) Additional",
+    "TestResultLevel": 0.1,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Eucalyptol (%) Additional",
+    "TestResultLevel": 0.05,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Linalool (%) Additional",
+    "TestResultLevel": 0.28,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Terpinolene (%) Additional",
+    "TestResultLevel": 0.09,
+    "TestPassed": true,
+    "TestPerformedDate": "2024-08-11",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 7037602,
+    "ProductName": "2g All in One",
+    "TestTypeName": "Trans-Nerolidol (%) Additional",
     "TestResultLevel": 0.0,
     "TestPassed": true,
     "TestPerformedDate": "2024-08-11",
@@ -1910,152 +1910,8 @@
   {
     "PackageId": 6816554,
     "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Trans-Nerolidol (%) Vape Cartridge",
-    "TestResultLevel": 0.4,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Terpinolene (%) Vape Cartridge",
-    "TestResultLevel": 0.03,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Linalool (%) Vape Cartridge",
-    "TestResultLevel": 0.43,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Eucalyptol (%) Vape Cartridge",
+    "TestTypeName": "CBD (%) Vape Cartridge",
     "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Caryophyllene Oxide (%) Vape Cartridge",
-    "TestResultLevel": 0.14,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Beta-Pinene (%) Vape Cartridge",
-    "TestResultLevel": 0.48,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Beta-Myrcene (%) Vape Cartridge",
-    "TestResultLevel": 1.88,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
-    "TestResultLevel": 0.94,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
-    "TestResultLevel": 1.45,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
-    "TestResultLevel": 0.21,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
-    "TestResultLevel": 0.21,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "CBG (%) Vape Cartridge",
-    "TestResultLevel": 1.72,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "THCA (%) Vape Cartridge",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-    "TestResultLevel": 85.83,
-    "TestPassed": true,
-    "TestPerformedDate": "2025-03-17",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6816554,
-    "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "CBN (%) Vape Cartridge",
-    "TestResultLevel": 0.7,
     "TestPassed": true,
     "TestPerformedDate": "2025-03-17",
     "LabFacilityName": "Green Analytics"
@@ -2072,8 +1928,152 @@
   {
     "PackageId": 6816554,
     "ProductName": "LORE 1g Cart - Grape Ape",
-    "TestTypeName": "CBD (%) Vape Cartridge",
+    "TestTypeName": "CBN (%) Vape Cartridge",
+    "TestResultLevel": 0.7,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+    "TestResultLevel": 85.83,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
     "TestResultLevel": 0.0,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "THCA (%) Vape Cartridge",
+    "TestResultLevel": 0.0,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "CBG (%) Vape Cartridge",
+    "TestResultLevel": 1.72,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
+    "TestResultLevel": 0.21,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
+    "TestResultLevel": 0.21,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
+    "TestResultLevel": 1.45,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
+    "TestResultLevel": 0.0,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
+    "TestResultLevel": 0.94,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Beta-Myrcene (%) Vape Cartridge",
+    "TestResultLevel": 1.88,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Beta-Pinene (%) Vape Cartridge",
+    "TestResultLevel": 0.48,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Caryophyllene Oxide (%) Vape Cartridge",
+    "TestResultLevel": 0.14,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Eucalyptol (%) Vape Cartridge",
+    "TestResultLevel": 0.0,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Linalool (%) Vape Cartridge",
+    "TestResultLevel": 0.43,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Terpinolene (%) Vape Cartridge",
+    "TestResultLevel": 0.03,
+    "TestPassed": true,
+    "TestPerformedDate": "2025-03-17",
+    "LabFacilityName": "Green Analytics"
+  },
+  {
+    "PackageId": 6816554,
+    "ProductName": "LORE 1g Cart - Grape Ape",
+    "TestTypeName": "Trans-Nerolidol (%) Vape Cartridge",
+    "TestResultLevel": 0.4,
     "TestPassed": true,
     "TestPerformedDate": "2025-03-17",
     "LabFacilityName": "Green Analytics"
@@ -2585,177 +2585,6 @@
   {
     "PackageId": 6181124,
     "ProductName": "LORE Infused PR Strawberry Candy",
-    "TestTypeName": "Trans-Nerolidol (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "CBD (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "CBDA (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "CBN (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.04,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Delta-9 THC (%) Solvent Based Concentrate",
-    "TestResultLevel": 3.53,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Delta-8 THC (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "THCA (%) Solvent Based Concentrate",
-    "TestResultLevel": 30.46,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "CBG (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.29,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Alpha-Bisabolol (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.1,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Alpha-Humulene (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.1,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Alpha-Pinene (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.04,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Alpha-Terpinene (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Beta-Caryophyllene (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.37,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Beta-Myrcene (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.28,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Beta-Pinene (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.04,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Caryophyllene Oxide (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.05,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Eucalyptol (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Linalool (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
-    "TestTypeName": "Terpinolene (%) Solvent Based Concentrate",
-    "TestResultLevel": 0.0,
-    "TestPassed": true,
-    "TestPerformedDate": "2024-10-05",
-    "LabFacilityName": "Green Analytics"
-  },
-  {
-    "PackageId": 6181126,
-    "ProductName": "LORE Infused PR Black Cherry Gelato",
     "TestTypeName": "Trans-Nerolidol (%) Solvent Based Concentrate",
     "TestResultLevel": 0.0,
     "TestPassed": true,
