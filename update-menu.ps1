@@ -28,4 +28,4 @@ git -C $RepoDir add menu.json
 git -C $RepoDir commit -m "menu auto-update $stamp"
 git -C $RepoDir push origin main
 
-Write-Host "✅ Menu pushed at $stamp"
+Write-Host "✅ Menu pushed at $stamp"# test commit 2025-06-12 16:03:57Z
