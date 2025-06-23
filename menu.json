@@ -4,6 +4,8 @@
     "Label": "1A4030100003201000000148",
     "ItemName": "LORE 2g Vape - Citrus Breeze",
     "Quantity": 153.0,
+    "Price": 50.0,
+    "Type": "Sativa",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Vape Cartridge",
@@ -278,6 +280,8 @@
     "Label": "1A4030100003201000000149",
     "ItemName": "LORE 2g Vape - Sour Delight",
     "Quantity": 174.0,
+    "Price": 50.0,
+    "Type": "Hybrid",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Stability T0",
@@ -552,6 +556,8 @@
     "Label": "1A4030100003201000000150",
     "ItemName": "LORE 2g Vape - Pine Peak",
     "Quantity": 142.0,
+    "Price": 50.0,
+    "Type": "Hybrid",
     "LabResults": [
       {
         "TestTypeName": "Alpha-Bisabolol (%) Additional",
@@ -826,6 +832,8 @@
     "Label": "1A4030100003201000000124",
     "ItemName": "LORE Infused PR 1g - Sour Diesel",
     "Quantity": 944.0,
+    "Price": 12.0,
+    "Type": "Hybrid",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Solvent Based Concentrate",
@@ -974,6 +982,8 @@
     "Label": "1A4030100003201000000128",
     "ItemName": "LORE Infused Pre-Roll 1g - Strawberry Candy",
     "Quantity": 1123.0,
+    "Price": 12.0,
+    "Type": "Hybrid",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Solvent Based Concentrate",
@@ -1122,6 +1132,8 @@
     "Label": "1A4030100003201000000132",
     "ItemName": "LORE Infused PR 1g - Skywalker Gushmints",
     "Quantity": 962.0,
+    "Price": 12.0,
+    "Type": "Hybrid",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Solvent Based Concentrate",
@@ -1270,6 +1282,8 @@
     "Label": "1A4030100003201000000104",
     "ItemName": "LORE 1g Cart - Berry Gelato",
     "Quantity": 870.0,
+    "Price": 30.0,
+    "Type": "Indica",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Vape Cartridge",
@@ -1411,6 +1425,8 @@
     "Label": "1A4030100003201000000108",
     "ItemName": "LORE 1g Cart - Lemon Cake",
     "Quantity": 888.0,
+    "Price": 30.0,
+    "Type": "Sativa",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Vape Cartridge",
@@ -1552,6 +1568,8 @@
     "Label": "1A4030100003201000000112",
     "ItemName": "LORE 1g Cart - Grape Ape",
     "Quantity": 845.0,
+    "Price": 30.0,
+    "Type": "Indica",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Vape Cartridge",
@@ -1693,6 +1711,8 @@
     "Label": "1A4030100003201000000116",
     "ItemName": "LORE 1g Vape - Ghost OG",
     "Quantity": 875.0,
+    "Price": 30.0,
+    "Type": "Hybrid",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Vape Cartridge",
@@ -1834,6 +1854,8 @@
     "Label": "1A4030100003201000000120",
     "ItemName": "LORE 1g Vape - Citrus Breeze",
     "Quantity": 905.0,
+    "Price": 30.0,
+    "Type": "Sativa",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Vape Cartridge",
@@ -1975,6 +1997,8 @@
     "Label": "1A4030100003201000000094",
     "ItemName": "LORE 2g Vape - Super Lemon Haze",
     "Quantity": 45.0,
+    "Price": 50.0,
+    "Type": "Sativa",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Vape Cartridge",
@@ -2116,6 +2140,8 @@
     "Label": "1A4030100003201000000098",
     "ItemName": "LORE 1g Vape - Black Berry Kush",
     "Quantity": 4.0,
+    "Price": 30.0,
+    "Type": "Indica",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Vape Cartridge",
@@ -2257,6 +2283,8 @@
     "Label": "1A4030100003201000000093",
     "ItemName": "LORE PR - Jealousy",
     "Quantity": 153.0,
+    "Price": 12.0,
+    "Type": "Hybrid",
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Raw Plant Material",
@@ -2489,6 +2517,8 @@
     "Label": "1A4030300003201000000002",
     "ItemName": "2g All in One",
     "Quantity": 50.0,
+    "Price": null,
+    "Type": null,
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Vape Cartridge",
@@ -2763,6 +2793,8 @@
     "Label": "1A4030300003201000000003",
     "ItemName": "2g All in One",
     "Quantity": 30.0,
+    "Price": null,
+    "Type": null,
     "LabResults": [
       {
         "TestTypeName": "CBD (%) Stability T0",
@@ -3037,6 +3069,8 @@
     "Label": "1A4030300003201000000004",
     "ItemName": "2g All in One",
     "Quantity": 30.0,
+    "Price": null,
+    "Type": null,
     "LabResults": [
       {
         "TestTypeName": "Alpha-Bisabolol (%) Additional",
