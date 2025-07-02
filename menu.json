@@ -8,36 +8,8 @@
     "Type": "Sativa",
     "LabResults": [
       {
-        "TestTypeName": "CBG (%) Vape Cartridge",
-        "TestResultLevel": 2.48,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCA (%) Vape Cartridge",
+        "TestTypeName": "CBD (%) Vape Cartridge",
         "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-        "TestResultLevel": 78.38,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Vape Cartridge",
-        "TestResultLevel": 1.84,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
@@ -50,8 +22,36 @@
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "CBD (%) Vape Cartridge",
+        "TestTypeName": "CBN (%) Vape Cartridge",
+        "TestResultLevel": 1.84,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+        "TestResultLevel": 78.38,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
         "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBG (%) Vape Cartridge",
+        "TestResultLevel": 2.48,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
@@ -1282,7 +1282,7 @@
     "Label": "1A4030100003201000000104",
     "ItemName": "LORE 1g Cart - Berry Gelato",
     "Quantity": 870.0,
-    "Price": 25.0,
+    "Price": 30.0,
     "Type": "Indica",
     "LabResults": [
       {
@@ -1425,7 +1425,7 @@
     "Label": "1A4030100003201000000108",
     "ItemName": "LORE 1g Cart - Lemon Cake",
     "Quantity": 888.0,
-    "Price": 25.0,
+    "Price": 30.0,
     "Type": "Sativa",
     "LabResults": [
       {
@@ -1568,7 +1568,7 @@
     "Label": "1A4030100003201000000112",
     "ItemName": "LORE 1g Cart - Grape Ape",
     "Quantity": 845.0,
-    "Price": 25.0,
+    "Price": 30.0,
     "Type": "Indica",
     "LabResults": [
       {
@@ -1711,7 +1711,7 @@
     "Label": "1A4030100003201000000116",
     "ItemName": "LORE 1g Vape - Ghost OG",
     "Quantity": 875.0,
-    "Price": 25.0,
+    "Price": 30.0,
     "Type": "Hybrid",
     "LabResults": [
       {
@@ -1854,7 +1854,7 @@
     "Label": "1A4030100003201000000120",
     "ItemName": "LORE 1g Vape - Citrus Breeze",
     "Quantity": 905.0,
-    "Price": 25.0,
+    "Price": 30.0,
     "Type": "Sativa",
     "LabResults": [
       {
