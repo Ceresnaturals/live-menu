@@ -1136,6 +1136,41 @@
     "Type": "Hybrid",
     "LabResults": [
       {
+        "TestTypeName": "CBD (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBDA (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBN (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.57,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
         "TestTypeName": "THCA (%) Solvent Based Concentrate",
         "TestResultLevel": 27.42,
         "TestPassed": true,
@@ -1152,41 +1187,6 @@
       {
         "TestTypeName": "THCVA (%) Solvent Based Concentrate",
         "TestResultLevel": 0.13,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.57,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBDA (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBD (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2025-04-07",
         "LabFacilityName": "Green Analytics"
@@ -1286,6 +1286,55 @@
     "Type": "Indica",
     "LabResults": [
       {
+        "TestTypeName": "CBD (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBDA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBN (%) Vape Cartridge",
+        "TestResultLevel": 0.7,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+        "TestResultLevel": 84.78,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBG (%) Vape Cartridge",
+        "TestResultLevel": 1.48,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
         "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
         "TestResultLevel": 0.31,
         "TestPassed": true,
@@ -1358,55 +1407,6 @@
       {
         "TestTypeName": "Terpinolene (%) Vape Cartridge",
         "TestResultLevel": 0.24,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBG (%) Vape Cartridge",
-        "TestResultLevel": 1.48,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-        "TestResultLevel": 84.78,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Vape Cartridge",
-        "TestResultLevel": 0.7,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBDA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBD (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2025-03-17",
         "LabFacilityName": "Green Analytics"
