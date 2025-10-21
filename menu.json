@@ -4,7 +4,7 @@
     "Label": "1A4030100003201000000162",
     "ItemName": "LORE Double Diamonds 1g - Amnesia OG",
     "Quantity": 851.0,
-    "Type": "Double Diamonds",
+    "Type": null,
     "Price": null,
     "LabResults": [
       {
@@ -322,7 +322,7 @@
     "Label": "1A4030100003201000000165",
     "ItemName": "LORE Double Diamonds 1g - Goji Dough",
     "Quantity": 851.0,
-    "Type": "Double Diamonds",
+    "Type": null,
     "Price": null,
     "LabResults": [
       {
@@ -640,7 +640,7 @@
     "Label": "1A4030100003201000000168",
     "ItemName": "LORE Double Diamonds 1g - Gelato OG",
     "Quantity": 851.0,
-    "Type": "Double Diamonds",
+    "Type": null,
     "Price": null,
     "LabResults": [
       {
