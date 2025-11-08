@@ -8,22 +8,15 @@
     "Price": 10.0,
     "LabResults": [
       {
-        "TestTypeName": "CBDA (%) Raw Plant Material",
-        "TestResultLevel": 0.04,
+        "TestTypeName": "THC (%) Raw Plant Material",
+        "TestResultLevel": 0.54,
         "TestPassed": true,
         "TestPerformedDate": "2022-06-27",
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBN (%) Raw Plant Material",
-        "TestResultLevel": 0.02,
-        "TestPassed": true,
-        "TestPerformedDate": "2022-06-27",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.4,
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 30.78,
         "TestPassed": true,
         "TestPerformedDate": "2022-06-27",
         "LabFacilityName": "Quales, LLC"
@@ -36,15 +29,22 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "THC (%) Raw Plant Material",
-        "TestResultLevel": 0.54,
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.4,
         "TestPassed": true,
         "TestPerformedDate": "2022-06-27",
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 30.78,
+        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestResultLevel": 0.02,
+        "TestPassed": true,
+        "TestPerformedDate": "2022-06-27",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBDA (%) Raw Plant Material",
+        "TestResultLevel": 0.04,
         "TestPassed": true,
         "TestPerformedDate": "2022-06-27",
         "LabFacilityName": "Quales, LLC"
@@ -92,6 +92,20 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
+        "TestTypeName": "THC (%) Raw Plant Material",
+        "TestResultLevel": 0.7,
+        "TestPassed": true,
+        "TestPerformedDate": "2022-09-23",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 22.54,
+        "TestPassed": true,
+        "TestPerformedDate": "2022-09-23",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
         "TestTypeName": "CBDA (%) Raw Plant Material",
         "TestResultLevel": 0.03,
         "TestPassed": true,
@@ -120,17 +134,31 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "THC (%) Raw Plant Material",
-        "TestResultLevel": 0.7,
+        "TestTypeName": "CBDA (%) Raw Plant Material",
+        "TestResultLevel": 0.04,
         "TestPassed": true,
-        "TestPerformedDate": "2022-09-23",
+        "TestPerformedDate": "2022-10-11",
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 22.54,
+        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
         "TestPassed": true,
-        "TestPerformedDate": "2022-09-23",
+        "TestPerformedDate": "2022-10-11",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.28,
+        "TestPassed": true,
+        "TestPerformedDate": "2022-10-11",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.02,
+        "TestPassed": true,
+        "TestPerformedDate": "2022-10-11",
         "LabFacilityName": "Quales, LLC"
       },
       {
@@ -171,34 +199,6 @@
       {
         "TestTypeName": "THCA (%) Raw Plant Material",
         "TestResultLevel": 26.25,
-        "TestPassed": true,
-        "TestPerformedDate": "2022-10-11",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBDA (%) Raw Plant Material",
-        "TestResultLevel": 0.04,
-        "TestPassed": true,
-        "TestPerformedDate": "2022-10-11",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBN (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
-        "TestPassed": true,
-        "TestPerformedDate": "2022-10-11",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.28,
-        "TestPassed": true,
-        "TestPerformedDate": "2022-10-11",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.02,
         "TestPassed": true,
         "TestPerformedDate": "2022-10-11",
         "LabFacilityName": "Quales, LLC"
@@ -33153,126 +33153,7 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
-        "TestResultLevel": 0.0014,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
-        "TestResultLevel": 0.2386,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total THC (%) Raw Plant Material",
-        "TestResultLevel": 17.83,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
-        "TestResultLevel": 0.2646,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
-        "TestResultLevel": 0.0019,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.15,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.02,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Linalool (%) Raw Plant Material",
-        "TestResultLevel": 0.0802,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
-        "TestResultLevel": 0.0353,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.0242,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
-        "TestResultLevel": 0.0766,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
-        "TestResultLevel": 0.0009,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.0367,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 20.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Terpinolene (%) Raw Plant Material",
-        "TestResultLevel": 0.0054,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.13,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.34,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-02-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-02-28",
@@ -33286,8 +33167,127 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
+        "TestTypeName": "CBN (%) Raw Plant Material",
         "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.34,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.13,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Terpinolene (%) Raw Plant Material",
+        "TestResultLevel": 0.0054,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 20.17,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.0367,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
+        "TestResultLevel": 0.0009,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
+        "TestResultLevel": 0.0766,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.0242,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
+        "TestResultLevel": 0.0353,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Linalool (%) Raw Plant Material",
+        "TestResultLevel": 0.0802,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.02,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.15,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
+        "TestResultLevel": 0.0019,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
+        "TestResultLevel": 0.2646,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total THC (%) Raw Plant Material",
+        "TestResultLevel": 17.83,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
+        "TestResultLevel": 0.2386,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-02-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
+        "TestResultLevel": 0.0014,
         "TestPassed": true,
         "TestPerformedDate": "2024-02-28",
         "LabFacilityName": "Quales, LLC"
@@ -46929,141 +46929,8 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBDA (%) Raw Plant Material",
-        "TestResultLevel": 0.06,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBN (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.31,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total CBD (%) Raw Plant Material",
+        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
         "TestResultLevel": 0.22,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Terpinolene (%) Raw Plant Material",
-        "TestResultLevel": 0.0063,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 28.1,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.1848,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
-        "TestResultLevel": 0.0022,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
-        "TestResultLevel": 0.0869,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.431,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
-        "TestResultLevel": 0.0226,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Linalool (%) Raw Plant Material",
-        "TestResultLevel": 0.0105,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.18,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.59,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
-        "TestResultLevel": 0.0018,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
-        "TestResultLevel": 0.2292,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total THC (%) Raw Plant Material",
-        "TestResultLevel": 25.24,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-09-13",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
-        "TestResultLevel": 1.5508,
         "TestPassed": true,
         "TestPerformedDate": "2024-09-13",
         "LabFacilityName": "Quales, LLC"
@@ -47076,8 +46943,141 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
+        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
+        "TestResultLevel": 1.5508,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total THC (%) Raw Plant Material",
+        "TestResultLevel": 25.24,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
+        "TestResultLevel": 0.2292,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
+        "TestResultLevel": 0.0018,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.59,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.18,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Linalool (%) Raw Plant Material",
+        "TestResultLevel": 0.0105,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
+        "TestResultLevel": 0.0226,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.431,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
+        "TestResultLevel": 0.0869,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
+        "TestResultLevel": 0.0022,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.1848,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 28.1,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Terpinolene (%) Raw Plant Material",
+        "TestResultLevel": 0.0063,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Raw Plant Material",
         "TestResultLevel": 0.22,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.17,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.31,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBDA (%) Raw Plant Material",
+        "TestResultLevel": 0.06,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-09-13",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-09-13",
         "LabFacilityName": "Quales, LLC"
@@ -65563,140 +65563,7 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
-        "TestResultLevel": 0.2,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
-        "TestResultLevel": 0.68,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total THC (%) Raw Plant Material",
-        "TestResultLevel": 24.1,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
-        "TestResultLevel": 1.28,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.5,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.18,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Linalool (%) Raw Plant Material",
-        "TestResultLevel": 0.3,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
-        "TestResultLevel": 0.04,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.08,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
-        "TestResultLevel": 0.39,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.14,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 26.91,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Terpinolene (%) Raw Plant Material",
-        "TestResultLevel": 0.04,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.2,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.15,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.52,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-11-26",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-11-26",
@@ -65710,8 +65577,141 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
+        "TestTypeName": "CBN (%) Raw Plant Material",
         "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.52,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.15,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.2,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Terpinolene (%) Raw Plant Material",
+        "TestResultLevel": 0.04,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 26.91,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.14,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
+        "TestResultLevel": 0.39,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.08,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
+        "TestResultLevel": 0.04,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Linalool (%) Raw Plant Material",
+        "TestResultLevel": 0.3,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.18,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.5,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
+        "TestResultLevel": 1.28,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total THC (%) Raw Plant Material",
+        "TestResultLevel": 24.1,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
+        "TestResultLevel": 0.68,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-11-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
+        "TestResultLevel": 0.2,
         "TestPassed": true,
         "TestPerformedDate": "2024-11-26",
         "LabFacilityName": "Quales, LLC"
@@ -78807,141 +78807,8 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
-        "TestResultLevel": 0.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
+        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
         "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
-        "TestResultLevel": 0.53,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total THC (%) Raw Plant Material",
-        "TestResultLevel": 17.46,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
-        "TestResultLevel": 0.41,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.59,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.05,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Linalool (%) Raw Plant Material",
-        "TestResultLevel": 0.07,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
-        "TestResultLevel": 0.07,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.08,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
-        "TestResultLevel": 0.16,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.06,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 19.24,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Terpinolene (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.08,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.25,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-12-31",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBN (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
         "TestPassed": true,
         "TestPerformedDate": "2024-12-31",
         "LabFacilityName": "Quales, LLC"
@@ -78954,8 +78821,141 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
+        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.25,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.08,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.17,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Terpinolene (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 19.24,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.06,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
         "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
+        "TestResultLevel": 0.16,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.08,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
+        "TestResultLevel": 0.07,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Linalool (%) Raw Plant Material",
+        "TestResultLevel": 0.07,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.05,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.59,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
+        "TestResultLevel": 0.41,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total THC (%) Raw Plant Material",
+        "TestResultLevel": 17.46,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
+        "TestResultLevel": 0.53,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-12-31",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
+        "TestResultLevel": 0.17,
         "TestPassed": true,
         "TestPerformedDate": "2024-12-31",
         "LabFacilityName": "Quales, LLC"
@@ -84659,141 +84659,8 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
-        "TestResultLevel": 0.25,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
+        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
         "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
-        "TestResultLevel": 0.39,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total THC (%) Raw Plant Material",
-        "TestResultLevel": 20.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
-        "TestResultLevel": 0.46,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.26,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.06,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Linalool (%) Raw Plant Material",
-        "TestResultLevel": 0.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
-        "TestResultLevel": 0.02,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.05,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
-        "TestResultLevel": 0.14,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.09,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 22.51,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Terpinolene (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.25,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.19,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.54,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-24",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBN (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
         "TestPassed": true,
         "TestPerformedDate": "2025-01-24",
         "LabFacilityName": "Quales, LLC"
@@ -84806,8 +84673,141 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
+        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.54,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.19,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.25,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Terpinolene (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 22.51,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.09,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
         "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
+        "TestResultLevel": 0.14,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.05,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
+        "TestResultLevel": 0.02,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Linalool (%) Raw Plant Material",
+        "TestResultLevel": 0.17,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.06,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.26,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
+        "TestResultLevel": 0.46,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total THC (%) Raw Plant Material",
+        "TestResultLevel": 20.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
+        "TestResultLevel": 0.39,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-24",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
+        "TestResultLevel": 0.25,
         "TestPassed": true,
         "TestPerformedDate": "2025-01-24",
         "LabFacilityName": "Quales, LLC"
@@ -85583,141 +85583,8 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
-        "TestResultLevel": 0.36,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
+        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
         "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
-        "TestResultLevel": 0.45,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total THC (%) Raw Plant Material",
-        "TestResultLevel": 23.62,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
-        "TestResultLevel": 0.35,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.26,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.03,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Linalool (%) Raw Plant Material",
-        "TestResultLevel": 0.15,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
-        "TestResultLevel": 0.04,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.04,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
-        "TestResultLevel": 0.12,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.06,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 26.63,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Terpinolene (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.36,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.28,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.42,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-22",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBN (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
         "TestPassed": true,
         "TestPerformedDate": "2025-01-22",
         "LabFacilityName": "Quales, LLC"
@@ -85730,8 +85597,141 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
+        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.42,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.28,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.36,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Terpinolene (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 26.63,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.06,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
         "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
+        "TestResultLevel": 0.12,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.04,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
+        "TestResultLevel": 0.04,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Linalool (%) Raw Plant Material",
+        "TestResultLevel": 0.15,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.03,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.26,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
+        "TestResultLevel": 0.35,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total THC (%) Raw Plant Material",
+        "TestResultLevel": 23.62,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
+        "TestResultLevel": 0.45,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-22",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
+        "TestResultLevel": 0.36,
         "TestPassed": true,
         "TestPerformedDate": "2025-01-22",
         "LabFacilityName": "Quales, LLC"
@@ -86507,141 +86507,8 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
-        "TestResultLevel": 0.22,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
+        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
         "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
-        "TestResultLevel": 0.06,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total THC (%) Raw Plant Material",
-        "TestResultLevel": 16.82,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
-        "TestResultLevel": 0.32,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.1,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.03,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Linalool (%) Raw Plant Material",
-        "TestResultLevel": 0.08,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
-        "TestResultLevel": 0.07,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.09,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
-        "TestResultLevel": 0.09,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.1,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 19.07,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Terpinolene (%) Raw Plant Material",
-        "TestResultLevel": 0.03,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.22,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.07,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBN (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
         "TestPassed": true,
         "TestPerformedDate": "2025-01-28",
         "LabFacilityName": "Quales, LLC"
@@ -86654,8 +86521,141 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
+        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.07,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.17,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.22,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Terpinolene (%) Raw Plant Material",
+        "TestResultLevel": 0.03,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 19.07,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.1,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
         "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
+        "TestResultLevel": 0.09,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.09,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
+        "TestResultLevel": 0.07,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Linalool (%) Raw Plant Material",
+        "TestResultLevel": 0.08,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.03,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.1,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
+        "TestResultLevel": 0.32,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total THC (%) Raw Plant Material",
+        "TestResultLevel": 16.82,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
+        "TestResultLevel": 0.06,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
+        "TestResultLevel": 0.22,
         "TestPassed": true,
         "TestPerformedDate": "2025-01-28",
         "LabFacilityName": "Quales, LLC"
@@ -87431,133 +87431,14 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
-        "TestResultLevel": 0.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
+        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2025-01-28",
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
-        "TestResultLevel": 0.08,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total THC (%) Raw Plant Material",
-        "TestResultLevel": 17.57,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
-        "TestResultLevel": 0.36,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.33,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
-        "TestResultLevel": 0.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Linalool (%) Raw Plant Material",
-        "TestResultLevel": 0.25,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
-        "TestResultLevel": 0.04,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.13,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
-        "TestResultLevel": 0.11,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
-        "TestResultLevel": 0.13,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 19.66,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Terpinolene (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "Total CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.11,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-01-28",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestTypeName": "CBDA (%) Raw Plant Material",
         "TestResultLevel": 0.07,
         "TestPassed": true,
         "TestPerformedDate": "2025-01-28",
@@ -87571,15 +87452,134 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBDA (%) Raw Plant Material",
+        "TestTypeName": "CBG (%) Raw Plant Material",
         "TestResultLevel": 0.07,
         "TestPassed": true,
         "TestPerformedDate": "2025-01-28",
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "Trans-Nerolidol (%) Raw Plant Material",
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.11,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.17,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Terpinolene (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 19.66,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.13,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Raw Plant Material",
         "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Raw Plant Material",
+        "TestResultLevel": 0.11,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Raw Plant Material",
+        "TestResultLevel": 0.13,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Raw Plant Material",
+        "TestResultLevel": 0.04,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Linalool (%) Raw Plant Material",
+        "TestResultLevel": 0.25,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.17,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Raw Plant Material",
+        "TestResultLevel": 0.33,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Raw Plant Material",
+        "TestResultLevel": 0.36,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total THC (%) Raw Plant Material",
+        "TestResultLevel": 17.57,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Beta-Myrcene (%) Raw Plant Material",
+        "TestResultLevel": 0.08,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Caryophyllene Oxide (%) Raw Plant Material",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-01-28",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "Total CBD (%) Hemp Raw Plant Material",
+        "TestResultLevel": 0.17,
         "TestPassed": true,
         "TestPerformedDate": "2025-01-28",
         "LabFacilityName": "Quales, LLC"
@@ -88365,132 +88365,6 @@
     "Price": 10.0,
     "LabResults": [
       {
-        "TestTypeName": "CBD (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.5,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBDA (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.52,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.54,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCA (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBDV (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBG (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBGA (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBC (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCV (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCVA (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Total THC (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.54,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Tincture for Oral Administration",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-09-23",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
         "TestTypeName": "Beta-Myrcene (%) Tincture for Oral Administration",
         "TestResultLevel": 0.0,
         "TestPassed": true,
@@ -88535,6 +88409,132 @@
       {
         "TestTypeName": "Trans-Nerolidol (%) Tincture for Oral Administration",
         "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Total THC (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.54,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCVA (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCV (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBC (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBGA (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBG (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBDV (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCA (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.54,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBN (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.52,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBDA (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-09-23",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBD (%) Tincture for Oral Administration",
+        "TestResultLevel": 0.5,
         "TestPassed": true,
         "TestPerformedDate": "2025-09-23",
         "LabFacilityName": "Green Analytics"
@@ -89060,36 +89060,8 @@
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "CBD (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBDA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Vape Cartridge",
-        "TestResultLevel": 1.73,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-        "TestResultLevel": 81.25,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
+        "TestTypeName": "CBG (%) Vape Cartridge",
+        "TestResultLevel": 2.15,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
@@ -89102,8 +89074,36 @@
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "CBG (%) Vape Cartridge",
-        "TestResultLevel": 2.15,
+        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+        "TestResultLevel": 81.25,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBN (%) Vape Cartridge",
+        "TestResultLevel": 1.73,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBDA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBD (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
@@ -89371,6 +89371,90 @@
         "LabFacilityName": "Green Analytics"
       },
       {
+        "TestTypeName": "CBD (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBDA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBN (%) Vape Cartridge",
+        "TestResultLevel": 1.87,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+        "TestResultLevel": 73.71,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBG (%) Vape Cartridge",
+        "TestResultLevel": 2.17,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
+        "TestResultLevel": 0.15,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
+        "TestResultLevel": 0.45,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
+        "TestResultLevel": 0.06,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
+        "TestResultLevel": 0.36,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
         "TestTypeName": "Beta-Myrcene (%) Vape Cartridge",
         "TestResultLevel": 0.82,
         "TestPassed": true,
@@ -89464,90 +89548,6 @@
       {
         "TestTypeName": "CBG (%) Stability T0",
         "TestResultLevel": 2.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
-        "TestResultLevel": 0.36,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
-        "TestResultLevel": 0.06,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
-        "TestResultLevel": 0.45,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
-        "TestResultLevel": 0.15,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBG (%) Vape Cartridge",
-        "TestResultLevel": 2.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-        "TestResultLevel": 73.71,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Vape Cartridge",
-        "TestResultLevel": 1.87,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBDA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBD (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
@@ -90156,6 +90156,55 @@
     "Price": 25.0,
     "LabResults": [
       {
+        "TestTypeName": "CBD (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBDA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBN (%) Vape Cartridge",
+        "TestResultLevel": 0.69,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+        "TestResultLevel": 86.49,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBG (%) Vape Cartridge",
+        "TestResultLevel": 1.86,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
         "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
         "TestResultLevel": 0.23,
         "TestPassed": true,
@@ -90186,55 +90235,6 @@
       {
         "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
         "TestResultLevel": 1.12,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBG (%) Vape Cartridge",
-        "TestResultLevel": 1.86,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-        "TestResultLevel": 86.49,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Vape Cartridge",
-        "TestResultLevel": 0.69,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBDA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBD (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2025-03-17",
         "LabFacilityName": "Green Analytics"
@@ -90442,36 +90442,8 @@
     "Price": 25.0,
     "LabResults": [
       {
-        "TestTypeName": "CBD (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBDA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Vape Cartridge",
-        "TestResultLevel": 0.7,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-        "TestResultLevel": 85.9,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
+        "TestTypeName": "CBG (%) Vape Cartridge",
+        "TestResultLevel": 1.75,
         "TestPassed": true,
         "TestPerformedDate": "2025-03-17",
         "LabFacilityName": "Green Analytics"
@@ -90484,8 +90456,36 @@
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "CBG (%) Vape Cartridge",
-        "TestResultLevel": 1.75,
+        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+        "TestResultLevel": 85.9,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBN (%) Vape Cartridge",
+        "TestResultLevel": 0.7,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBDA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBD (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2025-03-17",
         "LabFacilityName": "Green Analytics"
