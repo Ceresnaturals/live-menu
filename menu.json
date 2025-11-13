@@ -3,38 +3,10 @@
     "Id": 7603974,
     "Label": "1A4030100003201000000180",
     "ItemName": "Essentia - Zen Drops - Tincture - 15g",
-    "Quantity": 830.0,
+    "Quantity": 820.0,
     "Type": "Hybrid",
     "Price": 10.0,
     "LabResults": [
-      {
-        "TestTypeName": "CBDA (%) Raw Plant Material",
-        "TestResultLevel": 0.04,
-        "TestPassed": true,
-        "TestPerformedDate": "2022-06-27",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBN (%) Raw Plant Material",
-        "TestResultLevel": 0.02,
-        "TestPassed": true,
-        "TestPerformedDate": "2022-06-27",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.4,
-        "TestPassed": true,
-        "TestPerformedDate": "2022-06-27",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.08,
-        "TestPassed": true,
-        "TestPerformedDate": "2022-06-27",
-        "LabFacilityName": "Quales, LLC"
-      },
       {
         "TestTypeName": "THC (%) Raw Plant Material",
         "TestResultLevel": 0.54,
@@ -75,6 +47,34 @@
         "TestResultLevel": 0.05,
         "TestPassed": true,
         "TestPerformedDate": "2022-08-26",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.08,
+        "TestPassed": true,
+        "TestPerformedDate": "2022-06-27",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.4,
+        "TestPassed": true,
+        "TestPerformedDate": "2022-06-27",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestResultLevel": 0.02,
+        "TestPassed": true,
+        "TestPerformedDate": "2022-06-27",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBDA (%) Raw Plant Material",
+        "TestResultLevel": 0.04,
+        "TestPassed": true,
+        "TestPerformedDate": "2022-06-27",
         "LabFacilityName": "Quales, LLC"
       },
       {
@@ -88545,7 +88545,7 @@
     "Id": 7139888,
     "Label": "1A4030100003201000000152",
     "ItemName": "LORE Infused PR 1g - Purple Crunch Berries",
-    "Quantity": 1283.0,
+    "Quantity": 1276.0,
     "Type": "Hybrid",
     "Price": 12.0,
     "LabResults": [
@@ -88730,7 +88730,7 @@
     "Id": 7037601,
     "Label": "1A4030100003201000000148",
     "ItemName": "LORE 2g Vape - Citrus Breeze",
-    "Quantity": 83.0,
+    "Quantity": 73.0,
     "Type": "Sativa",
     "Price": 40.0,
     "LabResults": [
@@ -89006,7 +89006,7 @@
     "Id": 7037602,
     "Label": "1A4030100003201000000149",
     "ItemName": "LORE 2g Vape - Sour Delight",
-    "Quantity": 69.0,
+    "Quantity": 59.0,
     "Type": "Hybrid",
     "Price": 40.0,
     "LabResults": [
@@ -89282,7 +89282,7 @@
     "Id": 7037603,
     "Label": "1A4030100003201000000150",
     "ItemName": "LORE 2g Vape - Pine Peak",
-    "Quantity": 62.0,
+    "Quantity": 52.0,
     "Type": "Hybrid",
     "Price": 40.0,
     "LabResults": [
@@ -89558,7 +89558,7 @@
     "Id": 6898428,
     "Label": "1A4030100003201000000124",
     "ItemName": "LORE Infused PR 1g - Sour Diesel",
-    "Quantity": 363.0,
+    "Quantity": 357.0,
     "Type": "Hybrid",
     "Price": 12.0,
     "LabResults": [
@@ -89708,7 +89708,7 @@
     "Id": 6898368,
     "Label": "1A4030100003201000000128",
     "ItemName": "LORE Infused Pre-Roll 1g - Strawberry Candy",
-    "Quantity": 648.0,
+    "Quantity": 642.0,
     "Type": "Hybrid",
     "Price": 12.0,
     "LabResults": [
@@ -89858,7 +89858,7 @@
     "Id": 6898361,
     "Label": "1A4030100003201000000132",
     "ItemName": "LORE Infused PR 1g - Skywalker Gushmints",
-    "Quantity": 671.0,
+    "Quantity": 640.0,
     "Type": "Hybrid",
     "Price": 12.0,
     "LabResults": [
@@ -90299,55 +90299,6 @@
     "Price": 25.0,
     "LabResults": [
       {
-        "TestTypeName": "CBD (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBDA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Vape Cartridge",
-        "TestResultLevel": 0.7,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-        "TestResultLevel": 85.83,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBG (%) Vape Cartridge",
-        "TestResultLevel": 1.72,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
         "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
         "TestResultLevel": 0.21,
         "TestPassed": true,
@@ -90399,6 +90350,55 @@
       {
         "TestTypeName": "Caryophyllene Oxide (%) Vape Cartridge",
         "TestResultLevel": 0.14,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBG (%) Vape Cartridge",
+        "TestResultLevel": 1.72,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+        "TestResultLevel": 85.83,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBN (%) Vape Cartridge",
+        "TestResultLevel": 0.7,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBDA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBD (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2025-03-17",
         "LabFacilityName": "Green Analytics"
