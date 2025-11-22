@@ -9454,22 +9454,15 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 20.6,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THC (%) Raw Plant Material",
-        "TestResultLevel": 0.25,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestTypeName": "CBDA (%) Raw Plant Material",
         "TestResultLevel": 0.02,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
@@ -9482,43 +9475,29 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBN (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBDA (%) Raw Plant Material",
+        "TestTypeName": "CBD (%) Raw Plant Material",
         "TestResultLevel": 0.02,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 22.15,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
         "TestTypeName": "THC (%) Raw Plant Material",
-        "TestResultLevel": 0.2,
+        "TestResultLevel": 0.25,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBD (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 20.6,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.08,
+        "TestTypeName": "CBDA (%) Raw Plant Material",
+        "TestResultLevel": 0.1,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
@@ -9531,8 +9510,29 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBDA (%) Raw Plant Material",
-        "TestResultLevel": 0.1,
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.08,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THC (%) Raw Plant Material",
+        "TestResultLevel": 0.2,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 22.15,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
@@ -9748,22 +9748,15 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 29.02,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THC (%) Raw Plant Material",
-        "TestResultLevel": 0.25,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestTypeName": "CBDA (%) Raw Plant Material",
         "TestResultLevel": 0.02,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
@@ -9776,34 +9769,6 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBN (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBDA (%) Raw Plant Material",
-        "TestResultLevel": 0.02,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 28.1,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THC (%) Raw Plant Material",
-        "TestResultLevel": 0.32,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
         "TestTypeName": "CBD (%) Raw Plant Material",
         "TestResultLevel": 0.02,
         "TestPassed": true,
@@ -9811,15 +9776,15 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.13,
+        "TestTypeName": "THC (%) Raw Plant Material",
+        "TestResultLevel": 0.25,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBN (%) Raw Plant Material",
-        "TestResultLevel": 0.01,
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 29.02,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
@@ -9832,6 +9797,20 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
+        "TestTypeName": "CBN (%) Raw Plant Material",
+        "TestResultLevel": 0.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.13,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
         "TestTypeName": "CBD (%) Raw Plant Material",
         "TestResultLevel": 0.02,
         "TestPassed": true,
@@ -9839,8 +9818,22 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.1,
+        "TestTypeName": "THC (%) Raw Plant Material",
+        "TestResultLevel": 0.32,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 28.1,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBDA (%) Raw Plant Material",
+        "TestResultLevel": 0.03,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
@@ -9853,8 +9846,15 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBDA (%) Raw Plant Material",
-        "TestResultLevel": 0.03,
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.1,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.02,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
@@ -10000,21 +10000,14 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 27.51,
+        "TestTypeName": "CBDA (%) Raw Plant Material",
+        "TestResultLevel": 0.02,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "THC (%) Raw Plant Material",
-        "TestResultLevel": 0.66,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestTypeName": "CBN (%) Raw Plant Material",
         "TestResultLevel": 0.02,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
@@ -10028,34 +10021,6 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBN (%) Raw Plant Material",
-        "TestResultLevel": 0.02,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "CBDA (%) Raw Plant Material",
-        "TestResultLevel": 0.02,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 28.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THC (%) Raw Plant Material",
-        "TestResultLevel": 0.62,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-18",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
         "TestTypeName": "CBD (%) Raw Plant Material",
         "TestResultLevel": 0.02,
         "TestPassed": true,
@@ -10063,8 +10028,22 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBG (%) Raw Plant Material",
-        "TestResultLevel": 0.17,
+        "TestTypeName": "THC (%) Raw Plant Material",
+        "TestResultLevel": 0.66,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 27.51,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBDA (%) Raw Plant Material",
+        "TestResultLevel": 0.04,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
@@ -10077,8 +10056,29 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "CBDA (%) Raw Plant Material",
-        "TestResultLevel": 0.04,
+        "TestTypeName": "CBG (%) Raw Plant Material",
+        "TestResultLevel": 0.17,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "CBD (%) Raw Plant Material",
+        "TestResultLevel": 0.02,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THC (%) Raw Plant Material",
+        "TestResultLevel": 0.62,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-18",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 28.17,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-18",
         "LabFacilityName": "Quales, LLC"
@@ -11512,20 +11512,6 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
-        "TestTypeName": "THC (%) Raw Plant Material",
-        "TestResultLevel": 0.53,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-25",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 27.63,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-25",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
         "TestTypeName": "CBDA (%) Raw Plant Material",
         "TestResultLevel": 0.08,
         "TestPassed": true,
@@ -11549,6 +11535,20 @@
       {
         "TestTypeName": "CBD (%) Raw Plant Material",
         "TestResultLevel": 0.02,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-25",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THC (%) Raw Plant Material",
+        "TestResultLevel": 0.53,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-25",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 27.63,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-25",
         "LabFacilityName": "Quales, LLC"
@@ -12856,6 +12856,20 @@
         "LabFacilityName": "Quales, LLC"
       },
       {
+        "TestTypeName": "THC (%) Raw Plant Material",
+        "TestResultLevel": 0.8,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-30",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
+        "TestTypeName": "THCA (%) Raw Plant Material",
+        "TestResultLevel": 29.69,
+        "TestPassed": true,
+        "TestPerformedDate": "2023-08-30",
+        "LabFacilityName": "Quales, LLC"
+      },
+      {
         "TestTypeName": "CBDA (%) Raw Plant Material",
         "TestResultLevel": 0.1,
         "TestPassed": true,
@@ -12879,20 +12893,6 @@
       {
         "TestTypeName": "CBD (%) Raw Plant Material",
         "TestResultLevel": 0.01,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-30",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THC (%) Raw Plant Material",
-        "TestResultLevel": 0.8,
-        "TestPassed": true,
-        "TestPerformedDate": "2023-08-30",
-        "LabFacilityName": "Quales, LLC"
-      },
-      {
-        "TestTypeName": "THCA (%) Raw Plant Material",
-        "TestResultLevel": 29.69,
         "TestPassed": true,
         "TestPerformedDate": "2023-08-30",
         "LabFacilityName": "Quales, LLC"
@@ -88838,217 +88838,42 @@
     "Price": 40.0,
     "LabResults": [
       {
-        "TestTypeName": "Trans-Nerolidol (%) Additional",
+        "TestTypeName": "CBD (%) Stability T0",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "Terpinolene (%) Additional",
-        "TestResultLevel": 0.09,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Linalool (%) Additional",
-        "TestResultLevel": 0.28,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Additional",
-        "TestResultLevel": 0.05,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Caryophyllene Oxide (%) Additional",
-        "TestResultLevel": 0.1,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Additional",
-        "TestResultLevel": 0.16,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Myrcene (%) Additional",
-        "TestResultLevel": 1.08,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Additional",
-        "TestResultLevel": 1.01,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Additional",
+        "TestTypeName": "CBDA (%) Stability T0",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "Alpha-Pinene (%) Additional",
-        "TestResultLevel": 0.29,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Additional",
-        "TestResultLevel": 0.34,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Additional",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Trans-Nerolidol (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Terpinolene (%) Vape Cartridge",
-        "TestResultLevel": 0.09,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Linalool (%) Vape Cartridge",
-        "TestResultLevel": 0.28,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Vape Cartridge",
-        "TestResultLevel": 0.05,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Caryophyllene Oxide (%) Vape Cartridge",
-        "TestResultLevel": 0.1,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Vape Cartridge",
-        "TestResultLevel": 0.16,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Myrcene (%) Vape Cartridge",
-        "TestResultLevel": 1.08,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
-        "TestResultLevel": 1.01,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
-        "TestResultLevel": 0.29,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
-        "TestResultLevel": 0.34,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBG (%) Vape Cartridge",
-        "TestResultLevel": 2.15,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-        "TestResultLevel": 81.25,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Vape Cartridge",
+        "TestTypeName": "CBN (%) Stability T0",
         "TestResultLevel": 1.73,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "CBDA (%) Vape Cartridge",
+        "TestTypeName": "Delta-9 THC (%) Stability T0",
+        "TestResultLevel": 81.25,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Stability T0",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "CBD (%) Vape Cartridge",
+        "TestTypeName": "THCA (%) Stability T0",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
@@ -89062,42 +88887,217 @@
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "THCA (%) Stability T0",
+        "TestTypeName": "CBD (%) Vape Cartridge",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "Delta-8 THC (%) Stability T0",
+        "TestTypeName": "CBDA (%) Vape Cartridge",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "Delta-9 THC (%) Stability T0",
-        "TestResultLevel": 81.25,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Stability T0",
+        "TestTypeName": "CBN (%) Vape Cartridge",
         "TestResultLevel": 1.73,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "CBDA (%) Stability T0",
+        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+        "TestResultLevel": 81.25,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "CBD (%) Stability T0",
+        "TestTypeName": "THCA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBG (%) Vape Cartridge",
+        "TestResultLevel": 2.15,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
+        "TestResultLevel": 0.34,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
+        "TestResultLevel": 0.29,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
+        "TestResultLevel": 1.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Myrcene (%) Vape Cartridge",
+        "TestResultLevel": 1.08,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Vape Cartridge",
+        "TestResultLevel": 0.16,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Caryophyllene Oxide (%) Vape Cartridge",
+        "TestResultLevel": 0.1,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Vape Cartridge",
+        "TestResultLevel": 0.05,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Linalool (%) Vape Cartridge",
+        "TestResultLevel": 0.28,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Terpinolene (%) Vape Cartridge",
+        "TestResultLevel": 0.09,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Trans-Nerolidol (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Additional",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Additional",
+        "TestResultLevel": 0.34,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Additional",
+        "TestResultLevel": 0.29,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Additional",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Additional",
+        "TestResultLevel": 1.01,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Myrcene (%) Additional",
+        "TestResultLevel": 1.08,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Additional",
+        "TestResultLevel": 0.16,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Caryophyllene Oxide (%) Additional",
+        "TestResultLevel": 0.1,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Additional",
+        "TestResultLevel": 0.05,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Linalool (%) Additional",
+        "TestResultLevel": 0.28,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Terpinolene (%) Additional",
+        "TestResultLevel": 0.09,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Trans-Nerolidol (%) Additional",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
@@ -89201,6 +89201,90 @@
         "LabFacilityName": "Green Analytics"
       },
       {
+        "TestTypeName": "CBD (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBDA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBN (%) Vape Cartridge",
+        "TestResultLevel": 1.87,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+        "TestResultLevel": 73.71,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBG (%) Vape Cartridge",
+        "TestResultLevel": 2.17,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
+        "TestResultLevel": 0.15,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
+        "TestResultLevel": 0.45,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
+        "TestResultLevel": 0.06,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
+        "TestResultLevel": 0.36,
+        "TestPassed": true,
+        "TestPerformedDate": "2024-08-11",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
         "TestTypeName": "Beta-Myrcene (%) Vape Cartridge",
         "TestResultLevel": 0.82,
         "TestPassed": true,
@@ -89294,90 +89378,6 @@
       {
         "TestTypeName": "CBG (%) Stability T0",
         "TestResultLevel": 2.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
-        "TestResultLevel": 0.36,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
-        "TestResultLevel": 0.06,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
-        "TestResultLevel": 0.45,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
-        "TestResultLevel": 0.15,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBG (%) Vape Cartridge",
-        "TestResultLevel": 2.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-        "TestResultLevel": 73.71,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Vape Cartridge",
-        "TestResultLevel": 1.87,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBDA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2024-08-11",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBD (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2024-08-11",
         "LabFacilityName": "Green Analytics"
@@ -89549,126 +89549,7 @@
     "Price": 12.0,
     "LabResults": [
       {
-        "TestTypeName": "Trans-Nerolidol (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Terpinolene (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.02,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Linalool (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.14,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Caryophyllene Oxide (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.06,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.02,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Myrcene (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.18,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.06,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCVA (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.14,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBG (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.29,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCA (%) Solvent Based Concentrate",
-        "TestResultLevel": 31.47,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Solvent Based Concentrate",
-        "TestResultLevel": 0.82,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-04-07",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Solvent Based Concentrate",
+        "TestTypeName": "CBD (%) Solvent Based Concentrate",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2025-04-07",
@@ -89682,7 +89563,126 @@
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "CBD (%) Solvent Based Concentrate",
+        "TestTypeName": "CBN (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.82,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCA (%) Solvent Based Concentrate",
+        "TestResultLevel": 31.47,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBG (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.29,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCVA (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.14,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.06,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.18,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Myrcene (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.02,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Caryophyllene Oxide (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.06,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Linalool (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.14,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Terpinolene (%) Solvent Based Concentrate",
+        "TestResultLevel": 0.02,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-04-07",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Trans-Nerolidol (%) Solvent Based Concentrate",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2025-04-07",
@@ -89855,120 +89855,8 @@
     "Price": 25.0,
     "LabResults": [
       {
-        "TestTypeName": "Trans-Nerolidol (%) Vape Cartridge",
+        "TestTypeName": "CBD (%) Vape Cartridge",
         "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Terpinolene (%) Vape Cartridge",
-        "TestResultLevel": 0.24,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Linalool (%) Vape Cartridge",
-        "TestResultLevel": 0.59,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Caryophyllene Oxide (%) Vape Cartridge",
-        "TestResultLevel": 0.16,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Vape Cartridge",
-        "TestResultLevel": 0.37,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Myrcene (%) Vape Cartridge",
-        "TestResultLevel": 1.08,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
-        "TestResultLevel": 1.65,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
-        "TestResultLevel": 0.34,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
-        "TestResultLevel": 0.15,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
-        "TestResultLevel": 0.31,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBG (%) Vape Cartridge",
-        "TestResultLevel": 1.48,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-        "TestResultLevel": 84.78,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Vape Cartridge",
-        "TestResultLevel": 0.7,
         "TestPassed": true,
         "TestPerformedDate": "2025-03-17",
         "LabFacilityName": "Green Analytics"
@@ -89981,7 +89869,119 @@
         "LabFacilityName": "Green Analytics"
       },
       {
-        "TestTypeName": "CBD (%) Vape Cartridge",
+        "TestTypeName": "CBN (%) Vape Cartridge",
+        "TestResultLevel": 0.7,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+        "TestResultLevel": 84.78,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBG (%) Vape Cartridge",
+        "TestResultLevel": 1.48,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
+        "TestResultLevel": 0.31,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
+        "TestResultLevel": 0.15,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
+        "TestResultLevel": 0.34,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
+        "TestResultLevel": 1.65,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Myrcene (%) Vape Cartridge",
+        "TestResultLevel": 1.08,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Vape Cartridge",
+        "TestResultLevel": 0.37,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Caryophyllene Oxide (%) Vape Cartridge",
+        "TestResultLevel": 0.16,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Linalool (%) Vape Cartridge",
+        "TestResultLevel": 0.59,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Terpinolene (%) Vape Cartridge",
+        "TestResultLevel": 0.24,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Trans-Nerolidol (%) Vape Cartridge",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2025-03-17",
@@ -90293,6 +90293,118 @@
     "Price": 25.0,
     "LabResults": [
       {
+        "TestTypeName": "CBD (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBDA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBN (%) Vape Cartridge",
+        "TestResultLevel": 0.7,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
+        "TestResultLevel": 85.9,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "THCA (%) Vape Cartridge",
+        "TestResultLevel": 0.0,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "CBG (%) Vape Cartridge",
+        "TestResultLevel": 1.75,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
+        "TestResultLevel": 0.12,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
+        "TestResultLevel": 0.28,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
+        "TestResultLevel": 0.58,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
+        "TestResultLevel": 0.04,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
+        "TestResultLevel": 0.82,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Myrcene (%) Vape Cartridge",
+        "TestResultLevel": 0.71,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Beta-Pinene (%) Vape Cartridge",
+        "TestResultLevel": 0.23,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Caryophyllene Oxide (%) Vape Cartridge",
+        "TestResultLevel": 0.17,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
+        "TestTypeName": "Eucalyptol (%) Vape Cartridge",
+        "TestResultLevel": 0.04,
+        "TestPassed": true,
+        "TestPerformedDate": "2025-03-17",
+        "LabFacilityName": "Green Analytics"
+      },
+      {
         "TestTypeName": "Linalool (%) Vape Cartridge",
         "TestResultLevel": 0.3,
         "TestPassed": true,
@@ -90308,118 +90420,6 @@
       },
       {
         "TestTypeName": "Trans-Nerolidol (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Eucalyptol (%) Vape Cartridge",
-        "TestResultLevel": 0.04,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Caryophyllene Oxide (%) Vape Cartridge",
-        "TestResultLevel": 0.17,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Pinene (%) Vape Cartridge",
-        "TestResultLevel": 0.23,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Myrcene (%) Vape Cartridge",
-        "TestResultLevel": 0.71,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Beta-Caryophyllene (%) Vape Cartridge",
-        "TestResultLevel": 0.82,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Terpinene (%) Vape Cartridge",
-        "TestResultLevel": 0.04,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Pinene (%) Vape Cartridge",
-        "TestResultLevel": 0.58,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Humulene (%) Vape Cartridge",
-        "TestResultLevel": 0.28,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Alpha-Bisabolol (%) Vape Cartridge",
-        "TestResultLevel": 0.12,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBG (%) Vape Cartridge",
-        "TestResultLevel": 1.75,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "THCA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-8 THC (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "Delta-9 THC (%) Vape Cartridge",
-        "TestResultLevel": 85.9,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBN (%) Vape Cartridge",
-        "TestResultLevel": 0.7,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBDA (%) Vape Cartridge",
-        "TestResultLevel": 0.0,
-        "TestPassed": true,
-        "TestPerformedDate": "2025-03-17",
-        "LabFacilityName": "Green Analytics"
-      },
-      {
-        "TestTypeName": "CBD (%) Vape Cartridge",
         "TestResultLevel": 0.0,
         "TestPassed": true,
         "TestPerformedDate": "2025-03-17",
