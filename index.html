@@ -287,7 +287,7 @@
   </style>
 </head>
 <body>
-  <div class="wrapper">
+  <div class="wrapper" id="app-wrapper">
 
     <!-- ================================
          HEADER
@@ -1297,6 +1297,48 @@
 
     // Hook up submit button
     document.getElementById('submit-button').addEventListener('click', submitOrder);
+
+  // =====================================
+  // IFRAME AUTO-RESIZE (postMessage)
+  // =====================================
+  (function enableIframeAutoResize() {
+    const wrapper = document.getElementById('app-wrapper') || document.body;
+
+    function sendHeight() {
+      // Use wrapper height + a little padding for safety
+      const height = Math.ceil(wrapper.scrollHeight + 40);
+
+      // Send to parent (Squarespace page)
+      window.parent.postMessage(
+        { type: 'CERES_IFRAME_HEIGHT', height },
+        '*'
+      );
+    }
+
+    // Send at key times
+    window.addEventListener('load', sendHeight);
+
+    // ResizeObserver catches dynamic content changes (menu loads, tables render, etc.)
+    if ('ResizeObserver' in window) {
+      const ro = new ResizeObserver(() => sendHeight());
+      ro.observe(wrapper);
+    } else {
+      // Fallback: periodic updates
+      setInterval(sendHeight, 1000);
+    }
+
+    // Also fire after rendering (your page updates DOM after fetch)
+    const originalRender = window.renderMenuTables;
+    if (typeof originalRender === 'function') {
+      window.renderMenuTables = function () {
+        const result = originalRender.apply(this, arguments);
+        // Let the DOM paint first, then measure
+        requestAnimationFrame(sendHeight);
+        return result;
+      };
+    }
+  })();
+
 
   </script>
 </body>
