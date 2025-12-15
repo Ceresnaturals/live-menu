@@ -898,36 +898,33 @@
      * Build the standard table header row (with sortable columns and no sample column).
      */
     function buildStandardHeaderHtml() {
-      const cols = [
-        { key: 'item',   label: 'Item' },
-        { key: 'category', label: 'Category' },
-        { key: 'qty',    label: 'Avail. Qty' },
-        { key: 'price',  label: 'Price' },
-        { key: 'thc',    label: 'THC %' },
-        { key: 'cbd',    label: 'CBD %' },
-        { key: 'terps',  label: 'Terps %' },
-        { key: null,     label: 'Amount Wanted' },
-        { key: null,     label: 'Item Total' }
-      ];
+    const cols = [
+    { key: 'item', label: 'Item' },
+    { key: 'category', label: 'Category' },
+    { key: 'qty', label: 'Avail. Qty' },
+    { key: 'price', label: 'Price' },
+    { key: 'thc', label: 'THC %' },
+    { key: 'cbd', label: 'CBD %' },
+    { key: 'terps', label: 'Terps %' },
+    { key: null, label: 'Amount Wanted' },
+    { key: null, label: 'Item Total' }
+    ];
 
-      return cols.map(col => {
-        if (!col.key) {
-          return `<th>${col.label}</th>`;
-        }
 
-        const arrow = '▲▼';
+    return cols.map(col => {
+    if (!col.key) return `<th>${col.label}</th>`;
 
-        return `
-          <th class="sortable"
-              data-sort-col="${col.key}"
-              data-sort-active="${isActive ? 'true' : 'false'}">
-            <span class="sort-label">${col.label}</span>
-            <span class="sort-indicator">${arrow}</span>
-          </th>
-        `;
-      }).join('');
+
+    return `
+    <th class="sortable"
+    data-sort-col="${col.key}"
+    data-sort-asc="">
+    <span class="sort-label">${col.label}</span>
+    <span class="sort-indicator">▲▼</span>
+    </th>
+    `;
+    }).join('');
     }
-
 
     // =====================================
     // TOTALS & STEP ENFORCEMENT
@@ -979,74 +976,76 @@
 
     // Table-local sort logic
     //****
-        function sortTableByColumn(table, columnKey, th) {
-        const tbody = table.querySelector('tbody');
-        if (!tbody) return;
-
-        const rows = Array.from(tbody.querySelectorAll('tr.menu-row'));
-        if (!rows.length) return;
-
-        // Track sort state on the TH itself
-        const currentAsc = th.dataset.sortAsc === 'true';
-        const asc = !currentAsc;
-
-        // Clear indicators in this table only
-        table.querySelectorAll('th.sortable').forEach(h => {
-            h.dataset.sortAsc = '';
-            h.querySelector('.sort-indicator').textContent = '▲▼';
-        });
-
-        th.dataset.sortAsc = asc ? 'true' : 'false';
-        th.querySelector('.sort-indicator').textContent = asc ? '▲' : '▼';
-
-        const dir = asc ? 1 : -1;
-
-        rows.sort((a, b) => {
-            let av, bv;
-
-            switch (columnKey) {
-            case 'item':
-                av = a.querySelector('.item-name')?.textContent.toLowerCase() || '';
-                bv = b.querySelector('.item-name')?.textContent.toLowerCase() || '';
-                break;
-            case 'category':
-                av = a.querySelector('.item-category')?.textContent.toLowerCase() || '';
-                bv = b.querySelector('.item-category')?.textContent.toLowerCase() || '';
-                break;
-            case 'qty':
-                av = parseFloat(a.children[2].textContent) || 0;
-                bv = parseFloat(b.children[2].textContent) || 0;
-                break;
-            case 'price':
-                av = parseFloat(a.querySelector('.item-price')?.dataset.price) || 0;
-                bv = parseFloat(b.querySelector('.item-price')?.dataset.price) || 0;
-                break;
-            case 'thc':
-                av = parseFloat(a.querySelector('.item-thc')?.textContent) || 0;
-                bv = parseFloat(b.querySelector('.item-thc')?.textContent) || 0;
-                break;
-            case 'cbd':
-                av = parseFloat(a.querySelector('.item-cbd')?.textContent) || 0;
-                bv = parseFloat(b.querySelector('.item-cbd')?.textContent) || 0;
-                break;
-            case 'terps':
-                av = parseFloat(a.querySelector('.item-terps')?.textContent) || 0;
-                bv = parseFloat(b.querySelector('.item-terps')?.textContent) || 0;
-                break;
-            default:
-                return 0;
-            }
-
-            if (av > bv) return dir;
-            if (av < bv) return -dir;
-            return 0;
-        });
-
-        // Re-append rows in new order
-        rows.forEach(r => tbody.appendChild(r));
-        }
+    function sortTableByColumn(table, columnKey, th) {
+    const tbody = table.querySelector('tbody');
+    if (!tbody) return;
 
 
+    const rows = Array.from(tbody.querySelectorAll('tr.menu-row'));
+    if (!rows.length) return;
+
+
+    const asc = th.dataset.sortAsc !== 'true';
+
+
+    // Reset only THIS table's headers
+    table.querySelectorAll('th.sortable').forEach(h => {
+    h.dataset.sortAsc = '';
+    h.querySelector('.sort-indicator').textContent = '▲▼';
+    });
+
+
+    th.dataset.sortAsc = asc ? 'true' : 'false';
+    th.querySelector('.sort-indicator').textContent = asc ? '▲' : '▼';
+
+
+    const dir = asc ? 1 : -1;
+
+
+    rows.sort((a, b) => {
+    let av, bv;
+
+
+    switch (columnKey) {
+    case 'item':
+    av = a.querySelector('.item-name')?.textContent.toLowerCase() || '';
+    bv = b.querySelector('.item-name')?.textContent.toLowerCase() || '';
+    break;
+    case 'category':
+    av = a.querySelector('.item-category')?.textContent.toLowerCase() || '';
+    bv = b.querySelector('.item-category')?.textContent.toLowerCase() || '';
+    break;
+    case 'qty':
+    av = parseFloat(a.children[2].textContent) || 0;
+    bv = parseFloat(b.children[2].textContent) || 0;
+    break;
+    case 'price':
+    av = parseFloat(a.querySelector('.item-price')?.dataset.price) || 0;
+    bv = parseFloat(b.querySelector('.item-price')?.dataset.price) || 0;
+    break;
+    case 'thc':
+    av = parseFloat(a.querySelector('.item-thc')?.textContent) || 0;
+    bv = parseFloat(b.querySelector('.item-thc')?.textContent) || 0;
+    break;
+    case 'cbd':
+    av = parseFloat(a.querySelector('.item-cbd')?.textContent) || 0;
+    bv = parseFloat(b.querySelector('.item-cbd')?.textContent) || 0;
+    break;
+    case 'terps':
+    av = parseFloat(a.querySelector('.item-terps')?.textContent) || 0;
+    bv = parseFloat(b.querySelector('.item-terps')?.textContent) || 0;
+    break;
+    default:
+    return 0;
+    }
+
+
+    return (av > bv ? 1 : av < bv ? -1 : 0) * dir;
+    });
+
+
+    rows.forEach(r => tbody.appendChild(r));
+    }
 
     // =====================================
     // ORDER BUILDERS (EMAIL BODY + JSON)
