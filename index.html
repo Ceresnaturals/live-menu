@@ -296,9 +296,7 @@
       <h1>Order Request Form</h1>
       <p class="subtitle">
         Please fill in your contact and license information, then enter quantities in the menu below.
-        Quantities are rounded to the nearest multiple of 5. 
-        
-        Use the “Sample Request” toggle next to a product type
+        Quantities are rounded to the nearest multiple of 5. Use the “Sample Request” toggle next to a product type
         (e.g., Zen Drops, Diamond Cut) if you’d like samples of that kind of product.
       </p>
     </header>
@@ -788,14 +786,22 @@
      * If withSampleToggle = true, each subgroup header gets a Sample Request checkbox.
      */
     function renderSubgroupSection(groupName, groupObj, withSampleToggle) {
-      if (!groupObj) return '';
+    if (!groupObj) return '';
 
-      let out = '';
+    // DISPLAY LABEL ONLY (presentation layer)
+    const displayName =
+        groupName === 'Cart' ? 'Carts' :
+        groupName === 'Vape' ? 'Vapes' :
+        groupName === 'Pre-Roll' ? 'Pre-Rolls' :
+        groupName;
 
-      out += `
-        <h2 class="group-title">${groupName}</h2>
+    let out = '';
+
+    out += `
+        <h2 class="group-title">${displayName}</h2>
         <p class="group-description">${groupDescriptions[groupName] || ''}</p>
-      `;
+    `;
+
 
       Object.entries(groupObj).forEach(([subName, items]) => {
         const subDesc = subgroupDescriptions[subName] || '';
