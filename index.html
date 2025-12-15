@@ -377,12 +377,6 @@
     // In-memory merged packages array
     let packages = [];
 
-    // Current sort state
-    let sortState = {
-      column: null, // 'item' | 'category' | 'qty' | 'price' | 'thc' | 'cbd' | 'terps'
-      asc: true
-    };
-
     // Tincture potency reference (mg/15 mL bottle) – for future use
     const tincturePotencies = {
       'Zen Drops':   { THC: 75, CBD: 75, CBN: 75 },
@@ -921,8 +915,7 @@
           return `<th>${col.label}</th>`;
         }
 
-        const isActive = sortState.column === col.key;
-        const arrow = isActive ? (sortState.asc ? '▲' : '▼') : '▲▼';
+        const arrow = '▲▼';
 
         return `
           <th class="sortable"
@@ -935,66 +928,6 @@
       }).join('');
     }
 
-    // =====================================
-    // SORTING LOGIC
-    // =====================================
-
-    /**
-     * Sort the global packages array based on a logical column key,
-     * then re-render all tables.
-     */
-    function sortPackagesBy(columnKey) {
-      const prevColumn = sortState.column;
-      const prevAsc = sortState.asc;
-
-      const asc = (prevColumn === columnKey) ? !prevAsc : true;
-      sortState = { column: columnKey, asc };
-
-      const dir = asc ? 1 : -1;
-
-      packages.sort((a, b) => {
-        let av, bv;
-
-        switch (columnKey) {
-          case 'item':
-            av = (a.ItemName || '').toLowerCase();
-            bv = (b.ItemName || '').toLowerCase();
-            break;
-          case 'category':
-            av = (a.Type || '').toLowerCase();
-            bv = (b.Type || '').toLowerCase();
-            break;
-          case 'qty':
-            av = parseFloat(a.Quantity) || 0;
-            bv = parseFloat(b.Quantity) || 0;
-            break;
-          case 'price':
-            av = Number(a.Price) || 0;
-            bv = Number(b.Price) || 0;
-            break;
-          case 'thc':
-            av = (a.analytes && a.analytes.totalTHC) || 0;
-            bv = (b.analytes && b.analytes.totalTHC) || 0;
-            break;
-          case 'cbd':
-            av = (a.analytes && a.analytes.totalCBD) || 0;
-            bv = (b.analytes && b.analytes.totalCBD) || 0;
-            break;
-          case 'terps':
-            av = (a.analytes && a.analytes.totalTerpenes) || 0;
-            bv = (b.analytes && b.analytes.totalTerpenes) || 0;
-            break;
-          default:
-            return 0;
-        }
-
-        if (av > bv) return dir;
-        if (av < bv) return -dir;
-        return 0;
-      });
-
-      renderMenuTables();
-    }
 
     // =====================================
     // TOTALS & STEP ENFORCEMENT
@@ -1043,6 +976,77 @@
       document.getElementById('running-total').textContent =
         `Total: $${total.toFixed(2)}`;
     }
+
+    // Table-local sort logic
+    //****
+        function sortTableByColumn(table, columnKey, th) {
+        const tbody = table.querySelector('tbody');
+        if (!tbody) return;
+
+        const rows = Array.from(tbody.querySelectorAll('tr.menu-row'));
+        if (!rows.length) return;
+
+        // Track sort state on the TH itself
+        const currentAsc = th.dataset.sortAsc === 'true';
+        const asc = !currentAsc;
+
+        // Clear indicators in this table only
+        table.querySelectorAll('th.sortable').forEach(h => {
+            h.dataset.sortAsc = '';
+            h.querySelector('.sort-indicator').textContent = '▲▼';
+        });
+
+        th.dataset.sortAsc = asc ? 'true' : 'false';
+        th.querySelector('.sort-indicator').textContent = asc ? '▲' : '▼';
+
+        const dir = asc ? 1 : -1;
+
+        rows.sort((a, b) => {
+            let av, bv;
+
+            switch (columnKey) {
+            case 'item':
+                av = a.querySelector('.item-name')?.textContent.toLowerCase() || '';
+                bv = b.querySelector('.item-name')?.textContent.toLowerCase() || '';
+                break;
+            case 'category':
+                av = a.querySelector('.item-category')?.textContent.toLowerCase() || '';
+                bv = b.querySelector('.item-category')?.textContent.toLowerCase() || '';
+                break;
+            case 'qty':
+                av = parseFloat(a.children[2].textContent) || 0;
+                bv = parseFloat(b.children[2].textContent) || 0;
+                break;
+            case 'price':
+                av = parseFloat(a.querySelector('.item-price')?.dataset.price) || 0;
+                bv = parseFloat(b.querySelector('.item-price')?.dataset.price) || 0;
+                break;
+            case 'thc':
+                av = parseFloat(a.querySelector('.item-thc')?.textContent) || 0;
+                bv = parseFloat(b.querySelector('.item-thc')?.textContent) || 0;
+                break;
+            case 'cbd':
+                av = parseFloat(a.querySelector('.item-cbd')?.textContent) || 0;
+                bv = parseFloat(b.querySelector('.item-cbd')?.textContent) || 0;
+                break;
+            case 'terps':
+                av = parseFloat(a.querySelector('.item-terps')?.textContent) || 0;
+                bv = parseFloat(b.querySelector('.item-terps')?.textContent) || 0;
+                break;
+            default:
+                return 0;
+            }
+
+            if (av > bv) return dir;
+            if (av < bv) return -dir;
+            return 0;
+        });
+
+        // Re-append rows in new order
+        rows.forEach(r => tbody.appendChild(r));
+        }
+
+
 
     // =====================================
     // ORDER BUILDERS (EMAIL BODY + JSON)
@@ -1271,13 +1275,16 @@
 
     // Handle clicks on sortable header cells
     document.getElementById('menu-data').addEventListener('click', function (e) {
-      const th = e.target.closest('th.sortable');
-      if (!th) return;
+    const th = e.target.closest('th.sortable');
+    if (!th) return;
 
-      const colKey = th.dataset.sortCol;
-      if (!colKey) return;
+    const colKey = th.dataset.sortCol;
+    if (!colKey) return;
 
-      sortPackagesBy(colKey);
+    const table = th.closest('table.menu-table');
+    if (!table) return;
+
+    sortTableByColumn(table, colKey, th);
     });
 
     // Handle input changes on quantity fields (update totals live)
