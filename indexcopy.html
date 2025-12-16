@@ -287,6 +287,8 @@
 
     .suggestions {
       position: absolute;
+      top: calc(100% + 2px);
+      left: 0;
       background: white;
       border: 1px solid #ccc;
       max-height: 220px;
@@ -294,6 +296,7 @@
       width: 100%;
       z-index: 1000;
     }
+
 
     .suggestion {
       padding: 8px 10px;
@@ -406,6 +409,16 @@
 
     let licenses = [];
 
+    fetch(LICENSES_URL)
+      .then(r => r.json())
+      .then(data => {
+        licenses = Array.isArray(data) ? data : [];
+        console.log('Licenses loaded:', licenses.length);
+      })
+      .catch(err => {
+        console.error('Failed to load licenses.json', err);
+      });
+
 
     // In-memory merged packages array
     let packages = [];
@@ -511,16 +524,6 @@
         console.error('Failed to load menu data:', err);
         document.getElementById('menu-data').textContent = 'Error loading menu.';
       });
-
-    fetch(LICENSES_URL)
-      .then(r => r.json())
-      .then(data => {
-        licenses = Array.isArray(data) ? data : [];
-      })
-      .catch(err => {
-        console.error('Failed to load licenses.json', err);
-      });
-
 
     // =====================================
     // DATA MERGE & ANALYTE CALCULATION
@@ -1365,17 +1368,6 @@
     const licenseInput    = document.getElementById('delivery-license');
     const suggestionsBox  = document.getElementById('dispensary-suggestions');
 
-    // Load licenses.json once
-    fetch(LICENSES_URL)
-      .then(r => r.json())
-      .then(data => {
-        licensesIndex = Array.isArray(data) ? data : [];
-      })
-      .catch(err => {
-        console.error('Failed to load licenses.json', err);
-      });
-
-    // Live autocomplete
     dispensaryInput.addEventListener('input', () => {
       const q = dispensaryInput.value.trim().toLowerCase();
       suggestionsBox.innerHTML = '';
@@ -1385,7 +1377,7 @@
 
       if (q.length < 2) return;
 
-      const matches = licensesIndex.filter(l =>
+      const matches = licenses.filter(l =>
         l.location.toLowerCase().includes(q)
       );
 
@@ -1405,9 +1397,18 @@
       });
     });
 
+    document.addEventListener('click', e => {
+      if (!e.target.closest('#dispensary-name') &&
+          !e.target.closest('#dispensary-suggestions')) {
+        suggestionsBox.innerHTML = '';
+      }
+    });
+
+
     // Close suggestions when clicking away
     document.addEventListener('click', e => {
-      if (!e.target.closest('#dispensary-name')) {
+      if (!e.target.closest('#dispensary-name') &&
+          !e.target.closest('#dispensary-suggestions')) {
         suggestionsBox.innerHTML = '';
       }
     });
