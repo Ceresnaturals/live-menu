@@ -1339,6 +1339,67 @@
     // Hook up submit button
     document.getElementById('submit-button').addEventListener('click', submitOrder);
 
+    // =====================================
+    // DISPENSARY AUTOCOMPLETE + LOCKED FIELDS
+    // =====================================
+
+    const LICENSES_URL =
+      'https://jaygmgtmgmail.sharepoint.com/sites/CeresPublicShare/Shared%20Documents/METRC%20API%20Depot/licenses.json';
+
+    let licensesIndex = [];
+
+    const dispensaryInput = document.getElementById('dispensary-name');
+    const businessInput   = document.getElementById('business-name');
+    const licenseInput    = document.getElementById('delivery-license');
+    const suggestionsBox  = document.getElementById('dispensary-suggestions');
+
+    // Load licenses.json once
+    fetch(LICENSES_URL)
+      .then(r => r.json())
+      .then(data => {
+        licensesIndex = Array.isArray(data) ? data : [];
+      })
+      .catch(err => {
+        console.error('Failed to load licenses.json', err);
+      });
+
+    // Live autocomplete
+    dispensaryInput.addEventListener('input', () => {
+      const q = dispensaryInput.value.trim().toLowerCase();
+      suggestionsBox.innerHTML = '';
+
+      businessInput.value = '';
+      licenseInput.value = '';
+
+      if (q.length < 2) return;
+
+      const matches = licensesIndex.filter(l =>
+        l.location.toLowerCase().includes(q)
+      );
+
+      matches.forEach(l => {
+        const div = document.createElement('div');
+        div.className = 'suggestion';
+        div.textContent = l.location;
+
+        div.addEventListener('click', () => {
+          dispensaryInput.value = l.location;
+          businessInput.value   = l.business;
+          licenseInput.value    = l.license;
+          suggestionsBox.innerHTML = '';
+        });
+
+        suggestionsBox.appendChild(div);
+      });
+    });
+
+    // Close suggestions when clicking away
+    document.addEventListener('click', e => {
+      if (!e.target.closest('#dispensary-name')) {
+        suggestionsBox.innerHTML = '';
+      }
+    });
+
   // =====================================
   // IFRAME AUTO-RESIZE (postMessage)
   // =====================================
