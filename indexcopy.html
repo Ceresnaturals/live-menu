@@ -336,13 +336,13 @@
         <label>
           Badge Number:
           <input id="badge-number" type="text" required>
-        </label>
-        <label style="position: relative;">
+        <label>
           Dispensary Name:
-          <input id="dispensary-name" type="text" autocomplete="off" required>
-          <div id="dispensary-suggestions" class="suggestions"></div>
+          <div class="autocomplete">
+            <input id="dispensary-name" type="text" autocomplete="off" required>
+            <div id="dispensary-suggestions" class="suggestions"></div>
+          </div>
         </label>
-
         <label>
           Business Name:
           <input id="business-name" type="text" readonly>
@@ -361,6 +361,22 @@
         All fields above are required before submitting an order request.
       </p>
     </section>
+
+    .autocomplete {
+      position: relative;
+    }
+
+    .suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ccc;
+      max-height: 220px;
+      overflow-y: auto;
+      width: 100%;
+      z-index: 1000;
+    }
 
     <!-- ================================
          MENU TABLES + RUNNING TOTAL
