@@ -284,6 +284,26 @@
       font-style: italic;
       color: #666;
     }
+
+    .suggestions {
+      position: absolute;
+      background: white;
+      border: 1px solid #ccc;
+      max-height: 220px;
+      overflow-y: auto;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .suggestion {
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+
+    .suggestion:hover {
+      background: #f0f0f0;
+    }
+
   </style>
 </head>
 <body>
@@ -314,13 +334,20 @@
           Badge Number:
           <input id="badge-number" type="text" required>
         </label>
-        <label>
+        <label style="position: relative;">
           Dispensary Name:
-          <input id="dispensary-name" type="text" required>
+          <input id="dispensary-name" type="text" autocomplete="off" required>
+          <div id="dispensary-suggestions" class="suggestions"></div>
         </label>
+
+        <label>
+          Business Name:
+          <input id="business-name" type="text" readonly>
+        </label>
+
         <label>
           Delivery License #:
-          <input id="delivery-license" type="text" required>
+          <input id="delivery-license" type="text" readonly required>
         </label>
         <label>
           Contact Email:
@@ -387,7 +414,7 @@
 
     // Group descriptions (top-level)
     const groupDescriptions = {
-      'Tincture': 'Full-spectrum tinctures formulated for specific effects and dosing precision.',
+      'Tincture': 'Full-spectrum - water soluble tinctures formulated for specific effects and dosing precision.',
       'Infused Pre-Rolls': 'Premium infused pre-rolls crafted for potency and consistency.',
       'Pre-Roll': 'Classic single-strain pre-rolls with smooth burn and true flavor.',
       'Cart': 'High-quality distillate cartridges available in multiple sizes.',
