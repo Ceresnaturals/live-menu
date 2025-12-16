@@ -401,6 +401,12 @@
     // Menu data source (GitHub JSON)
     const DATA_URL = 'https://raw.githubusercontent.com/Ceresnaturals/live-menu/main/menu.json';
 
+    //Autofill Source License Info
+    const LICENSES_URL = 'https://raw.githubusercontent.com/Ceresnaturals/live-menu/main/licenses.json';
+
+    let licenses = [];
+
+
     // In-memory merged packages array
     let packages = [];
 
@@ -505,6 +511,16 @@
         console.error('Failed to load menu data:', err);
         document.getElementById('menu-data').textContent = 'Error loading menu.';
       });
+
+    fetch(LICENSES_URL)
+      .then(r => r.json())
+      .then(data => {
+        licenses = Array.isArray(data) ? data : [];
+      })
+      .catch(err => {
+        console.error('Failed to load licenses.json', err);
+      });
+
 
     // =====================================
     // DATA MERGE & ANALYTE CALCULATION
@@ -1343,11 +1359,7 @@
     // DISPENSARY AUTOCOMPLETE + LOCKED FIELDS
     // =====================================
 
-    const LICENSES_URL =
-      'https://jaygmgtmgmail.sharepoint.com/sites/CeresPublicShare/Shared%20Documents/METRC%20API%20Depot/licenses.json';
-
-    let licensesIndex = [];
-
+   
     const dispensaryInput = document.getElementById('dispensary-name');
     const businessInput   = document.getElementById('business-name');
     const licenseInput    = document.getElementById('delivery-license');
