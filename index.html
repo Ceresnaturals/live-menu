@@ -284,6 +284,33 @@
       font-style: italic;
       color: #666;
     }
+
+    .suggestion {
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+
+    .suggestion:hover {
+      background: #f0f0f0;
+    }
+
+.autocomplete {
+  position: relative;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  max-height: 220px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 1000;
+  display: none;
+}
+
   </style>
 </head>
 <body>
@@ -316,11 +343,19 @@
         </label>
         <label>
           Dispensary Name:
-          <input id="dispensary-name" type="text" required>
+          <div class="autocomplete">
+            <input id="dispensary-name" type="text" autocomplete="off" required>
+            <div id="dispensary-suggestions" class="suggestions"></div>
+          </div>
         </label>
         <label>
+          Business Name:
+          <input id="business-name" type="text" readonly>
+        </label>
+
+        <label>
           Delivery License #:
-          <input id="delivery-license" type="text" required>
+          <input id="delivery-license" type="text" readonly required>
         </label>
         <label>
           Contact Email:
@@ -374,6 +409,22 @@
     // Menu data source (GitHub JSON)
     const DATA_URL = 'https://raw.githubusercontent.com/Ceresnaturals/live-menu/main/menu.json';
 
+    //Autofill Source License Info
+    const LICENSES_URL = 'https://raw.githubusercontent.com/Ceresnaturals/live-menu/main/licenses.json';
+
+    let licenses = [];
+
+    fetch(LICENSES_URL)
+      .then(r => r.json())
+      .then(data => {
+        licenses = Array.isArray(data) ? data : [];
+        console.log('Licenses loaded:', licenses.length);
+      })
+      .catch(err => {
+        console.error('Failed to load licenses.json', err);
+      });
+
+
     // In-memory merged packages array
     let packages = [];
 
@@ -387,7 +438,7 @@
 
     // Group descriptions (top-level)
     const groupDescriptions = {
-      'Tincture': 'Full-spectrum tinctures formulated for specific effects and dosing precision.',
+      'Tincture': 'Full-spectrum - water soluble tinctures formulated for specific effects and dosing precision.',
       'Infused Pre-Rolls': 'Premium infused pre-rolls crafted for potency and consistency.',
       'Pre-Roll': 'Classic single-strain pre-rolls with smooth burn and true flavor.',
       'Cart': 'High-quality distillate cartridges available in multiple sizes.',
@@ -1312,6 +1363,58 @@
     // Hook up submit button
     document.getElementById('submit-button').addEventListener('click', submitOrder);
 
+    // =====================================
+    // DISPENSARY AUTOCOMPLETE + LOCKED FIELDS
+    // =====================================
+
+   
+    const dispensaryInput = document.getElementById('dispensary-name');
+    const businessInput   = document.getElementById('business-name');
+    const licenseInput    = document.getElementById('delivery-license');
+    const suggestionsBox  = document.getElementById('dispensary-suggestions');
+
+    dispensaryInput.addEventListener('input', () => {
+      const q = dispensaryInput.value.trim().toLowerCase();
+      suggestionsBox.innerHTML = '';
+      suggestionsBox.style.display = 'none';
+
+      businessInput.value = '';
+      licenseInput.value = '';
+
+      if (q.length < 2) return;
+
+      const matches = licenses.filter(l =>
+        l.location.toLowerCase().includes(q)
+      );
+
+      suggestionsBox.style.display = matches.length ? 'block' : 'none';
+
+      matches.forEach(l => {
+        const div = document.createElement('div');
+        div.className = 'suggestion';
+        div.textContent = l.location;
+
+        div.addEventListener('click', () => {
+          dispensaryInput.value = l.location;
+          businessInput.value   = l.business;
+          licenseInput.value    = l.license;
+          suggestionsBox.innerHTML = '';
+          suggestionsBox.style.display = 'none';
+        });
+
+        suggestionsBox.appendChild(div);
+      });
+    });
+
+    // Close suggestions when clicking away
+    document.addEventListener('click', e => {
+      if (!e.target.closest('#dispensary-name') &&
+          !e.target.closest('#dispensary-suggestions')) {
+        suggestionsBox.innerHTML = '';
+        suggestionsBox.style.display = 'none';
+      }
+    });
+
   // =====================================
   // IFRAME AUTO-RESIZE (postMessage)
   // =====================================
@@ -1341,7 +1444,7 @@
       setInterval(sendHeight, 1000);
     }
 
-    // Also fire after rendering (your page updates DOM after fetch)
+    // Also fire after rendering (page updates DOM after fetch)
     const originalRender = window.renderMenuTables;
     if (typeof originalRender === 'function') {
       window.renderMenuTables = function () {
@@ -1353,7 +1456,6 @@
     }
   })();
 
-
-  </script>
+</script>
 </body>
 </html>

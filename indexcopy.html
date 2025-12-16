@@ -1444,7 +1444,7 @@
       setInterval(sendHeight, 1000);
     }
 
-    // Also fire after rendering (your page updates DOM after fetch)
+    // Also fire after rendering (page updates DOM after fetch)
     const originalRender = window.renderMenuTables;
     if (typeof originalRender === 'function') {
       window.renderMenuTables = function () {
