@@ -285,19 +285,6 @@
       color: #666;
     }
 
-    .suggestions {
-      position: absolute;
-      top: calc(100% + 2px);
-      left: 0;
-      background: white;
-      border: 1px solid #ccc;
-      max-height: 220px;
-      overflow-y: auto;
-      width: 100%;
-      z-index: 1000;
-    }
-
-
     .suggestion {
       padding: 8px 10px;
       cursor: pointer;
@@ -306,6 +293,23 @@
     .suggestion:hover {
       background: #f0f0f0;
     }
+
+.autocomplete {
+  position: relative;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  max-height: 220px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 1000;
+  display: none;
+}
 
   </style>
 </head>
@@ -336,6 +340,7 @@
         <label>
           Badge Number:
           <input id="badge-number" type="text" required>
+        </label>
         <label>
           Dispensary Name:
           <div class="autocomplete">
@@ -361,22 +366,6 @@
         All fields above are required before submitting an order request.
       </p>
     </section>
-
-    .autocomplete {
-      position: relative;
-    }
-
-    .suggestions {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      border: 1px solid #ccc;
-      max-height: 220px;
-      overflow-y: auto;
-      width: 100%;
-      z-index: 1000;
-    }
 
     <!-- ================================
          MENU TABLES + RUNNING TOTAL
@@ -1387,6 +1376,7 @@
     dispensaryInput.addEventListener('input', () => {
       const q = dispensaryInput.value.trim().toLowerCase();
       suggestionsBox.innerHTML = '';
+      suggestionsBox.style.display = 'none';
 
       businessInput.value = '';
       licenseInput.value = '';
@@ -1396,6 +1386,8 @@
       const matches = licenses.filter(l =>
         l.location.toLowerCase().includes(q)
       );
+
+      suggestionsBox.style.display = matches.length ? 'block' : 'none';
 
       matches.forEach(l => {
         const div = document.createElement('div');
@@ -1407,25 +1399,19 @@
           businessInput.value   = l.business;
           licenseInput.value    = l.license;
           suggestionsBox.innerHTML = '';
+          suggestionsBox.style.display = 'none';
         });
 
         suggestionsBox.appendChild(div);
       });
     });
 
-    document.addEventListener('click', e => {
-      if (!e.target.closest('#dispensary-name') &&
-          !e.target.closest('#dispensary-suggestions')) {
-        suggestionsBox.innerHTML = '';
-      }
-    });
-
-
     // Close suggestions when clicking away
     document.addEventListener('click', e => {
       if (!e.target.closest('#dispensary-name') &&
           !e.target.closest('#dispensary-suggestions')) {
         suggestionsBox.innerHTML = '';
+        suggestionsBox.style.display = 'none';
       }
     });
 
@@ -1470,7 +1456,6 @@
     }
   })();
 
-
-  </script>
+</script>
 </body>
 </html>
