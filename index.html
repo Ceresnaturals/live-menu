@@ -46,6 +46,11 @@
       margin-bottom: 24px;
     }
 
+    .required-fields .readonly-text {
+      width: 260px;
+      max-width: 100%;
+    }
+
     .required-fields label {
       display: flex;
       flex-direction: column;
@@ -74,6 +79,20 @@
       font-size: 12px;
       color: #666;
     }
+
+    .readonly-text {
+      margin-top: 4px;
+      min-height: 38px;
+      padding: 8px 0;
+      width: 260px;
+
+      background: transparent;
+      border: none;
+
+      font-size: 14px;
+      color: #333;
+    }
+
 
     /* Menu controls (in-stock toggle) */
     .menu-controls {
@@ -334,12 +353,11 @@
     <section class="top-form">
       <div class="required-fields">
         <label>
-          Name:
-          <input id="user-name" type="text" required>
-        </label>
-        <label>
-          Badge Number:
-          <input id="badge-number" type="text" required>
+          Delivery License #:
+          <div class="autocomplete">
+            <input id="delivery-license" type="text" autocomplete="off" required>
+            <div id="license-suggestions" class="suggestions"></div>
+          </div>
         </label>
         <label>
           Dispensary Name:
@@ -349,18 +367,22 @@
           </div>
         </label>
         <label>
-          Business Name:
-          <input id="business-name" type="text" readonly>
+          Contact Name:
+          <input id="user-name" type="text" required>
         </label>
-
         <label>
-          Delivery License #:
-          <input id="delivery-license" type="text" readonly required>
-        </label>
+          Badge Number:
+          <input id="badge-number" type="text" required>
+        </label>       
         <label>
           Contact Email:
           <input id="contact-email" type="email" required>
         </label>
+        <label>
+          Business Name:
+          <div id="business-name-display" class="readonly-text"></div>
+        </label>
+        <input type="hidden" id="business-name">
       </div>
       <p class="helper-text">
         All fields above are required before submitting an order request.
@@ -510,7 +532,9 @@
     // MENU LOAD & INITIAL RENDER
     // =====================================
 
+    // =====================================
     // Fetch menu JSON, merge packages by ItemName, then render grouped tables
+    // =====================================    
     fetch(DATA_URL)
       .then(r => r.json())
       .then(data => {
@@ -1364,21 +1388,27 @@
     document.getElementById('submit-button').addEventListener('click', submitOrder);
 
     // =====================================
-    // DISPENSARY AUTOCOMPLETE + LOCKED FIELDS
+    // DISPENSARY & LICENSE AUTOCOMPLETE
     // =====================================
 
-   
-    const dispensaryInput = document.getElementById('dispensary-name');
-    const businessInput   = document.getElementById('business-name');
-    const licenseInput    = document.getElementById('delivery-license');
-    const suggestionsBox  = document.getElementById('dispensary-suggestions');
+    const dispensaryInput   = document.getElementById('dispensary-name');
+    const licenseInput      = document.getElementById('delivery-license');
+    const businessHidden    = document.getElementById('business-name');
+    const businessDisplay   = document.getElementById('business-name-display');
 
+    const dispensarySuggestions = document.getElementById('dispensary-suggestions');
+    const licenseSuggestions    = document.getElementById('license-suggestions');
+
+    // -------------------------------------
+    // Dispensary → fill license + business
+    // -------------------------------------
     dispensaryInput.addEventListener('input', () => {
       const q = dispensaryInput.value.trim().toLowerCase();
-      suggestionsBox.innerHTML = '';
-      suggestionsBox.style.display = 'none';
+      dispensarySuggestions.innerHTML = '';
+      dispensarySuggestions.style.display = 'none';
 
-      businessInput.value = '';
+      businessHidden.value = '';
+      businessDisplay.textContent = '';
       licenseInput.value = '';
 
       if (q.length < 2) return;
@@ -1387,7 +1417,7 @@
         l.location.toLowerCase().includes(q)
       );
 
-      suggestionsBox.style.display = matches.length ? 'block' : 'none';
+      dispensarySuggestions.style.display = matches.length ? 'block' : 'none';
 
       matches.forEach(l => {
         const div = document.createElement('div');
@@ -1396,22 +1426,64 @@
 
         div.addEventListener('click', () => {
           dispensaryInput.value = l.location;
-          businessInput.value   = l.business;
-          licenseInput.value    = l.license;
-          suggestionsBox.innerHTML = '';
-          suggestionsBox.style.display = 'none';
+          licenseInput.value = l.license;
+          businessHidden.value = l.business;
+          businessDisplay.textContent = l.business;
+          dispensarySuggestions.innerHTML = '';
+          dispensarySuggestions.style.display = 'none';
         });
 
-        suggestionsBox.appendChild(div);
+        dispensarySuggestions.appendChild(div);
       });
     });
 
-    // Close suggestions when clicking away
+    // -------------------------------------
+    // License → fill dispensary + business
+    // -------------------------------------
+    licenseInput.addEventListener('input', () => {
+      const q = licenseInput.value.trim().toLowerCase();
+      licenseSuggestions.innerHTML = '';
+      licenseSuggestions.style.display = 'none';
+
+      businessHidden.value = '';
+      businessDisplay.textContent = '';
+      dispensaryInput.value = '';
+
+      if (q.length < 2) return;
+
+      const matches = licenses.filter(l =>
+        l.license.toLowerCase().includes(q)
+      );
+
+      licenseSuggestions.style.display = matches.length ? 'block' : 'none';
+
+      matches.forEach(l => {
+        const div = document.createElement('div');
+        div.className = 'suggestion';
+        div.textContent = `${l.license} — ${l.location}`;
+
+        div.addEventListener('click', () => {
+          licenseInput.value = l.license;
+          dispensaryInput.value = l.location;
+          businessHidden.value = l.business;
+          businessDisplay.textContent = l.business;
+          licenseSuggestions.innerHTML = '';
+          licenseSuggestions.style.display = 'none';
+        });
+
+        licenseSuggestions.appendChild(div);
+      });
+    });
+
+    // -------------------------------------
+    // Click-away handler (shared)
+    // -------------------------------------
     document.addEventListener('click', e => {
-      if (!e.target.closest('#dispensary-name') &&
-          !e.target.closest('#dispensary-suggestions')) {
-        suggestionsBox.innerHTML = '';
-        suggestionsBox.style.display = 'none';
+      if (!e.target.closest('.autocomplete')) {
+        dispensarySuggestions.innerHTML = '';
+        licenseSuggestions.innerHTML = '';
+        dispensarySuggestions.style.display = 'none';
+        licenseSuggestions.style.display = 'none';
       }
     });
 
