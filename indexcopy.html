@@ -353,12 +353,11 @@
     <section class="top-form">
       <div class="required-fields">
         <label>
-          Name:
-          <input id="user-name" type="text" required>
-        </label>
-        <label>
-          Badge Number:
-          <input id="badge-number" type="text" required>
+          Delivery License #:
+          <div class="autocomplete">
+            <input id="delivery-license" type="text" autocomplete="off" required>
+            <div id="license-suggestions" class="suggestions"></div>
+          </div>
         </label>
         <label>
           Dispensary Name:
@@ -368,22 +367,22 @@
           </div>
         </label>
         <label>
-          Business Name:
-          <div id="business-name-display" class="readonly-text"></div>
+          Name:
+          <input id="user-name" type="text" required>
         </label>
-        <input type="hidden" id="business-name">
         <label>
-          Delivery License #:
-          <div class="autocomplete">
-            <input id="delivery-license" type="text" autocomplete="off" required>
-            <div id="license-suggestions" class="suggestions"></div>
-          </div>
-        </label>
-
+          Badge Number:
+          <input id="badge-number" type="text" required>
+        </label>       
         <label>
           Contact Email:
           <input id="contact-email" type="email" required>
         </label>
+        <label>
+          Business Name:
+          <div id="business-name-display" class="readonly-text"></div>
+        </label>
+        <input type="hidden" id="business-name">
       </div>
       <p class="helper-text">
         All fields above are required before submitting an order request.
