@@ -252,4 +252,4 @@ os.system('git add menu.json')
 os.system(f'git commit -m "Auto-update @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"')
 os.system("git push origin main")
 
-print("SUCCESS: Changes pushed.")
+print("SUCCESS:")
