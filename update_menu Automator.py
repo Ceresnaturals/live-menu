@@ -5,6 +5,7 @@ import json
 import os
 import sys
 import subprocess
+import hashlib
 from datetime import datetime, timezone
 from pathlib import Path
 from decimal import Decimal, InvalidOperation
@@ -50,10 +51,8 @@ ANALYTES = [a.lower() for a in [
 REPO_DIR    = Path("/home/ceres/live-menu")
 OUTPUT_PATH = REPO_DIR / "menu.json"
 
-# EXCEL SOURCE
 RCLONE_REMOTE = "ceres_sharepoint:METRC API Depot/Product Information.xlsx"
 LOCAL_EXCEL   = Path("/tmp/Product Information.xlsx")
-
 
 # ============================================================
 #  HELPERS
@@ -66,6 +65,16 @@ def _to_money(v):
         return float(Decimal(s))
     except:
         return None
+
+
+def file_hash(path: Path):
+    if not path.exists():
+        return None
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def build_excel_map(path: Path):
@@ -85,7 +94,6 @@ def build_excel_map(path: Path):
         }
     return mapping
 
-
 # ============================================================
 #  STEP 0 — DOWNLOAD EXCEL
 # ============================================================
@@ -102,7 +110,6 @@ except:
         sys.exit(1)
 
 excel_map = build_excel_map(LOCAL_EXCEL)
-
 
 # ============================================================
 #  STEP 1 — GET PACKAGES FROM METRC
@@ -142,8 +149,6 @@ try:
                     "Label": pkg.get("Label"),
                     "ItemName": str(item_name).strip(),
                     "Quantity": pkg.get("Quantity"),
-
-                    # FIXED: always have a usable timestamp
                     "DateReceived": pkg.get("ReceivedDateTime") or pkg.get("ReceivedDate"),
                     "PackageDate": pkg.get("PackagedDate") or pkg.get("PackageDate"),
                     "CreatedAt": pkg.get("LastModified")
@@ -158,7 +163,6 @@ try:
 except Exception as e:
     print("STEP 1 ERROR:", e)
     sys.exit(1)
-
 
 # ============================================================
 #  STEP 2 — PULL LAB RESULTS
@@ -183,10 +187,10 @@ try:
 
             for rec in data:
                 if any(a in (rec.get("TestTypeName", "").lower()) for a in ANALYTES):
-                 lab_by_pkg[pid].append({
-                    "TestTypeName": rec.get("TestTypeName"),
-                    "TestResultLevel": rec.get("TestResultLevel")
-                })
+                    lab_by_pkg[pid].append({
+                        "TestTypeName": rec.get("TestTypeName"),
+                        "TestResultLevel": rec.get("TestResultLevel")
+                    })
 
         elif lr.status_code != 404:
             lr.raise_for_status()
@@ -211,56 +215,49 @@ for pkg in packages_map.values():
         "Label": pkg["Label"],
         "ItemName": pkg["ItemName"],
         "Quantity": pkg["Quantity"],
-
-        # REQUIRED FOR WEBSITE — must always exist (null is OK)
         "DateReceived": pkg.get("DateReceived"),
-        "PackageDate": pkg.get("PackageDate") or pkg.get("PackagedDate"),
+        "PackageDate": pkg.get("PackageDate"),
         "CreatedAt": pkg.get("CreatedAt"),
-
-        # REQUIRED FOR WEBSITE TABLE
         "Type": excel.get("type"),
         "Price": excel.get("price"),
-
-        # LAB DATA
         "LabResults": lab_by_pkg.get(pkg["Id"], [])
     })
 
+# Sort for stable comparisons
+final = sorted(final, key=lambda x: x["Id"])
+new_json = json.dumps(final, ensure_ascii=False, separators=(",", ":"))
+
 # ============================================================
-#  STEP 3.25 — SYNC WITH REMOTE (CRITICAL)
+#  CHANGE DETECTION
 # ============================================================
-print("STEP 3.25: Syncing with GitHub…")
+old_hash = file_hash(OUTPUT_PATH)
+new_hash = hashlib.sha256(new_json.encode("utf-8")).hexdigest()
+
+if old_hash == new_hash:
+    print("NO INVENTORY CHANGE DETECTED — skipping git push.")
+    sys.exit(0)
+
+# ============================================================
+#  GIT SYNC + WRITE + PUSH
+# ============================================================
+print("CHANGE DETECTED — updating repo…")
 
 os.chdir(REPO_DIR)
-
 pull_code = os.system("git pull --rebase origin main")
 if pull_code != 0:
-    print("STEP 3.25 ERROR: git pull failed")
+    print("GIT PULL FAILED")
     sys.exit(1)
-
-# ============================================================
-#  WRITE FILE + GIT PUSH
-# ============================================================
-print("STEP 3.5: Writing file…")
-
-REPO_DIR.mkdir(exist_ok=True, parents=True)
 
 with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-    json.dump(final, f, ensure_ascii=False, separators=(",", ":"))
+    f.write(new_json)
 
-print(f"STEP 3 SUCCESS: {len(final)} items written to {OUTPUT_PATH}")
-
-print("STEP 4: Pushing to GitHub…")
-
-os.chdir(REPO_DIR)
 os.system('git add "menu.json"')
 commit_msg = f"Auto-update @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-os.system(f'git commit -m "{commit_msg}" || true')
+os.system(f'git commit -m "{commit_msg}"')
 push_code = os.system("git push origin main")
+
 if push_code != 0:
-    print("STEP 4 ERROR: git push failed")
+    print("GIT PUSH FAILED")
     sys.exit(1)
 
-if push_code == 0:
-    print("STEP 4 SUCCESS: Changes pushed.")
-else:
-    print("STEP 4 WARNING: Push exit code:", push_code)
+print("SUCCESS: Changes pushed.")
