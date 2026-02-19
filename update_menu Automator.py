@@ -217,7 +217,12 @@ for pkg in sorted(packages_map.values(), key=lambda x: x["Id"]):
         "LabResults": lab_by_pkg.get(pkg["Id"], [])
     })
 
-new_json = json.dumps(final, ensure_ascii=False, separators=(",", ":"))
+payload = {
+    "items": final,
+    "bulkRules": bulk_rules
+}
+
+new_json = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 # ============================================================
 #  CHANGE DETECTION

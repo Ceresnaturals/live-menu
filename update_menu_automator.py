@@ -71,20 +71,53 @@ def _to_money(v):
 
 def build_excel_map(path: Path):
     xl = pd.ExcelFile(path, engine="openpyxl")
+
+    # ---------- PRODUCTS TABLE ----------
     sheet = xl.sheet_names[0]
     df = xl.parse(sheet, dtype=str)
     df.columns = [c.strip() for c in df.columns]
 
     df = df[df["Product"].notna() & (df["Product"].str.strip() != "")]
 
-    mapping = {}
+    product_map = {}
+
     for _, row in df.iterrows():
         name = str(row["Product"]).strip()
-        mapping[name] = {
+
+        bulk_raw = row.get("BulkPricing")
+        bulk = None
+        if bulk_raw and not pd.isna(bulk_raw):
+            try:
+                bulk = json.loads(str(bulk_raw))
+            except:
+                bulk = None
+
+        product_map[name] = {
             "price": _to_money(row.get("Price", "")),
-            "type":  (None if pd.isna(row.get("Type")) else str(row.get("Type")).strip())
+            "type":  (None if pd.isna(row.get("Type")) else str(row.get("Type")).strip()),
+            "bulk_pricing": bulk
         }
-    return mapping
+
+    # ---------- BULK RULES TABLE ----------
+    bulk_rules = []
+
+    if "BulkRules" in xl.sheet_names:
+        br_df = xl.parse("BulkRules", dtype=str)
+        br_df.columns = [c.strip() for c in br_df.columns]
+
+        for _, row in br_df.iterrows():
+            pg = row.get("ProductGroup")
+            mq = row.get("MinQty")
+            pr = row.get("Price")
+
+            if pg and mq and pr:
+                bulk_rules.append({
+                    "ProductGroup": str(pg).strip(),
+                    "MinQty": int(mq),
+                    "Price": _to_money(pr)
+                })
+
+    return product_map, bulk_rules
 
 # ============================================================
 #  STEP 0 — DOWNLOAD EXCEL
@@ -94,7 +127,7 @@ subprocess.run(
     check=False
 )
 
-excel_map = build_excel_map(LOCAL_EXCEL)
+excel_map, bulk_rules = build_excel_map(LOCAL_EXCEL)
 
 # ============================================================
 #  STEP 1 — GET PACKAGES
@@ -184,7 +217,12 @@ for pkg in sorted(packages_map.values(), key=lambda x: x["Id"]):
         "LabResults": lab_by_pkg.get(pkg["Id"], [])
     })
 
-new_json = json.dumps(final, ensure_ascii=False, separators=(",", ":"))
+payload = {
+    "items": final,
+    "bulkRules": bulk_rules
+}
+
+new_json = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 # ============================================================
 #  CHANGE DETECTION
