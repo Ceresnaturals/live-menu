@@ -535,10 +535,11 @@
     // =====================================
     // Fetch menu JSON, merge packages by ItemName, then render grouped tables
     // =====================================    
-    fetch(DATA_URL)
-      .then(r => r.json())
-      .then(data => {
-        const rawPackages = Array.isArray(data) ? data : [];
+fetch(DATA_URL)
+  .then(r => r.json())
+  .then(data => {
+    const rawPackages = Array.isArray(data.items) ? data.items : [];
+    window.bulkRules = Array.isArray(data.bulkRules) ? data.bulkRules : [];
         packages = mergePackagesByItemName(rawPackages);
 
         if (!packages.length) {

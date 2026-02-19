@@ -98,27 +98,26 @@ def build_excel_map(path: Path):
             "bulk_pricing": bulk
         }
 
-# ---------- BULK RULES TABLE (same sheet) ----------
-bulk_rules = []
+    # ---------- BULK RULES TABLE ----------
+    bulk_rules = []
 
-br_df = xl.parse(sheet, dtype=str)
-br_df.columns = [c.strip() for c in br_df.columns]
+    if "BulkRules" in xl.sheet_names:
+        br_df = xl.parse("BulkRules", dtype=str)
+        br_df.columns = [c.strip() for c in br_df.columns]
 
-if all(col in br_df.columns for col in ["ProductGroup", "MinQty", "Price"]):
-    br_df = br_df[br_df["ProductGroup"].notna() & (br_df["ProductGroup"].str.strip() != "")]
+        for _, row in br_df.iterrows():
+            pg = row.get("ProductGroup")
+            mq = row.get("MinQty")
+            pr = row.get("Price")
 
-    for _, row in br_df.iterrows():
-        pg = row.get("ProductGroup")
-        mq = row.get("MinQty")
-        pr = row.get("Price")
+            if pg and mq and pr:
+                bulk_rules.append({
+                    "ProductGroup": str(pg).strip(),
+                    "MinQty": int(mq),
+                    "Price": _to_money(pr)
+                })
 
-        if pg and mq and pr:
-            bulk_rules.append({
-                "ProductGroup": str(pg).strip(),
-                "MinQty": int(float(mq)),
-                "Price": _to_money(pr)
-            })
-
+    return product_map, bulk_rules
 
 # ============================================================
 #  STEP 0 — DOWNLOAD EXCEL
