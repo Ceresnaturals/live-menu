@@ -8,7 +8,7 @@ import subprocess
 import hashlib
 from datetime import datetime, timezone
 from pathlib import Path
-from decimal import Decimal, InvalidOperation
+from decimal import Decimal
 import pandas as pd
 
 # ============================================================
@@ -37,17 +37,6 @@ END   = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 ROOMS = {"vault - finished goods", "low inventory"}
 
-ANALYTES = [a.lower() for a in [
-    "CBD","CBDa","CBN","THC","THCa","CBDV","CBG","CBGa","Δ8-THC","THCV","CBC",
-    "alpha-Pinene","Camphene","Sabinene","beta-Pinene","beta-Myrcene","3-Carene",
-    "alpha-Terpinene","p-Cymene","d-Limonene","Eucalyptol","o-cymene","gamma-Terpinene",
-    "Sabinene hydrate","Terpinolene","Enochone","Linalool","Fenchol","Isopulegol",
-    "Camphor","Isoborneol","Borneol","Menthol","Terpineol","Nerol","Pulegone",
-    "Geraniol","Geraniol acetate","alpha-Cedrene","beta-Caryophyllene","alpha-Humulene",
-    "Valencene","cis-Nerolidol","trans-Nerolidol","Caryophyllene oxide","Guaio1",
-    "Cedrol","alpha-Bisabolol"
-]]
-
 REPO_DIR    = Path("/home/ceres/live-menu")
 OUTPUT_PATH = REPO_DIR / "menu.json"
 
@@ -58,15 +47,6 @@ LOCAL_EXCEL   = Path("/tmp/Product Information.xlsx")
 #  HELPERS
 # ============================================================
 
-def _to_money(v):
-    if v is None: return None
-    s = str(v).strip().replace("$", "").replace(",", "")
-    try:
-        return float(Decimal(s))
-    except:
-        return None
-
-
 def file_hash(path: Path):
     if not path.exists():
         return None
@@ -75,6 +55,16 @@ def file_hash(path: Path):
         for chunk in iter(lambda: f.read(8192), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def _to_money(v):
+    if v is None:
+        return None
+    s = str(v).strip().replace("$", "").replace(",", "")
+    try:
+        return float(Decimal(s))
+    except:
+        return None
 
 
 def build_excel_map(path: Path):
@@ -97,134 +87,101 @@ def build_excel_map(path: Path):
 # ============================================================
 #  STEP 0 — DOWNLOAD EXCEL
 # ============================================================
-try:
-    subprocess.run(
-        ["rclone", "copyto", RCLONE_REMOTE, str(LOCAL_EXCEL), "--checksum", "--quiet"],
-        check=True
-    )
-    print("STEP 0 SUCCESS: Excel pulled from SharePoint.")
-except:
-    print("STEP 0 WARNING: Failed to pull Excel, using cached version.")
-    if not LOCAL_EXCEL.exists():
-        print("STEP 0 ERROR: No Excel file available.")
-        sys.exit(1)
+subprocess.run(
+    ["rclone", "copyto", RCLONE_REMOTE, str(LOCAL_EXCEL), "--checksum", "--quiet"],
+    check=False
+)
 
 excel_map = build_excel_map(LOCAL_EXCEL)
 
 # ============================================================
-#  STEP 1 — GET PACKAGES FROM METRC
+#  STEP 1 — GET PACKAGES
 # ============================================================
-print("STEP 1: Pulling packages…")
 packages_map = {}
-page, page_size = 1, 20
+page = 1
 
-try:
-    while True:
-        resp = requests.get(
-            "https://api-md.metrc.com/packages/v2/active",
-            headers=HEADERS,
-            params={
-                "licenseNumber": LICENSE_NUMBER,
-                "pageNumber": page,
-                "pageSize": page_size,
-                "lastModifiedStart": START,
-                "lastModifiedEnd": END
-            },
-            timeout=30
-        )
-        resp.raise_for_status()
+while True:
+    resp = requests.get(
+        "https://api-md.metrc.com/packages/v2/active",
+        headers=HEADERS,
+        params={
+            "licenseNumber": LICENSE_NUMBER,
+            "pageNumber": page,
+            "pageSize": 20,
+            "lastModifiedStart": START,
+            "lastModifiedEnd": END
+        },
+        timeout=30
+    )
+    resp.raise_for_status()
+    data = resp.json()
 
-        data = resp.json()
-        for pkg in data.get("Data", []):
-            if pkg.get("LocationName", "").lower() in ROOMS:
+    for pkg in data.get("Data", []):
+        if pkg.get("LocationName", "").lower() in ROOMS:
 
-                item_name = None
-                if isinstance(pkg.get("Item"), dict):
-                    item_name = pkg["Item"].get("Name")
-                if not item_name:
-                    item_name = pkg.get("ItemName")
+            item_name = None
+            if isinstance(pkg.get("Item"), dict):
+                item_name = pkg["Item"].get("Name")
+            if not item_name:
+                item_name = pkg.get("ItemName")
 
-                packages_map[pkg["Id"]] = {
-                    "Id": pkg["Id"],
-                    "Label": pkg.get("Label"),
-                    "ItemName": str(item_name).strip(),
-                    "Quantity": pkg.get("Quantity"),
-                    "DateReceived": pkg.get("ReceivedDateTime") or pkg.get("ReceivedDate"),
-                    "PackageDate": pkg.get("PackagedDate") or pkg.get("PackageDate"),
-                    "CreatedAt": pkg.get("LastModified")
-                }
+            packages_map[pkg["Id"]] = {
+                "Id": pkg["Id"],
+                "Label": pkg.get("Label"),
+                "ItemName": str(item_name).strip(),
+                "Quantity": pkg.get("Quantity"),
+                "Type": excel_map.get(str(item_name).strip(), {}).get("type"),
+                "Price": excel_map.get(str(item_name).strip(), {}).get("price")
+            }
 
-        if page >= data.get("TotalPages", 1):
-            break
-        page += 1
-
-    print(f"STEP 1 SUCCESS: Found {len(packages_map)} packages.")
-
-except Exception as e:
-    print("STEP 1 ERROR:", e)
-    sys.exit(1)
+    if page >= data.get("TotalPages", 1):
+        break
+    page += 1
 
 # ============================================================
-#  STEP 2 — PULL LAB RESULTS
+#  STEP 2 — PULL LAB RESULTS (THC / CBD / TERPENES)
 # ============================================================
-print("STEP 2: Pulling lab results…")
+ANALYTES = ["thc","thca","cbd","cbda","cbg","cbc","cbn","limonene","myrcene","pinene","linalool","caryophyllene"]
 
 lab_by_pkg = {pid: [] for pid in packages_map}
-total_raw = 0
 
-try:
-    for pid in list(packages_map):
-        lr = requests.get(
-            "https://api-md.metrc.com/labtests/v2/results",
-            headers=HEADERS,
-            params={"licenseNumber": LICENSE_NUMBER, "packageId": pid},
-            timeout=30
-        )
+for pid in packages_map:
+    lr = requests.get(
+        "https://api-md.metrc.com/labtests/v2/results",
+        headers=HEADERS,
+        params={"licenseNumber": LICENSE_NUMBER, "packageId": pid},
+        timeout=30
+    )
 
-        if lr.status_code == 200:
-            data = lr.json().get("Data", [])
-            total_raw += len(data)
+    if lr.status_code == 200:
+        for rec in lr.json().get("Data", []):
+            name = (rec.get("TestTypeName") or "").lower()
+            if any(a in name for a in ANALYTES):
+                lab_by_pkg[pid].append({
+                    "TestTypeName": rec.get("TestTypeName"),
+                    "TestResultLevel": rec.get("TestResultLevel")
+                })
 
-            for rec in data:
-                if any(a in (rec.get("TestTypeName", "").lower()) for a in ANALYTES):
-                    lab_by_pkg[pid].append({
-                        "TestTypeName": rec.get("TestTypeName"),
-                        "TestResultLevel": rec.get("TestResultLevel")
-                    })
-
-        elif lr.status_code != 404:
-            lr.raise_for_status()
-
-    print(f"STEP 2 SUCCESS: Pulled {total_raw} lab rows.")
-
-except Exception as e:
-    print("STEP 2 ERROR:", e)
-    sys.exit(1)
+# Ensure stable lab ordering
+for pid in lab_by_pkg:
+    lab_by_pkg[pid] = sorted(lab_by_pkg[pid], key=lambda x: x["TestTypeName"] or "")
 
 # ============================================================
-#  STEP 3 — BUILD FINAL JSON
+#  BUILD FINAL JSON
 # ============================================================
-print("STEP 3: Building final JSON…")
-
 final = []
-for pkg in packages_map.values():
-    excel = excel_map.get(pkg["ItemName"], {})
 
+for pkg in sorted(packages_map.values(), key=lambda x: x["Id"]):
     final.append({
         "Id": pkg["Id"],
         "Label": pkg["Label"],
         "ItemName": pkg["ItemName"],
         "Quantity": pkg["Quantity"],
-        "DateReceived": pkg.get("DateReceived"),
-        "PackageDate": pkg.get("PackageDate"),
-        "CreatedAt": pkg.get("CreatedAt"),
-        "Type": excel.get("type"),
-        "Price": excel.get("price"),
+        "Type": pkg["Type"],
+        "Price": pkg["Price"],
         "LabResults": lab_by_pkg.get(pkg["Id"], [])
     })
 
-# Sort for stable comparisons
-final = sorted(final, key=lambda x: x["Id"])
 new_json = json.dumps(final, ensure_ascii=False, separators=(",", ":"))
 
 # ============================================================
@@ -234,30 +191,25 @@ old_hash = file_hash(OUTPUT_PATH)
 new_hash = hashlib.sha256(new_json.encode("utf-8")).hexdigest()
 
 if old_hash == new_hash:
-    print("NO INVENTORY CHANGE DETECTED — skipping git push.")
+    print("NO INVENTORY CHANGE — exiting.")
     sys.exit(0)
+
+print("CHANGE DETECTED — updating repo.")
 
 # ============================================================
 #  GIT SYNC + WRITE + PUSH
 # ============================================================
-print("CHANGE DETECTED — updating repo…")
-
 os.chdir(REPO_DIR)
-pull_code = os.system("git pull --rebase origin main")
-if pull_code != 0:
+
+if os.system("git pull --rebase origin main") != 0:
     print("GIT PULL FAILED")
     sys.exit(1)
 
 with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     f.write(new_json)
 
-os.system('git add "menu.json"')
-commit_msg = f"Auto-update @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-os.system(f'git commit -m "{commit_msg}"')
-push_code = os.system("git push origin main")
-
-if push_code != 0:
-    print("GIT PUSH FAILED")
-    sys.exit(1)
+os.system('git add menu.json')
+os.system(f'git commit -m "Auto-update @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"')
+os.system("git push origin main")
 
 print("SUCCESS: Changes pushed.")
