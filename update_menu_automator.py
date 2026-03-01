@@ -106,15 +106,33 @@ def build_excel_map(path: Path):
         br_df.columns = [c.strip() for c in br_df.columns]
 
         for _, row in br_df.iterrows():
-            pg = row.get("ProductGroup")
-            mq = row.get("MinQty")
-            pr = row.get("Price")
+            min_qty = row.get("MinQty")
+            price   = row.get("Price")
 
-            if pg and mq and pr:
+            if not min_qty or not price:
+                continue
+
+            min_qty = int(min_qty)
+            price   = _to_money(price)
+
+            # GROUP RULE
+            product_group = row.get("ProductGroup")
+            if product_group and str(product_group).strip():
                 bulk_rules.append({
-                    "ProductGroup": str(pg).strip(),
-                    "MinQty": int(mq),
-                    "Price": _to_money(pr)
+                    "Scope": "Group",
+                    "Key": str(product_group).strip(),
+                    "MinQty": min_qty,
+                    "Price": price
+                })
+
+            # ITEM RULE
+            item_name = row.get("ItemName")
+            if item_name and str(item_name).strip():
+                bulk_rules.append({
+                    "Scope": "Item",
+                    "Key": str(item_name).strip(),
+                    "MinQty": min_qty,
+                    "Price": price
                 })
 
     return product_map, bulk_rules
