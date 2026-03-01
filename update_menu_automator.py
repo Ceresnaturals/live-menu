@@ -72,67 +72,67 @@ def _to_money(v):
 def build_excel_map(path: Path):
     xl = pd.ExcelFile(path, engine="openpyxl")
 
-    # ---------- PRODUCTS TABLE ----------
-    sheet = xl.sheet_names[0]
+    # ============================================================
+    # PRODUCT TABLE (ProductInfo)
+    # ============================================================
+    sheet = "ProductInfo" if "ProductInfo" in xl.sheet_names else xl.sheet_names[0]
     df = xl.parse(sheet, dtype=str)
     df.columns = [c.strip() for c in df.columns]
 
     df = df[df["Product"].notna() & (df["Product"].str.strip() != "")]
 
     product_map = {}
+    bulk_rules = []
 
     for _, row in df.iterrows():
         name = str(row["Product"]).strip()
 
-        bulk_raw = row.get("BulkPricing")
-        bulk = None
-        if bulk_raw and not pd.isna(bulk_raw):
-            try:
-                bulk = json.loads(str(bulk_raw))
-            except:
-                bulk = None
-
+        # Base price + type
         product_map[name] = {
             "price": _to_money(row.get("Price", "")),
-            "type":  (None if pd.isna(row.get("Type")) else str(row.get("Type")).strip()),
-            "bulk_pricing": bulk
+            "type":  (None if pd.isna(row.get("Type")) else str(row.get("Type")).strip())
         }
 
-    # ---------- BULK RULES TABLE ----------
-    bulk_rules = []
+        # -------------------------
+        # ITEM BULK PRICING
+        # -------------------------
+        bulk_raw = row.get("BulkPricing")
 
-    if "BulkRules" in xl.sheet_names:
-        br_df = xl.parse("BulkRules", dtype=str)
+        if bulk_raw and not pd.isna(bulk_raw):
+            try:
+                tiers = json.loads(str(bulk_raw))
+                if isinstance(tiers, list):
+                    for tier in tiers:
+                        min_qty = tier.get("minQty")
+                        price   = tier.get("price")
+                        if min_qty and price:
+                            bulk_rules.append({
+                                "Scope": "Item",
+                                "Key": name,
+                                "MinQty": int(min_qty),
+                                "Price": float(price)
+                            })
+            except Exception:
+                pass
+
+    # ============================================================
+    # GROUP BULK PRICING TABLE (BulkPrice)
+    # ============================================================
+    if "BulkPrice" in xl.sheet_names:
+        br_df = xl.parse("BulkPrice", dtype=str)
         br_df.columns = [c.strip() for c in br_df.columns]
 
         for _, row in br_df.iterrows():
-            min_qty = row.get("MinQty")
-            price   = row.get("Price")
+            pg = row.get("ProductGroup")
+            mq = row.get("MinQty")
+            pr = row.get("Price")
 
-            if not min_qty or not price:
-                continue
-
-            min_qty = int(min_qty)
-            price   = _to_money(price)
-
-            # GROUP RULE
-            product_group = row.get("ProductGroup")
-            if product_group and str(product_group).strip():
+            if pg and mq and pr:
                 bulk_rules.append({
                     "Scope": "Group",
-                    "Key": str(product_group).strip(),
-                    "MinQty": min_qty,
-                    "Price": price
-                })
-
-            # ITEM RULE
-            item_name = row.get("ItemName")
-            if item_name and str(item_name).strip():
-                bulk_rules.append({
-                    "Scope": "Item",
-                    "Key": str(item_name).strip(),
-                    "MinQty": min_qty,
-                    "Price": price
+                    "Key": str(pg).strip(),
+                    "MinQty": int(mq),
+                    "Price": _to_money(pr)
                 })
 
     return product_map, bulk_rules
