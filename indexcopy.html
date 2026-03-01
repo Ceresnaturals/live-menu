@@ -1014,6 +1014,22 @@ fetch(DATA_URL)
     // TOTALS & STEP ENFORCEMENT
     // =====================================
 
+    function getBestBulkPrice(scope, key, totalQty) {
+      if (!window.bulkRules || !window.bulkRules.length) return null;
+
+      const applicable = window.bulkRules
+        .filter(r =>
+          r.Scope === scope &&
+          r.Key === key &&
+          totalQty >= r.MinQty
+        )
+        .sort((a, b) => b.MinQty - a.MinQty);
+
+      if (!applicable.length) return null;
+
+      return parseFloat(applicable[0].Price);
+    }
+
     /**
      * Enforce quantities as multiples of a given step (default 5).
      */
@@ -1037,27 +1053,103 @@ fetch(DATA_URL)
      */
     function updateTotals() {
       let total = 0;
-      const rows = document.querySelectorAll('#menu-data .menu-row');
 
-      rows.forEach(row => {
-        const input = row.querySelector('.item-input');
-        const priceEl = row.querySelector('.item-price');
-        const totalCell = row.querySelector('.item-total');
+      const groupTotals = {};
+      const nextTierMessages = [];
 
-        if (!input || !priceEl || !totalCell) return;
+      // --- First pass: calculate group totals ---
+      document.querySelectorAll('#menu-data .subgroup-title').forEach(header => {
+        const groupName = header.textContent.trim().split('\n')[0].trim();
+        groupTotals[groupName] = 0;
 
-        const qty = parseFloat(input.value) || 0;
-        const price = parseFloat(priceEl.dataset.price) || 0;
-        const lineTotal = qty * price;
+        let table = header.nextElementSibling;
+        while (table && table.tagName !== 'TABLE') {
+          table = table.nextElementSibling;
+        }
+        if (!table) return;
 
-        total += lineTotal;
-        totalCell.textContent = `$${lineTotal.toFixed(2)}`;
+        table.querySelectorAll('.menu-row').forEach(row => {
+          const qty = parseFloat(row.querySelector('.item-input')?.value) || 0;
+          groupTotals[groupName] += qty;
+        });
+      });
+
+      // --- Second pass: apply pricing ---
+      document.querySelectorAll('#menu-data .subgroup-title').forEach(header => {
+        const groupName = header.textContent.trim().split('\n')[0].trim();
+
+        let table = header.nextElementSibling;
+        while (table && table.tagName !== 'TABLE') {
+          table = table.nextElementSibling;
+        }
+        if (!table) return;
+
+        const groupQty = groupTotals[groupName];
+        const groupBulkPrice = getBestBulkPrice("Group", groupName, groupQty);
+
+        table.querySelectorAll('.menu-row').forEach(row => {
+          const input = row.querySelector('.item-input');
+          const priceEl = row.querySelector('.item-price');
+          const totalCell = row.querySelector('.item-total');
+          const nameEl = row.querySelector('.item-name');
+
+          if (!input || !priceEl || !totalCell || !nameEl) return;
+
+          const qty = parseFloat(input.value) || 0;
+          const basePrice = parseFloat(priceEl.dataset.price) || 0;
+
+          const itemBulkPrice = getBestBulkPrice(
+            "Item",
+            nameEl.textContent.trim(),
+            qty
+          );
+
+          let appliedPrice = basePrice;
+
+          if (itemBulkPrice !== null) {
+            appliedPrice = itemBulkPrice;
+          } else if (groupBulkPrice !== null) {
+            appliedPrice = groupBulkPrice;
+          }
+
+          const lineTotal = qty * appliedPrice;
+          total += lineTotal;
+
+          totalCell.textContent = `$${lineTotal.toFixed(2)}`;
+
+          if (appliedPrice !== basePrice) {
+            priceEl.textContent = `$${appliedPrice.toFixed(2)}*`;
+            priceEl.style.color = "#0070c9";
+            priceEl.style.fontWeight = "700";
+          } else {
+            priceEl.textContent = `$${basePrice.toFixed(2)}`;
+            priceEl.style.color = "";
+            priceEl.style.fontWeight = "";
+          }
+        });
+
+        const futureTiers = (window.bulkRules || [])
+          .filter(r => r.Scope === "Group" && r.Key === groupName)
+          .sort((a, b) => a.MinQty - b.MinQty);
+
+        if (futureTiers.length) {
+          const nextTier = futureTiers.find(t => groupQty < t.MinQty);
+          if (nextTier) {
+            const needed = nextTier.MinQty - groupQty;
+            if (needed > 0) {
+              nextTierMessages.push(
+                `Add ${needed} more ${groupName} to unlock $${nextTier.Price.toFixed(2)} pricing.`
+              );
+            }
+          }
+        }
       });
 
       document.getElementById('running-total').textContent =
         `Total: $${total.toFixed(2)}`;
-    }
 
+      renderBulkBanner(nextTierMessages);
+    }
     // Table-local sort logic
     //****
     function sortTableByColumn(table, columnKey, th) {
@@ -1487,6 +1579,31 @@ fetch(DATA_URL)
         licenseSuggestions.style.display = 'none';
       }
     });
+
+    function renderBulkBanner(messages) {
+      let banner = document.getElementById("bulk-banner");
+
+      if (!banner) {
+        banner = document.createElement("div");
+        banner.id = "bulk-banner";
+        banner.style.margin = "12px 0";
+        banner.style.padding = "10px 14px";
+        banner.style.borderRadius = "6px";
+        banner.style.fontSize = "14px";
+        banner.style.fontWeight = "600";
+        document.getElementById("running-total").after(banner);
+      }
+
+      if (!messages.length) {
+        banner.style.display = "none";
+        return;
+      }
+
+      banner.style.display = "block";
+      banner.style.background = "#f0f7ff";
+      banner.style.border = "1px solid #0070c9";
+      banner.innerHTML = messages.join("<br>");
+    }
 
   // =====================================
   // IFRAME AUTO-RESIZE (postMessage)
