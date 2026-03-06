@@ -255,6 +255,25 @@ if old_hash == new_hash:
 print("CHANGE DETECTED — updating repo.")
 
 # ============================================================
+#  Prevent Push if build running (to avoid triggering multiple GH Pages builds in a short time)
+# ============================================================
+def github_pages_build_running():
+    try:
+        result = subprocess.run(
+            ["gh", "run", "list", "--workflow=pages-build-deployment", "--limit", "1"],
+            capture_output=True,
+            text=True
+        )
+
+        if "in_progress" in result.stdout or "queued" in result.stdout:
+            return True
+    except:
+        pass
+
+    return False
+
+
+# ============================================================
 #  GIT SYNC + WRITE + PUSH
 # ============================================================
 os.chdir(REPO_DIR)
@@ -266,8 +285,18 @@ if os.system("git pull --rebase origin main") != 0:
 with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     f.write(new_json)
 
-os.system('git add menu.json')
-os.system(f'git commit -m "Auto-update @ {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}"')
+os.system("git add menu.json")
+
+subprocess.run(
+    ["git", "commit", "-m", f"Auto-update @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"],
+    check=False
+)
+
+# Prevent push if a Pages build is already running
+if github_pages_build_running():
+    print("GitHub Pages build already running — skipping push.")
+    sys.exit(0)
+
 os.system("git push origin main")
 
 print("SUCCESS:")
