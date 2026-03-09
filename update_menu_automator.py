@@ -45,9 +45,28 @@ OUTPUT_PATH = REPO_DIR / "menu.json"
 RCLONE_REMOTE = "ceres_sharepoint:METRC API Depot/Product Information.xlsx"
 LOCAL_EXCEL   = Path("/tmp/Product Information.xlsx")
 
+# LAB CACHE
+LAB_CACHE_PATH = Path("/home/ceres/cache/lab_results_cache.json")
+LAB_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+
 # ============================================================
 #  HELPERS
 # ============================================================
+
+def load_lab_cache():
+    if LAB_CACHE_PATH.exists():
+        try:
+            with open(LAB_CACHE_PATH, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except:
+            pass
+    return {}
+
+
+def save_lab_cache(cache):
+    with open(LAB_CACHE_PATH, "w", encoding="utf-8") as f:
+        json.dump(cache, f, ensure_ascii=False)
+
 
 def file_hash(path: Path):
     if not path.exists():
@@ -192,32 +211,67 @@ while True:
     page += 1
 
 # ============================================================
-#  STEP 2 — PULL LAB RESULTS (THC / CBD / TERPENES)
+#  STEP 2 — LAB RESULTS WITH CACHE
 # ============================================================
+
 ANALYTES = ["thc","thca","cbd","cbda","cbg","cbc","cbn","limonene","myrcene","pinene","linalool","caryophyllene"]
 
-lab_by_pkg = {pid: [] for pid in packages_map}
+lab_cache = load_lab_cache()
+
+lab_by_pkg = {}
 
 for pid in packages_map:
+
+    # ------------------------------------------------
+    # Use cache if we already have this package
+    # ------------------------------------------------
+    if str(pid) in lab_cache:
+        lab_by_pkg[pid] = lab_cache[str(pid)]
+        continue
+
+    # ------------------------------------------------
+    # Otherwise call METRC
+    # ------------------------------------------------
     lr = requests.get(
         "https://api-md.metrc.com/labtests/v2/results",
         headers=HEADERS,
-        params={"licenseNumber": LICENSE_NUMBER, "packageId": pid},
+        params={
+            "licenseNumber": LICENSE_NUMBER,
+            "packageId": pid
+        },
         timeout=30
     )
+
+    results = []
 
     if lr.status_code == 200:
         for rec in lr.json().get("Data", []):
             name = (rec.get("TestTypeName") or "").lower()
+
             if any(a in name for a in ANALYTES):
-                lab_by_pkg[pid].append({
+                results.append({
                     "TestTypeName": rec.get("TestTypeName"),
                     "TestResultLevel": rec.get("TestResultLevel")
                 })
 
-# Ensure stable lab ordering
-for pid in lab_by_pkg:
-    lab_by_pkg[pid] = sorted(lab_by_pkg[pid], key=lambda x: x["TestTypeName"] or "")
+    results = sorted(results, key=lambda x: x["TestTypeName"] or "")
+
+    lab_by_pkg[pid] = results
+    lab_cache[str(pid)] = results
+
+# ------------------------------------------------
+# CLEAN OLD CACHE ENTRIES
+# ------------------------------------------------
+current_pkg_ids = {str(pid) for pid in packages_map}
+
+lab_cache = {
+    pid: labs
+    for pid, labs in lab_cache.items()
+    if pid in current_pkg_ids
+}
+
+# save updated cache
+save_lab_cache(lab_cache)
 
 # ============================================================
 #  BUILD FINAL JSON
