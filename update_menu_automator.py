@@ -37,7 +37,7 @@ HEADERS = {"Authorization": f"Basic {auth}", "Content-Type": "application/json"}
 START = "2020-01-01T00:00:00Z"
 END   = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-ROOMS = {"vault - finished goods", "low inventory"}
+ROOMS = {"Vault - Finished Goods", "Low Inventory"}
 
 REPO_DIR    = Path("/home/ceres/live-menu")
 OUTPUT_PATH = REPO_DIR / "menu.json"

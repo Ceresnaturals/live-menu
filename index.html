@@ -786,7 +786,7 @@ fetch(DATA_URL)
       `;
 
       tinctureBlends
-        .filter(b => !["Lucid Drops", "Drift Drops", "Pure Drops"].includes(b.name))
+        .filter(b => !["Zen Drops","Lucid Drops", "Drift Drops", "Pure Drops"].includes(b.name))
         .forEach(blend => {
           const subItems = tinctureGroups[blend.name] || [];
           const subDesc = subgroupDescriptions[blend.name] || '';
