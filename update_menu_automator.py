@@ -333,9 +333,6 @@ if not changes_detected:
 # ============================================================
 os.chdir(REPO_DIR)
 
-if os.system("git pull --rebase origin main") != 0:
-    print("GIT PULL FAILED")
-    sys.exit(1)
 
 with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     f.write(new_json)
