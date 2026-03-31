@@ -329,10 +329,31 @@ if not changes_detected:
     sys.exit(0)
 
 # ============================================================
+#  Prevent Push if build running 
+# ============================================================
+def github_pages_build_running():
+    try:
+        result = subprocess.run(
+            ["gh", "run", "list", "--workflow=pages-build-deployment", "--limit", "1"],
+            capture_output=True,
+            text=True
+        )
+
+        if "in_progress" in result.stdout or "queued" in result.stdout:
+            return True
+    except:
+        pass
+
+    return False
+
+# ============================================================
 #  GIT SYNC + WRITE + PUSH
 # ============================================================
 os.chdir(REPO_DIR)
 
+if os.system("git pull --rebase origin main") != 0:
+    print("GIT PULL FAILED")
+    sys.exit(1)
 
 with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     f.write(new_json)
