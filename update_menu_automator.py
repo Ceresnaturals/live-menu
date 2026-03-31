@@ -347,13 +347,9 @@ def github_pages_build_running():
     return False
 
 # ============================================================
-#  GIT SYNC + WRITE + PUSH
+#  WRITE + COMMIT + PUSH
 # ============================================================
 os.chdir(REPO_DIR)
-
-if os.system("git pull --rebase origin main") != 0:
-    print("GIT PULL FAILED")
-    sys.exit(1)
 
 with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     f.write(new_json)
