@@ -37,35 +37,22 @@ HEADERS = {"Authorization": f"Basic {auth}", "Content-Type": "application/json"}
 START = "2020-01-01T00:00:00Z"
 END   = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-TRACKED_ROOMS = {
-    "vault - finished goods",
-    "vault - bulk",
-    "vault - bulk wip",
-    "on hold"
-}
-
-MENU_ROOMS = {
-    "vault - finished goods",
-    "low inventory"
-}
-
-WATCHED_ROOMS = TRACKED_ROOMS | MENU_ROOMS
+ROOMS = {"vault - finished goods", "low inventory"}
 
 REPO_DIR    = Path("/home/ceres/live-menu")
-OUTPUT_PATH = REPO_DIR / "menu_v2_collector_temp.json"
-DRY_RUN = True
+OUTPUT_PATH = REPO_DIR / "menu.json"
 
 RCLONE_REMOTE = "ceres_sharepoint:METRC API Depot/Product Information.xlsx"
 LOCAL_EXCEL   = Path("/tmp/Product Information.xlsx")
 
 # LAB CACHE
-LAB_CACHE_PATH = Path("/home/ceres/cache/lab_results_library_v2.json")
+LAB_CACHE_PATH = Path("/home/ceres/cache/lab_results_cache.json")
 LAB_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 # ============================================================
 #  SNAPSHOT FOR CHANGE DETECTION
 # ============================================================
-SNAPSHOT_PATH = Path("/home/ceres/cache/tracked_inventory_snapshot_v2.json")
+SNAPSHOT_PATH = Path("/home/ceres/cache/package_snapshot.json")
 SNAPSHOT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 
@@ -195,8 +182,7 @@ excel_map, bulk_rules = build_excel_map(LOCAL_EXCEL)
 # ============================================================
 #  STEP 1 — GET PACKAGES
 # ============================================================
-tracked_packages_map = {}
-menu_packages_map = {}
+packages_map = {}
 page = 1
 
 while True:
@@ -213,18 +199,18 @@ while True:
         timeout=30
     )
     resp.raise_for_status()
-
     data = resp.json()
 
     for pkg in data.get("Data", []):
-        if (pkg.get("LocationName") or "").lower() in WATCHED_ROOMS:
+        if (pkg.get("LocationName") or "").lower() in ROOMS:
+
             item_name = None
             if isinstance(pkg.get("Item"), dict):
                 item_name = pkg["Item"].get("Name")
             if not item_name:
                 item_name = pkg.get("ItemName")
 
-            pkg_obj = {
+            packages_map[pkg["Id"]] = {
                 "Id": pkg["Id"],
                 "Label": pkg.get("Label"),
                 "ItemName": str(item_name).strip(),
@@ -232,14 +218,6 @@ while True:
                 "Type": excel_map.get(str(item_name).strip(), {}).get("type"),
                 "Price": excel_map.get(str(item_name).strip(), {}).get("price")
             }
-
-            room_name = (pkg.get("LocationName") or "").lower()
-
-            if room_name in TRACKED_ROOMS:
-                tracked_packages_map[pkg["Id"]] = pkg_obj
-
-            if room_name in MENU_ROOMS:
-                menu_packages_map[pkg["Id"]] = pkg_obj
 
     if page >= data.get("TotalPages", 1):
         break
@@ -256,7 +234,7 @@ old_packages = snapshot.get("packages", {})
 
 lab_by_pkg = {}
 
-for pid in tracked_packages_map:
+for pid in packages_map:
     pid_str = str(pid)
 
     if pid_str in lab_cache:
@@ -291,7 +269,7 @@ for pid in tracked_packages_map:
     lab_cache[pid_str] = results
 
 # clean cache
-current_pkg_ids = {str(pid) for pid in tracked_packages_map}
+current_pkg_ids = {str(pid) for pid in packages_map}
 lab_cache = {pid: labs for pid, labs in lab_cache.items() if pid in current_pkg_ids}
 save_lab_cache(lab_cache)
 
@@ -300,7 +278,7 @@ save_lab_cache(lab_cache)
 # ============================================================
 final = []
 
-for pkg in sorted(menu_packages_map.values(), key=lambda x: x["Id"]):    
+for pkg in sorted(packages_map.values(), key=lambda x: x["Id"]):
     final.append({
         "Id": pkg["Id"],
         "Label": pkg["Label"],
@@ -321,7 +299,7 @@ new_packages = {}
 changes_detected = False
 now = datetime.now(timezone.utc).isoformat()
 
-for pkg in tracked_packages_map.values():
+for pkg in packages_map.values():
     label = str(pkg["Id"])
 
     lab_hash = compute_lab_hash(lab_by_pkg.get(pkg["Id"], []))
@@ -347,7 +325,8 @@ for label in old_packages:
         changes_detected = True
 
 if not changes_detected:
-print("NO CHANGES DETECTED — collector internal files refreshed; publisher can rebuild menu_v2.json")
+    print("NO CHANGES — SKIPPING PUSH")
+    sys.exit(0)
 
 # ============================================================
 #  Prevent Push if build running 
@@ -375,21 +354,18 @@ os.chdir(REPO_DIR)
 with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     f.write(new_json)
 
-if DRY_RUN:
-    print(f"DRY RUN: wrote {OUTPUT_PATH}, skipping git add/commit/push")
-else:
-    os.system("git add menu_v2.json")
+os.system("git add menu.json")
 
-    subprocess.run(
-        ["git", "commit", "-m", f"Auto-update v2 @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"],
-        check=False
-    )
+subprocess.run(
+    ["git", "commit", "-m", f"Auto-update @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"],
+    check=False
+)
 
-    if github_pages_build_running():
-        print("GitHub Pages build already running — skipping push.")
-        sys.exit(0)
+if github_pages_build_running():
+    print("GitHub Pages build already running — skipping push.")
+    sys.exit(0)
 
-    os.system("git push origin main")
+os.system("git push origin main")
 
 # ============================================================
 #  SAVE SNAPSHOT (ONLY AFTER SUCCESSFUL PUSH)
