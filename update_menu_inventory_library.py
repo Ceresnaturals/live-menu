@@ -62,6 +62,9 @@ LOCAL_EXCEL   = Path("/tmp/Product Information.xlsx")
 LAB_CACHE_PATH = Path("/home/ceres/cache/lab_results_library_v2.json")
 LAB_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
 
+WATCHED_INVENTORY_PATH = Path("/home/ceres/cache/watched_inventory_v2.json")
+WATCHED_INVENTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
+
 # ============================================================
 #  SNAPSHOT FOR CHANGE DETECTION
 # ============================================================
@@ -82,6 +85,15 @@ def load_snapshot():
 def save_snapshot(snapshot):
     with open(SNAPSHOT_PATH, "w", encoding="utf-8") as f:
         json.dump(snapshot, f, indent=2)
+
+
+def save_watched_inventory(watched_packages_map):
+    payload = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "packages": {str(k): v for k, v in watched_packages_map.items()}
+    }
+    with open(WATCHED_INVENTORY_PATH, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
 
 # ============================================================
 #  LAB HASH
@@ -195,6 +207,7 @@ excel_map, bulk_rules = build_excel_map(LOCAL_EXCEL)
 # ============================================================
 #  STEP 1 — GET PACKAGES
 # ============================================================
+watched_packages_map = {}
 tracked_packages_map = {}
 menu_packages_map = {}
 page = 1
@@ -229,11 +242,19 @@ while True:
                 "Label": pkg.get("Label"),
                 "ItemName": str(item_name).strip(),
                 "Quantity": pkg.get("Quantity"),
+                "LocationName": (
+                    pkg.get("LocationName")
+                    or pkg.get("CurrentLocationName")
+                    or (pkg.get("Location") or {}).get("Name")
+                    or pkg.get("Location")
+                ),
                 "Type": excel_map.get(str(item_name).strip(), {}).get("type"),
                 "Price": excel_map.get(str(item_name).strip(), {}).get("price")
             }
 
             room_name = (pkg.get("LocationName") or "").lower()
+
+            watched_packages_map[pkg["Id"]] = pkg_obj
 
             if room_name in TRACKED_ROOMS:
                 tracked_packages_map[pkg["Id"]] = pkg_obj
@@ -244,6 +265,8 @@ while True:
     if page >= data.get("TotalPages", 1):
         break
     page += 1
+
+save_watched_inventory(watched_packages_map)
 
 # ============================================================
 #  STEP 2 — LAB RESULTS WITH CACHE 
@@ -306,6 +329,7 @@ for pkg in sorted(menu_packages_map.values(), key=lambda x: x["Id"]):
         "Label": pkg["Label"],
         "ItemName": pkg["ItemName"],
         "Quantity": pkg["Quantity"],
+        "LocationName": pkg.get("LocationName"),
         "Type": pkg["Type"],
         "Price": pkg["Price"],
         "LabResults": lab_by_pkg.get(pkg["Id"], [])
@@ -347,7 +371,7 @@ for label in old_packages:
         changes_detected = True
 
 if not changes_detected:
-print("NO CHANGES DETECTED — collector internal files refreshed; publisher can rebuild menu_v2.json")
+    print("NO CHANGES DETECTED — collector internal files refreshed; publisher can rebuild menu_v2.json")
 
 # ============================================================
 #  Prevent Push if build running 
@@ -378,10 +402,10 @@ with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
 if DRY_RUN:
     print(f"DRY RUN: wrote {OUTPUT_PATH}, skipping git add/commit/push")
 else:
-    os.system("git add menu_v2.json")
+    os.system("git add menu_v2_collector_temp.json")
 
     subprocess.run(
-        ["git", "commit", "-m", f"Auto-update v2 @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"],
+        ["git", "commit", "-m", f"Auto-update v2 collector @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"],
         check=False
     )
 
