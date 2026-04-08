@@ -52,7 +52,7 @@ MENU_ROOMS = {
 WATCHED_ROOMS = TRACKED_ROOMS | MENU_ROOMS
 
 REPO_DIR    = Path("/home/ceres/live-menu")
-OUTPUT_PATH = REPO_DIR / "menu_v2.json"
+OUTPUT_PATH = REPO_DIR / "menu_v2_collector_temp.json"
 DRY_RUN = True
 
 RCLONE_REMOTE = "ceres_sharepoint:METRC API Depot/Product Information.xlsx"
@@ -347,7 +347,7 @@ for label in old_packages:
         changes_detected = True
 
 if not changes_detected:
-    print("NO CHANGES DETECTED — continuing in DRY RUN so menu_v2.json can be rebuilt")
+print("NO CHANGES DETECTED — collector internal files refreshed; publisher can rebuild menu_v2.json")
 
 # ============================================================
 #  Prevent Push if build running 
