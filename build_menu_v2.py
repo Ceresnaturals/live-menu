@@ -3,7 +3,8 @@ import json
 import subprocess
 from pathlib import Path
 from decimal import Decimal
-
+from datetime import datetime
+import os
 import pandas as pd
 
 WATCHED_INVENTORY_PATH = Path("/home/ceres/cache/watched_inventory_v2.json")
@@ -201,6 +202,31 @@ def main():
     print("MENU ITEMS:", len(final))
     print("WROTE:", OUTPUT_PATH)
 
+# ============================================================
+#  GIT SYNC + COMMIT + PUSH
+# ============================================================
+
+REPO_DIR = Path("/home/ceres/live-menu")
+
+os.chdir(REPO_DIR)
+
+# ensure we are up to date (avoid conflicts)
+subprocess.run(["git", "fetch", "origin"], check=False)
+subprocess.run(["git", "reset", "--hard", "origin/main"], check=False)
+
+# add file
+subprocess.run(["git", "add", "menu_v2.json"], check=False)
+
+# commit (won’t fail if nothing changed)
+subprocess.run(
+    ["git", "commit", "-m", f"menu_v2 update @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"],
+    check=False
+)
+
+# push
+subprocess.run(["git", "push", "origin", "main"], check=False)
+
+print("PUSHED TO GITHUB")
 
 if __name__ == "__main__":
     main()
