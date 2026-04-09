@@ -42,6 +42,8 @@ def get_product_group(product_name):
         return "Double Diamonds"
     if "diamond cut" in name:
         return "Diamond Cut"
+    if "infused pr" in name or "infused pre-roll" in name:
+        return "Diamond Cut"
     if "zen drops" in name:
         return "Zen Drops"
     if "cart" in name and "2g" in name:
