@@ -539,7 +539,6 @@ fetch(DATA_URL)
   .then(r => r.json())
   .then(data => {
     const rawPackages = Array.isArray(data.items) ? data.items : [];
-    window.bulkRules = Array.isArray(data.bulkRules) ? data.bulkRules : [];
         packages = mergePackagesByItemName(rawPackages);
 
         if (!packages.length) {
@@ -956,7 +955,7 @@ fetch(DATA_URL)
       const a = pkg.analytes || { totalTHC: 0, totalCBD: 0, totalTerpenes: 0 };
 
       return `
-        <tr class="menu-row">
+          <tr class="menu-row" data-bulk='${JSON.stringify(pkg.bulkRules || [])}'>          
           <td class="item-name">${pkg.ItemName || ''}</td>
           <td class="item-category">${pkg.Type || ''}</td>
           <td>${pkg.Quantity || 0}</td>
@@ -1035,28 +1034,56 @@ fetch(DATA_URL)
     /**
      * Recalculate per-row item totals and overall running total.
      */
-    function updateTotals() {
-      let total = 0;
-      const rows = document.querySelectorAll('#menu-data .menu-row');
 
-      rows.forEach(row => {
-        const input = row.querySelector('.item-input');
-        const priceEl = row.querySelector('.item-price');
-        const totalCell = row.querySelector('.item-total');
+     function getBulkPrice(qty, basePrice, bulkRules) {
+  if (!bulkRules || !bulkRules.length) return basePrice;
 
-        if (!input || !priceEl || !totalCell) return;
+  let applied = basePrice;
 
-        const qty = parseFloat(input.value) || 0;
-        const price = parseFloat(priceEl.dataset.price) || 0;
-        const lineTotal = qty * price;
-
-        total += lineTotal;
-        totalCell.textContent = `$${lineTotal.toFixed(2)}`;
-      });
-
-      document.getElementById('running-total').textContent =
-        `Total: $${total.toFixed(2)}`;
+  bulkRules.forEach(rule => {
+    if (qty >= rule.minQty) {
+      applied = rule.price;
     }
+  });
+
+  return applied;
+}
+
+function updateTotals() {
+  let total = 0;
+  const rows = document.querySelectorAll('#menu-data .menu-row');
+
+  rows.forEach(row => {
+    const input = row.querySelector('.item-input');
+    const priceEl = row.querySelector('.item-price');
+    const totalCell = row.querySelector('.item-total');
+
+    if (!input || !priceEl || !totalCell) return;
+
+    const qty = parseFloat(input.value) || 0;
+    const basePrice = parseFloat(priceEl.dataset.price) || 0;
+
+    // bulk rules from row
+    const bulkRules = JSON.parse(row.dataset.bulk || "[]");
+
+    const effectivePrice = getBulkPrice(qty, basePrice, bulkRules);
+    const lineTotal = qty * effectivePrice;
+
+    total += lineTotal;
+
+    totalCell.textContent = `$${lineTotal.toFixed(2)}`;
+
+    // update displayed price if bulk applied
+    if (qty > 0 && effectivePrice !== basePrice) {
+      priceEl.textContent = `$${effectivePrice.toFixed(2)}`;
+    } else {
+      priceEl.textContent = `$${basePrice.toFixed(2)}`;
+    }
+  });
+
+  document.getElementById('running-total').textContent =
+    `Total: $${total.toFixed(2)}`;
+}
 
     // Table-local sort logic
     //****
