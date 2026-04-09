@@ -358,7 +358,7 @@ for pkg in tracked_packages_map.values():
 
     if label not in old_packages:
         changes_detected = True
-    else:S
+    else:
         old = old_packages[label]
         if old.get("qty") != pkg["Quantity"]:
             changes_detected = True
