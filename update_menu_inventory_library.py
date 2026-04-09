@@ -53,7 +53,6 @@ WATCHED_ROOMS = TRACKED_ROOMS | MENU_ROOMS
 
 REPO_DIR    = Path("/home/ceres/live-menu")
 OUTPUT_PATH = REPO_DIR / "menu_v2_collector_temp.json"
-DRY_RUN = True
 
 RCLONE_REMOTE = "ceres_sharepoint:METRC API Depot/Product Information.xlsx"
 LOCAL_EXCEL   = Path("/tmp/Product Information.xlsx")
@@ -374,49 +373,14 @@ if not changes_detected:
     print("NO CHANGES DETECTED — collector internal files refreshed; publisher can rebuild menu_v2.json")
 
 # ============================================================
-#  Prevent Push if build running 
+#  WRITE TEMP COLLECTOR OUTPUT ONLY
 # ============================================================
-def github_pages_build_running():
-    try:
-        result = subprocess.run(
-            ["gh", "run", "list", "--workflow=pages-build-deployment", "--limit", "1"],
-            capture_output=True,
-            text=True
-        )
-
-        if "in_progress" in result.stdout or "queued" in result.stdout:
-            return True
-    except:
-        pass
-
-    return False
-
-# ============================================================
-#  WRITE + COMMIT + PUSH
-# ============================================================
-os.chdir(REPO_DIR)
-
 with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
     f.write(new_json)
 
-if DRY_RUN:
-    print(f"DRY RUN: wrote {OUTPUT_PATH}, skipping git add/commit/push")
-else:
-    os.system("git add menu_v2_collector_temp.json")
-
-    subprocess.run(
-        ["git", "commit", "-m", f"Auto-update v2 collector @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"],
-        check=False
-    )
-
-    if github_pages_build_running():
-        print("GitHub Pages build already running — skipping push.")
-        sys.exit(0)
-
-    os.system("git push origin main")
-
+print(f"WROTE TEMP COLLECTOR OUTPUT: {OUTPUT_PATH}")
 # ============================================================
-#  SAVE SNAPSHOT (ONLY AFTER SUCCESSFUL PUSH)
+#  SAVE SNAPSHOT 
 # ============================================================
 snapshot["packages"] = new_packages
 save_snapshot(snapshot)
