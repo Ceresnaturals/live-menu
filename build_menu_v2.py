@@ -229,31 +229,57 @@ def main():
     print("MENU ITEMS:", len(final))
     print("WROTE:", OUTPUT_PATH)
 
-# ============================================================
-#  GIT SYNC + COMMIT + PUSH
-# ============================================================
+def sync_to_github():
+    repo_dir = Path("/home/ceres/live-menu")
+    os.chdir(repo_dir)
 
-REPO_DIR = Path("/home/ceres/live-menu")
+    print("SYNCING TO GITHUB...")
 
-os.chdir(REPO_DIR)
+    subprocess.run(["git", "fetch", "origin"], check=False, capture_output=True, text=True)
+    subprocess.run(["git", "add", "menu_v2.json"], check=False, capture_output=True, text=True)
 
-# ensure we are up to date (avoid conflicts)
-subprocess.run(["git", "fetch", "origin"], check=False)
-subprocess.run(["git", "reset", "--hard", "origin/main"], check=False)
+    diff_result = subprocess.run(
+        ["git", "diff", "--cached", "--quiet"],
+        check=False,
+        capture_output=True,
+        text=True
+    )
 
-# add file
-subprocess.run(["git", "add", "menu_v2.json"], check=False)
+    if diff_result.returncode == 0:
+        print("NO GITHUB CHANGES TO PUSH")
+        return
 
-# commit (won’t fail if nothing changed)
-subprocess.run(
-    ["git", "commit", "-m", f"menu_v2 update @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"],
-    check=False
-)
+    commit_result = subprocess.run(
+        ["git", "commit", "-m", f"menu_v2 update @ {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"],
+        check=False,
+        capture_output=True,
+        text=True
+    )
 
-# push
-subprocess.run(["git", "push", "origin", "main"], check=False)
+    if commit_result.returncode != 0:
+        print("GIT COMMIT FAILED")
+        if commit_result.stderr.strip():
+            print(commit_result.stderr.strip())
+        elif commit_result.stdout.strip():
+            print(commit_result.stdout.strip())
+        return
 
-print("PUSHED TO GITHUB")
+    push_result = subprocess.run(
+        ["git", "push", "origin", "main"],
+        check=False,
+        capture_output=True,
+        text=True
+    )
+
+    if push_result.returncode == 0:
+        print("PUSHED TO GITHUB")
+    else:
+        print("GIT PUSH FAILED")
+        if push_result.stderr.strip():
+            print(push_result.stderr.strip())
+        elif push_result.stdout.strip():
+            print(push_result.stdout.strip())
 
 if __name__ == "__main__":
     main()
+    sync_to_github()
