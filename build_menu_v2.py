@@ -191,12 +191,15 @@ def main():
         excel_row = product_map.get(item_name, {})
 
         bulk_rules = []
+        bulk_rule_scope = None
+        bulk_rule_group = None
 
         # ==========================
         # PRIORITY: ITEM RULES
         # ==========================
         if item_name in item_rules:
             bulk_rules = item_rules[item_name]
+            bulk_rule_scope = "item"
 
         # ==========================
         # FALLBACK: GROUP RULES
@@ -205,6 +208,8 @@ def main():
             group = get_product_group(item_name)
             if group and group in group_rules:
                 bulk_rules = group_rules[group]
+                bulk_rule_scope = "group"
+                bulk_rule_group = group
 
         final.append({
             "Id": pkg.get("Id"),
@@ -215,7 +220,9 @@ def main():
             "Type": excel_row.get("type"),
             "Price": excel_row.get("price"),
             "LabResults": lab_cache.get(str(pkg.get("Id")), []),
-            "bulkRules": bulk_rules if bulk_rules else None
+            "bulkRules": bulk_rules if bulk_rules else None,
+            "bulkRuleScope": bulk_rule_scope,
+            "bulkRuleGroup": bulk_rule_group
         })
 
     final = sorted(final, key=lambda x: (str(x.get("ItemName") or ""), x.get("Id") or 0))

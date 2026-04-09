@@ -962,9 +962,14 @@ fetch(DATA_URL)
     function makeStandardRow(pkg) {
       const priceNum = Number(pkg.Price) || 0;
       const a = pkg.analytes || { totalTHC: 0, totalCBD: 0, totalTerpenes: 0 };
+      const bulkScope = pkg.bulkRuleScope || '';
+      const bulkGroup = pkg.bulkRuleGroup || '';
 
       return `
-          <tr class="menu-row" data-bulk='${JSON.stringify(pkg.bulkRules || [])}'>          
+          <tr class="menu-row"
+              data-bulk='${JSON.stringify(pkg.bulkRules || [])}'
+              data-bulk-scope="${bulkScope}"
+              data-bulk-group="${bulkGroup}">          
           <td class="item-name">${pkg.ItemName || ''}</td>
           <td class="item-category">${pkg.Type || ''}</td>
           <td>${pkg.Quantity || 0}</td>
@@ -1058,6 +1063,28 @@ fetch(DATA_URL)
   return applied;
 }
 
+function getBulkQuantity(row) {
+  const input = row.querySelector('.item-input');
+  if (!input) return 0;
+
+  const scope = row.dataset.bulkScope || '';
+  if (scope !== 'group') {
+    return parseFloat(input.value) || 0;
+  }
+
+  const bulkGroup = row.dataset.bulkGroup || '';
+  if (!bulkGroup) {
+    return parseFloat(input.value) || 0;
+  }
+
+  let totalQty = 0;
+  document.querySelectorAll(`#menu-data .menu-row[data-bulk-group="${CSS.escape(bulkGroup)}"] .item-input`).forEach(groupInput => {
+    totalQty += parseFloat(groupInput.value) || 0;
+  });
+
+  return totalQty;
+}
+
 function updateTotals() {
   let total = 0;
   const rows = document.querySelectorAll('#menu-data .menu-row');
@@ -1075,7 +1102,8 @@ function updateTotals() {
     // bulk rules from row
     const bulkRules = JSON.parse(row.dataset.bulk || "[]");
 
-    const effectivePrice = getBulkPrice(qty, basePrice, bulkRules);
+    const bulkQty = getBulkQuantity(row);
+    const effectivePrice = getBulkPrice(bulkQty, basePrice, bulkRules);
     const lineTotal = qty * effectivePrice;
 
     total += lineTotal;
@@ -1106,14 +1134,13 @@ function updateTotals() {
 
 function getEffectiveRowPrice(row) {
   const priceEl = row.querySelector('.item-price');
-  const input = row.querySelector('.item-input');
-  if (!priceEl || !input) return 0;
+  if (!priceEl) return 0;
 
-  const qty = parseFloat(input.value) || 0;
   const basePrice = parseFloat(priceEl.dataset.price) || 0;
   const bulkRules = JSON.parse(row.dataset.bulk || "[]");
+  const bulkQty = getBulkQuantity(row);
 
-  return getBulkPrice(qty, basePrice, bulkRules);
+  return getBulkPrice(bulkQty, basePrice, bulkRules);
 }
 
     // Table-local sort logic
