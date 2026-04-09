@@ -31,6 +31,37 @@ def _to_money(v):
         return None
 
 
+# ==============================
+# PRODUCT GROUP MAPPING
+# ==============================
+def get_product_group(product_name):
+    name = product_name.lower()
+
+    if "double diamonds" in name:
+        return "Double Diamonds"
+    if "diamond cut" in name:
+        return "Diamond Cut"
+    if "zen drops" in name:
+        return "Zen Drops"
+    if "cart" in name and "2g" in name:
+        return "2g Cart"
+    if "cart" in name:
+        return "1g Cart"
+    if "vape" in name and "2g" in name:
+        return "2g Vape"
+    if "vape" in name:
+        return "1g Vape"
+    if "pre-roll" in name:
+        return "Pre-Roll"
+    if "relic" in name:
+        return "Relic"
+
+    return None
+
+
+# ==============================
+# BUILD MAPS + BULK LOOKUPS
+# ==============================
 def build_excel_map(path: Path):
     xl = pd.ExcelFile(path, engine="openpyxl")
 
@@ -41,8 +72,12 @@ def build_excel_map(path: Path):
     df = df[df["Product"].notna() & (df["Product"].str.strip() != "")]
 
     product_map = {}
-    bulk_rules = []
+    item_rules = {}
+    group_rules = {}
 
+    # ==========================
+    # PRODUCT + ITEM RULES
+    # ==========================
     for _, row in df.iterrows():
         name = str(row["Product"]).strip()
 
@@ -51,36 +86,46 @@ def build_excel_map(path: Path):
             "type": None if pd.isna(row.get("Type")) else str(row.get("Type")).strip()
         }
 
+        # ITEM-LEVEL BULK JSON
         bulk_raw = row.get("BulkPricing")
         if bulk_raw and not pd.isna(bulk_raw):
             try:
                 tiers = json.loads(str(bulk_raw))
-                if isinstance(tiers, list):
-                    for tier in tiers:
-                        if tier.get("minQty") and tier.get("price"):
-                            bulk_rules.append({
-                                "Scope": "Item",
-                                "Key": name,
-                                "MinQty": int(tier["minQty"]),
-                                "Price": float(tier["price"])
+                if isinstance(tiers, list) and tiers:
+                    clean = []
+                    for t in tiers:
+                        if t.get("minQty") and t.get("price"):
+                            clean.append({
+                                "minQty": int(t["minQty"]),
+                                "price": float(t["price"])
                             })
-            except Exception:
-                pass
 
+                    if clean:
+                        item_rules[name] = sorted(clean, key=lambda x: x["minQty"])
+
+            except Exception as e:
+                print(f"Bulk pricing parse error for {name}: {e}")
+
+    # ==========================
+    # GROUP RULES
+    # ==========================
     if "BulkPrice" in xl.sheet_names:
         br_df = xl.parse("BulkPrice", dtype=str)
         br_df.columns = [c.strip() for c in br_df.columns]
 
-        for _, row in br_df.iterrows():
-            if row.get("ProductGroup") and row.get("MinQty") and row.get("Price"):
-                bulk_rules.append({
-                    "Scope": "Group",
-                    "Key": str(row["ProductGroup"]).strip(),
-                    "MinQty": int(row["MinQty"]),
-                    "Price": _to_money(row["Price"])
+        br_df = br_df.dropna(subset=["ProductGroup", "MinQty", "Price"])
+
+        for group, gdf in br_df.groupby("ProductGroup"):
+            rules = []
+            for _, r in gdf.iterrows():
+                rules.append({
+                    "minQty": int(r["MinQty"]),
+                    "price": _to_money(r["Price"])
                 })
 
-    return product_map, bulk_rules
+            group_rules[str(group).strip()] = sorted(rules, key=lambda x: x["minQty"])
+
+    return product_map, item_rules, group_rules
 
 
 def main():
@@ -95,7 +140,7 @@ def main():
         check=False
     )
 
-    product_map, bulk_rules = build_excel_map(LOCAL_EXCEL)
+    product_map, item_rules, group_rules = build_excel_map(LOCAL_EXCEL)
 
     with open(WATCHED_INVENTORY_PATH, "r", encoding="utf-8") as f:
         watched_payload = json.load(f)
@@ -115,6 +160,22 @@ def main():
         item_name = str(pkg.get("ItemName") or "").strip()
         excel_row = product_map.get(item_name, {})
 
+        bulk_rules = []
+
+        # ==========================
+        # PRIORITY: ITEM RULES
+        # ==========================
+        if item_name in item_rules:
+            bulk_rules = item_rules[item_name]
+
+        # ==========================
+        # FALLBACK: GROUP RULES
+        # ==========================
+        else:
+            group = get_product_group(item_name)
+            if group and group in group_rules:
+                bulk_rules = group_rules[group]
+
         final.append({
             "Id": pkg.get("Id"),
             "Label": pkg.get("Label"),
@@ -123,14 +184,14 @@ def main():
             "LocationName": pkg.get("LocationName"),
             "Type": excel_row.get("type"),
             "Price": excel_row.get("price"),
-            "LabResults": lab_cache.get(str(pkg.get("Id")), [])
+            "LabResults": lab_cache.get(str(pkg.get("Id")), []),
+            "bulkRules": bulk_rules if bulk_rules else None
         })
 
     final = sorted(final, key=lambda x: (str(x.get("ItemName") or ""), x.get("Id") or 0))
 
     payload = {
-        "items": final,
-        "bulkRules": bulk_rules
+        "items": final
     }
 
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
@@ -142,5 +203,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main() 
-    
+    main()
