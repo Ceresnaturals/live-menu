@@ -69,6 +69,7 @@ def build_excel_map(path: Path):
     sheet = "ProductInfo" if "ProductInfo" in xl.sheet_names else xl.sheet_names[0]
     df = xl.parse(sheet, dtype=str)
     df.columns = [c.strip() for c in df.columns]
+    raw_df = xl.parse(sheet, dtype=str, header=None).fillna("")
 
     df = df[df["Product"].notna() & (df["Product"].str.strip() != "")]
 
@@ -109,22 +110,48 @@ def build_excel_map(path: Path):
 
     # ==========================
     # GROUP RULES
+    # BulkPrice lives as a separate table on the same worksheet.
     # ==========================
-    if "BulkPrice" in xl.sheet_names:
-        br_df = xl.parse("BulkPrice", dtype=str)
-        br_df.columns = [c.strip() for c in br_df.columns]
+    bulk_header = None
+    bulk_start_col = None
 
-        br_df = br_df.dropna(subset=["ProductGroup", "MinQty", "Price"])
+    for row_idx in range(len(raw_df)):
+        row_values = [
+            "" if pd.isna(value) else str(value).strip()
+            for value in raw_df.iloc[row_idx].tolist()
+        ]
 
-        for group, gdf in br_df.groupby("ProductGroup"):
-            rules = []
-            for _, r in gdf.iterrows():
-                rules.append({
-                    "minQty": int(r["MinQty"]),
-                    "price": _to_money(r["Price"])
-                })
+        for col_idx in range(max(0, len(row_values) - 2)):
+            if row_values[col_idx:col_idx + 3] == ["ProductGroup", "MinQty", "Price"]:
+                bulk_header = row_idx
+                bulk_start_col = col_idx
+                break
 
-            group_rules[str(group).strip()] = sorted(rules, key=lambda x: x["minQty"])
+        if bulk_header is not None:
+            break
+
+    if bulk_header is not None and bulk_start_col is not None:
+        for row_idx in range(bulk_header + 1, len(raw_df)):
+            group = str(raw_df.iat[row_idx, bulk_start_col]).strip()
+            min_qty_raw = raw_df.iat[row_idx, bulk_start_col + 1]
+            price_raw = raw_df.iat[row_idx, bulk_start_col + 2]
+
+            if not group and pd.isna(min_qty_raw) and pd.isna(price_raw):
+                continue
+
+            min_qty = _to_money(min_qty_raw)
+            price = _to_money(price_raw)
+
+            if not group or min_qty is None or price is None:
+                continue
+
+            group_rules.setdefault(group, []).append({
+                "minQty": int(min_qty),
+                "price": price
+            })
+
+    for group, rules in group_rules.items():
+        group_rules[group] = sorted(rules, key=lambda x: x["minQty"])
 
     return product_map, item_rules, group_rules
 

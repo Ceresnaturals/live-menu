@@ -1085,6 +1085,18 @@ function updateTotals() {
     `Total: $${total.toFixed(2)}`;
 }
 
+function getEffectiveRowPrice(row) {
+  const priceEl = row.querySelector('.item-price');
+  const input = row.querySelector('.item-input');
+  if (!priceEl || !input) return 0;
+
+  const qty = parseFloat(input.value) || 0;
+  const basePrice = parseFloat(priceEl.dataset.price) || 0;
+  const bulkRules = JSON.parse(row.dataset.bulk || "[]");
+
+  return getBulkPrice(qty, basePrice, bulkRules);
+}
+
     // Table-local sort logic
     //****
     function sortTableByColumn(table, columnKey, th) {
@@ -1181,7 +1193,7 @@ function updateTotals() {
         if (!input || !priceEl || !nameEl) return;
 
         const qty = parseFloat(input.value) || 0;
-        const price = parseFloat(priceEl.dataset.price) || 0;
+        const price = getEffectiveRowPrice(row);
 
         if (qty <= 0 || price <= 0) return;
 
@@ -1282,7 +1294,7 @@ function updateTotals() {
         if (!input || !priceEl || !nameEl) return;
 
         const qty = parseFloat(input.value) || 0;
-        const price = parseFloat(priceEl.dataset.price) || 0;
+        const price = getEffectiveRowPrice(row);
 
         if (qty > 0) {
           items.push({
