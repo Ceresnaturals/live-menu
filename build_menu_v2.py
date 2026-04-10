@@ -10,6 +10,7 @@ import pandas as pd
 WATCHED_INVENTORY_PATH = Path("/home/ceres/cache/watched_inventory_v2.json")
 LAB_CACHE_PATH = Path("/home/ceres/cache/lab_results_library_v2.json")
 OUTPUT_PATH = Path("/home/ceres/live-menu/menu_v2.json")
+INVENTORY_RESULTS_OUTPUT_PATH = Path("/home/ceres/live-menu/inventory_test_results_v2.json")
 
 MENU_ROOMS = {
     "vault - finished goods",
@@ -179,16 +180,31 @@ def main():
         lab_cache = json.load(f)
 
     watched_packages = watched_payload.get("packages", {})
+    watched_generated_at = watched_payload.get("generated_at")
 
     final = []
+    inventory_results = []
 
     for pkg_id_str, pkg in watched_packages.items():
-        room_name = str(pkg.get("LocationName") or "").strip().lower()
-        if room_name not in MENU_ROOMS:
-            continue
-
         item_name = str(pkg.get("ItemName") or "").strip()
         excel_row = product_map.get(item_name, {})
+        lab_results = lab_cache.get(str(pkg.get("Id")), [])
+        room_name = str(pkg.get("LocationName") or "").strip()
+
+        inventory_results.append({
+            "Id": pkg.get("Id"),
+            "Label": pkg.get("Label"),
+            "ItemName": item_name,
+            "Quantity": pkg.get("Quantity"),
+            "LocationName": room_name,
+            "Type": excel_row.get("type"),
+            "Price": excel_row.get("price"),
+            "LabResults": lab_results
+        })
+
+        room_name = room_name.lower()
+        if room_name not in MENU_ROOMS:
+            continue
 
         bulk_rules = []
         bulk_rule_scope = None
@@ -219,24 +235,41 @@ def main():
             "LocationName": pkg.get("LocationName"),
             "Type": excel_row.get("type"),
             "Price": excel_row.get("price"),
-            "LabResults": lab_cache.get(str(pkg.get("Id")), []),
+            "LabResults": lab_results,
             "bulkRules": bulk_rules if bulk_rules else None,
             "bulkRuleScope": bulk_rule_scope,
             "bulkRuleGroup": bulk_rule_group
         })
 
     final = sorted(final, key=lambda x: (str(x.get("ItemName") or ""), x.get("Id") or 0))
+    inventory_results = sorted(
+        inventory_results,
+        key=lambda x: (
+            str(x.get("LocationName") or ""),
+            str(x.get("ItemName") or ""),
+            x.get("Id") or 0
+        )
+    )
 
     payload = {
         "items": final
     }
 
+    inventory_payload = {
+        "generatedAt": watched_generated_at,
+        "items": inventory_results
+    }
+
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, separators=(",", ":"))
+
+    with open(INVENTORY_RESULTS_OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(inventory_payload, f, ensure_ascii=False, separators=(",", ":"))
 
     print("WATCHED PACKAGES:", len(watched_packages))
     print("MENU ITEMS:", len(final))
     print("WROTE:", OUTPUT_PATH)
+    print("WROTE:", INVENTORY_RESULTS_OUTPUT_PATH)
 
 def sync_to_github():
     repo_dir = Path("/home/ceres/live-menu")
@@ -245,7 +278,12 @@ def sync_to_github():
     print("SYNCING TO GITHUB...")
 
     subprocess.run(["git", "fetch", "origin"], check=False, capture_output=True, text=True)
-    subprocess.run(["git", "add", "menu_v2.json"], check=False, capture_output=True, text=True)
+    subprocess.run(
+        ["git", "add", "menu_v2.json", "inventory_test_results_v2.json"],
+        check=False,
+        capture_output=True,
+        text=True
+    )
 
     diff_result = subprocess.run(
         ["git", "diff", "--cached", "--quiet"],
