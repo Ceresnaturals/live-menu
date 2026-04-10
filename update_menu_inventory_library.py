@@ -51,9 +51,6 @@ MENU_ROOMS = {
 
 WATCHED_ROOMS = TRACKED_ROOMS | MENU_ROOMS
 
-REPO_DIR    = Path("/home/ceres/live-menu")
-OUTPUT_PATH = REPO_DIR / "menu_v2_collector_temp.json"
-
 RCLONE_REMOTE = "ceres_sharepoint:METRC API Depot/Product Information.xlsx"
 LOCAL_EXCEL   = Path("/tmp/Product Information.xlsx")
 
@@ -318,26 +315,6 @@ lab_cache = {pid: labs for pid, labs in lab_cache.items() if pid in current_pkg_
 save_lab_cache(lab_cache)
 
 # ============================================================
-#  BUILD FINAL JSON
-# ============================================================
-final = []
-
-for pkg in sorted(menu_packages_map.values(), key=lambda x: x["Id"]):    
-    final.append({
-        "Id": pkg["Id"],
-        "Label": pkg["Label"],
-        "ItemName": pkg["ItemName"],
-        "Quantity": pkg["Quantity"],
-        "LocationName": pkg.get("LocationName"),
-        "Type": pkg["Type"],
-        "Price": pkg["Price"],
-        "LabResults": lab_by_pkg.get(pkg["Id"], [])
-    })
-
-payload = {"items": final, "bulkRules": bulk_rules}
-new_json = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
-
-# ============================================================
 #  CHANGE DETECTION
 # ============================================================
 new_packages = {}
@@ -371,14 +348,6 @@ for label in old_packages:
 
 if not changes_detected:
     print("NO CHANGES DETECTED — collector internal files refreshed; publisher can rebuild menu_v2.json")
-
-# ============================================================
-#  WRITE TEMP COLLECTOR OUTPUT ONLY
-# ============================================================
-with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-    f.write(new_json)
-
-print(f"WROTE TEMP COLLECTOR OUTPUT: {OUTPUT_PATH}")
 # ============================================================
 #  SAVE SNAPSHOT 
 # ============================================================
