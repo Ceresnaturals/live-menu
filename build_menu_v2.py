@@ -7,10 +7,40 @@ from datetime import datetime
 import os
 import pandas as pd
 
-WATCHED_INVENTORY_PATH = Path("/home/ceres/cache/watched_inventory_v2.json")
-LAB_CACHE_PATH = Path("/home/ceres/cache/lab_results_library_v2.json")
-OUTPUT_PATH = Path("/home/ceres/live-menu/menu_v2.json")
-INVENTORY_RESULTS_OUTPUT_PATH = Path("/home/ceres/live-menu/inventory_test_results_v2.json")
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+
+def resolve_cache_dir():
+    override = os.getenv("CERES_CACHE_DIR")
+    if override:
+        return Path(override).expanduser()
+
+    legacy = Path("/home/ceres/cache")
+    if legacy.exists():
+        return legacy
+
+    return SCRIPT_DIR / "cache"
+
+
+def first_existing_path(*paths):
+    for path in paths:
+        if path.exists():
+            return path
+    return paths[0]
+
+
+CACHE_DIR = resolve_cache_dir()
+SHARED_DATA_DIR = SCRIPT_DIR / "shared"
+WATCHED_INVENTORY_PATH = first_existing_path(
+    CACHE_DIR / "watched_inventory_v2.json",
+    SHARED_DATA_DIR / "watched_inventory_v2.json",
+)
+LAB_CACHE_PATH = first_existing_path(
+    CACHE_DIR / "lab_results_library_v2.json",
+    SHARED_DATA_DIR / "lab_results_library_v2.json",
+)
+OUTPUT_PATH = SCRIPT_DIR / "menu_v2.json"
+INVENTORY_RESULTS_OUTPUT_PATH = SCRIPT_DIR / "inventory_test_results_v2.json"
 
 MENU_ROOMS = {
     "vault - finished goods",
@@ -18,7 +48,7 @@ MENU_ROOMS = {
 }
 
 RCLONE_REMOTE = "ceres_sharepoint:METRC API Depot/Product Information.xlsx"
-LOCAL_EXCEL = Path("/tmp/Product Information.xlsx")
+LOCAL_EXCEL = Path(os.getenv("CERES_LOCAL_EXCEL_PATH", "/tmp/Product Information.xlsx")).expanduser()
 
 
 def _to_money(v):
@@ -270,14 +300,14 @@ def main():
     print("WROTE:", INVENTORY_RESULTS_OUTPUT_PATH)
 
 def sync_to_github():
-    repo_dir = Path("/home/ceres/live-menu")
+    repo_dir = SCRIPT_DIR
     os.chdir(repo_dir)
 
     print("SYNCING TO GITHUB...")
 
     subprocess.run(["git", "fetch", "origin"], check=False, capture_output=True, text=True)
     subprocess.run(
-        ["git", "add", "menu_v2.json", "inventory_test_results_v2.json"],
+        ["git", "add", "menu_v2.json", "inventory_test_results_v2.json", "shared/watched_inventory_v2.json"],
         check=False,
         capture_output=True,
         text=True

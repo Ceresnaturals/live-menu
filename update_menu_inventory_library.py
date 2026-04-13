@@ -13,16 +13,50 @@ import pandas as pd
 
 print("RUNNING REPO SCRIPT:", __file__)
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+DEFAULT_ENV_FILE = Path("/etc/ceres/metrc.env")
+SHARED_DATA_DIR = SCRIPT_DIR / "shared"
+SHARED_WATCHED_INVENTORY_PATH = SHARED_DATA_DIR / "watched_inventory_v2.json"
+SHARED_DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def load_metrc_env():
+    env = {
+        "METRC_VENDOR_KEY": os.getenv("METRC_VENDOR_KEY"),
+        "METRC_USER_KEY": os.getenv("METRC_USER_KEY"),
+        "METRC_LICENSE": os.getenv("METRC_LICENSE"),
+    }
+    if all(env.values()):
+        return env
+
+    env_file = Path(os.getenv("METRC_ENV_FILE", str(DEFAULT_ENV_FILE))).expanduser()
+    with open(env_file, "r", encoding="utf-8") as f:
+        for line in f:
+            if "=" in line and not line.startswith("#"):
+                k, v = line.strip().split("=", 1)
+                env[k] = v
+
+    missing = [k for k in ("METRC_VENDOR_KEY", "METRC_USER_KEY", "METRC_LICENSE") if not env.get(k)]
+    if missing:
+        raise RuntimeError(f"Missing METRC configuration values: {', '.join(missing)}")
+    return env
+
+
+def resolve_cache_dir():
+    override = os.getenv("CERES_CACHE_DIR")
+    if override:
+        return Path(override).expanduser()
+
+    legacy = Path("/home/ceres/cache")
+    if legacy.exists():
+        return legacy
+
+    return SCRIPT_DIR / "cache"
+
 # ============================================================
 #  METRC API AUTH
 # ============================================================
-ENV_FILE = "/etc/ceres/metrc.env"
-env = {}
-with open(ENV_FILE, "r", encoding="utf-8") as f:
-    for line in f:
-        if "=" in line and not line.startswith("#"):
-            k, v = line.strip().split("=", 1)
-            env[k] = v
+env = load_metrc_env()
 
 VENDOR_KEY     = env["METRC_VENDOR_KEY"]
 USER_KEY       = env["METRC_USER_KEY"]
@@ -52,19 +86,22 @@ MENU_ROOMS = {
 WATCHED_ROOMS = TRACKED_ROOMS | MENU_ROOMS
 
 RCLONE_REMOTE = "ceres_sharepoint:METRC API Depot/Product Information.xlsx"
-LOCAL_EXCEL   = Path("/tmp/Product Information.xlsx")
+LOCAL_EXCEL   = Path(os.getenv("CERES_LOCAL_EXCEL_PATH", "/tmp/Product Information.xlsx")).expanduser()
+
+CACHE_DIR = resolve_cache_dir()
+CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 # LAB CACHE
-LAB_CACHE_PATH = Path("/home/ceres/cache/lab_results_library_v2.json")
+LAB_CACHE_PATH = CACHE_DIR / "lab_results_library_v2.json"
 LAB_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-WATCHED_INVENTORY_PATH = Path("/home/ceres/cache/watched_inventory_v2.json")
+WATCHED_INVENTORY_PATH = CACHE_DIR / "watched_inventory_v2.json"
 WATCHED_INVENTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 # ============================================================
 #  SNAPSHOT FOR CHANGE DETECTION
 # ============================================================
-SNAPSHOT_PATH = Path("/home/ceres/cache/tracked_inventory_snapshot_v2.json")
+SNAPSHOT_PATH = CACHE_DIR / "tracked_inventory_snapshot_v2.json"
 SNAPSHOT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 
@@ -89,6 +126,8 @@ def save_watched_inventory(watched_packages_map):
         "packages": {str(k): v for k, v in watched_packages_map.items()}
     }
     with open(WATCHED_INVENTORY_PATH, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    with open(SHARED_WATCHED_INVENTORY_PATH, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
 # ============================================================
@@ -355,3 +394,5 @@ snapshot["packages"] = new_packages
 save_snapshot(snapshot)
 
 print("SUCCESS:")
+print("LOCAL WATCHED INVENTORY:", WATCHED_INVENTORY_PATH)
+print("SHARED WATCHED INVENTORY:", SHARED_WATCHED_INVENTORY_PATH)
