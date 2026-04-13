@@ -180,7 +180,6 @@ def main():
         lab_cache = json.load(f)
 
     watched_packages = watched_payload.get("packages", {})
-    watched_generated_at = watched_payload.get("generated_at")
 
     final = []
     inventory_results = []
@@ -256,7 +255,6 @@ def main():
     }
 
     inventory_payload = {
-        "generatedAt": watched_generated_at,
         "items": inventory_results
     }
 
