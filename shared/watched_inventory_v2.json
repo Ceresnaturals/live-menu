@@ -1,0 +1,302 @@
+{
+  "generated_at": "2026-04-13T18:15:05.921630+00:00",
+  "packages": {
+    "8230623": {
+      "Id": 8230623,
+      "Label": "1A4030100003201000000241",
+      "ItemName": "LORE Relic - 2g Blunt - 33 OG",
+      "Quantity": 583.0,
+      "LocationName": "Vault - Bulk WIP",
+      "Type": "Hybrid",
+      "Price": 17.0
+    },
+    "8230285": {
+      "Id": 8230285,
+      "Label": "1A4030100003201000000260",
+      "ItemName": "LORE 1g Cart - Blackberry Gelato",
+      "Quantity": 712.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Indica",
+      "Price": 17.0
+    },
+    "8230286": {
+      "Id": 8230286,
+      "Label": "1A4030100003201000000264",
+      "ItemName": "LORE 1g Cart - Grape Ape",
+      "Quantity": 741.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Indica",
+      "Price": 17.0
+    },
+    "8211126": {
+      "Id": 8211126,
+      "Label": "1A4030100003201000000250",
+      "ItemName": "LORE 1g Vape - Watermelon Burst",
+      "Quantity": 804.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Hybrid",
+      "Price": 18.0
+    },
+    "8210469": {
+      "Id": 8210469,
+      "Label": "1A4030100003201000000254",
+      "ItemName": "LORE 1g Vape - Super Lemon Haze",
+      "Quantity": 775.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Sativa",
+      "Price": 18.0
+    },
+    "8203984": {
+      "Id": 8203984,
+      "Label": "1A4030100003201000000258",
+      "ItemName": "Bulk Trim",
+      "Quantity": 1003.0,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "8204224": {
+      "Id": 8204224,
+      "Label": "1A4030100003201000000259",
+      "ItemName": "Bulk Trim",
+      "Quantity": 1875.0,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "8211107": {
+      "Id": 8211107,
+      "Label": "1A4030100003201000000245",
+      "ItemName": "LORE 2g Vape - Lemon Berry Gelato",
+      "Quantity": 871.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Indica",
+      "Price": 35.0
+    },
+    "8187090": {
+      "Id": 8187090,
+      "Label": "1A4030100003201000000249",
+      "ItemName": "RSO-E-BULK-PACKAGED",
+      "Quantity": 1576.0,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "8120744": {
+      "Id": 8120744,
+      "Label": "1A4030100003201000000233",
+      "ItemName": "LORE Infused PR 1g - Goji Overdrive",
+      "Quantity": 912.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Hybrid",
+      "Price": 8.0
+    },
+    "8120742": {
+      "Id": 8120742,
+      "Label": "1A4030100003201000000237",
+      "ItemName": "LORE Infused PR 1g - Dough Drop",
+      "Quantity": 893.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Indica",
+      "Price": 8.0
+    },
+    "8042267": {
+      "Id": 8042267,
+      "Label": "1A4030300002F45000019025",
+      "ItemName": "THCa",
+      "Quantity": 2006.0,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "8023962": {
+      "Id": 8023962,
+      "Label": "1A4030100003201000000229",
+      "ItemName": "LORE Double Diamonds 1g - Zelato",
+      "Quantity": 634.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Hybrid",
+      "Price": 12.0
+    },
+    "7729278": {
+      "Id": 7729278,
+      "Label": "1A4030100003201000000217",
+      "ItemName": "LORE Double Diamonds 1g - Goji Dough",
+      "Quantity": 657.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Indica",
+      "Price": 12.0
+    },
+    "7729279": {
+      "Id": 7729279,
+      "Label": "1A4030100003201000000220",
+      "ItemName": "LORE Double Diamonds 1g - Amnesia OG",
+      "Quantity": 489.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Sativa",
+      "Price": 12.0
+    },
+    "7729277": {
+      "Id": 7729277,
+      "Label": "1A4030100003201000000223",
+      "ItemName": "LORE Double Diamonds 1g - Gelato OG",
+      "Quantity": 642.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Hybrid",
+      "Price": 12.0
+    },
+    "7709720": {
+      "Id": 7709720,
+      "Label": "1A4030300002F45000015153",
+      "ItemName": "THCa",
+      "Quantity": 10.0,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "7603945": {
+      "Id": 7603945,
+      "Label": "1A4030100003201000000162",
+      "ItemName": "LORE Double Diamonds 1g - Amnesia OG",
+      "Quantity": 62.0,
+      "LocationName": "On Hold",
+      "Type": "Sativa",
+      "Price": 12.0
+    },
+    "7603742": {
+      "Id": 7603742,
+      "Label": "1A4030100003201000000165",
+      "ItemName": "LORE Double Diamonds 1g - Goji Dough",
+      "Quantity": 122.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Indica",
+      "Price": 12.0
+    },
+    "7603971": {
+      "Id": 7603971,
+      "Label": "1A4030100003201000000168",
+      "ItemName": "LORE Double Diamonds 1g - Gelato OG",
+      "Quantity": 41.0,
+      "LocationName": "On Hold",
+      "Type": "Hybrid",
+      "Price": 12.0
+    },
+    "7603974": {
+      "Id": 7603974,
+      "Label": "1A4030100003201000000180",
+      "ItemName": "Essentia - Zen Drops - Tincture - 15g",
+      "Quantity": 437.0,
+      "LocationName": "On Hold",
+      "Type": "Hybrid",
+      "Price": 10.0
+    },
+    "7618521": {
+      "Id": 7618521,
+      "Label": "1A4030100003201000000205",
+      "ItemName": "Bulk THCv",
+      "Quantity": 250.0,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "7618522": {
+      "Id": 7618522,
+      "Label": "1A4030100003201000000206",
+      "ItemName": "Bulk CBG",
+      "Quantity": 250.0,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "7618523": {
+      "Id": 7618523,
+      "Label": "1A4030100003201000000207",
+      "ItemName": "Bulk CBC",
+      "Quantity": 250.0,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "7354324": {
+      "Id": 7354324,
+      "Label": "1A4030100003201000000154",
+      "ItemName": "Dispersion Phase Concentrate",
+      "Quantity": 833.0,
+      "LocationName": "Vault - Bulk WIP",
+      "Type": null,
+      "Price": null
+    },
+    "7351594": {
+      "Id": 7351594,
+      "Label": "1A403030000070A000015240",
+      "ItemName": "TAILS-E-BULK-PACKAGED",
+      "Quantity": 1418.3,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "7139888": {
+      "Id": 7139888,
+      "Label": "1A4030100003201000000152",
+      "ItemName": "LORE Infused PR 1g - Purple Crunch Berries",
+      "Quantity": 626.0,
+      "LocationName": "Vault - Finished Goods",
+      "Type": "Hybrid",
+      "Price": 8.0
+    },
+    "7116155": {
+      "Id": 7116155,
+      "Label": "1A4030100003201000000151",
+      "ItemName": "Bulk Trim",
+      "Quantity": 742.0,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "7066127": {
+      "Id": 7066127,
+      "Label": "1A4030300002F45000012381",
+      "ItemName": "Bulk Distillate",
+      "Quantity": 500.0,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "7066128": {
+      "Id": 7066128,
+      "Label": "1A4030300002F45000012382",
+      "ItemName": "Bulk Distillate",
+      "Quantity": 287.5,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "6642767": {
+      "Id": 6642767,
+      "Label": "1A4030100003201000000102",
+      "ItemName": "Dispersion Phase Concentrate",
+      "Quantity": 100.0,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "4012022": {
+      "Id": 4012022,
+      "Label": "1A4030100003201000000001",
+      "ItemName": "Bulk CBN Isolate",
+      "Quantity": 380.8,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    },
+    "4012801": {
+      "Id": 4012801,
+      "Label": "1A4030100003201000000002",
+      "ItemName": "Bulk CBD Isolate",
+      "Quantity": 880.6,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
+    }
+  }
+}
