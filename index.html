@@ -580,27 +580,18 @@ fetch(DATA_URL)
         const name = (pkg.ItemName || '').trim();
         if (!name) return;
 
-        const date = new Date(
-          pkg.DateReceived ||
-          pkg.PackageDate ||
-          pkg.CreatedAt ||
-          0
-        );
-
-        const withDate = { ...pkg, _date: date };
-
         if (!groupedMap.has(name)) {
-          groupedMap.set(name, [withDate]);
+          groupedMap.set(name, [pkg]);
         } else {
-          groupedMap.get(name).push(withDate);
+          groupedMap.get(name).push(pkg);
         }
       });
 
       const merged = [];
 
       groupedMap.forEach(group => {
-        // Sort ascending: oldest first
-        group.sort((a, b) => a._date - b._date);
+        // Sort ascending by Id: lower Id = older batch in METRC
+        group.sort((a, b) => (a.Id || 0) - (b.Id || 0));
         const [oldest] = group;
         const totalQty = group.reduce((sum, p) => sum + (parseFloat(p.Quantity) || 0), 0);
 
