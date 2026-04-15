@@ -619,16 +619,18 @@ fetch(DATA_URL)
         !/stability/i.test(r.TestTypeName || '')
       );
 
-      let thc = 0, thca = 0, cbd = 0, terps = 0;
+      let totalTHCDirect = null, thc = 0, thca = 0, cbd = 0, terps = 0;
 
       results.forEach(r => {
         const name = String(r.TestTypeName || '').toLowerCase();
         const val = parseFloat(r.TestResultLevel) || 0;
 
-        if (name.includes('delta-9 thc')) {
-          thc = val;
+        if (/\btotal thc\b/.test(name)) {
+          if (totalTHCDirect === null || val > totalTHCDirect) totalTHCDirect = val;
+        } else if (name.includes('delta-9 thc')) {
+          if (val > thc) thc = val;
         } else if (name.includes('thca')) {
-          thca = val;
+          if (val > thca) thca = val;
         } else if (name.includes('cbd')) {
           cbd += val;
         } else if (/(pinene|myrcene|limonene|linalool|caryophyllene|humulene|terpinene|terpinolene|nerolidol|camphene|eucalyptol|fenchol|isopulegol|camphor|bisabolol|ocimene|sabinene|cymene)/.test(name)) {
@@ -636,7 +638,9 @@ fetch(DATA_URL)
         }
       });
 
-      const totalTHC = +(thc + thca * 0.877).toFixed(2);
+      const totalTHC = totalTHCDirect !== null
+        ? +totalTHCDirect.toFixed(2)
+        : +(thc + thca * 0.877).toFixed(2);
       const totalCBD = +cbd.toFixed(2);
       const totalTerpenes = +terps.toFixed(2);
 
