@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-04-15T12:47:18.910629+00:00",
+  "generated_at": "2026-04-17T19:18:28.304031+00:00",
   "packages": {
-    "8230623": {
-      "Id": 8230623,
-      "Label": "1A4030100003201000000241",
-      "ItemName": "LORE Relic - 2g Blunt - 33 OG",
-      "Quantity": 583.0,
-      "LocationName": "Vault - Bulk WIP",
-      "Type": "Hybrid",
-      "Price": 17.0
+    "8341532": {
+      "Id": 8341532,
+      "Label": "1A4030100003201000000281",
+      "ItemName": "R&D Pre Roll Test",
+      "Quantity": 0.0,
+      "LocationName": "Vault - Bulk",
+      "Type": null,
+      "Price": null
     },
     "8230285": {
       "Id": 8230285,
       "Label": "1A4030100003201000000260",
       "ItemName": "LORE 1g Cart - Blackberry Gelato",
-      "Quantity": 697.0,
+      "Quantity": 677.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Indica",
       "Price": 17.0
@@ -23,7 +23,7 @@
       "Id": 8230286,
       "Label": "1A4030100003201000000264",
       "ItemName": "LORE 1g Cart - Grape Ape",
-      "Quantity": 726.0,
+      "Quantity": 706.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Indica",
       "Price": 17.0
@@ -32,7 +32,7 @@
       "Id": 8211126,
       "Label": "1A4030100003201000000250",
       "ItemName": "LORE 1g Vape - Watermelon Burst",
-      "Quantity": 804.0,
+      "Quantity": 784.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Hybrid",
       "Price": 18.0
@@ -41,7 +41,7 @@
       "Id": 8210469,
       "Label": "1A4030100003201000000254",
       "ItemName": "LORE 1g Vape - Super Lemon Haze",
-      "Quantity": 775.0,
+      "Quantity": 755.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Sativa",
       "Price": 18.0
@@ -59,7 +59,7 @@
       "Id": 8204224,
       "Label": "1A4030100003201000000259",
       "ItemName": "Bulk Trim",
-      "Quantity": 1875.0,
+      "Quantity": 1873.0,
       "LocationName": "Vault - Bulk",
       "Type": null,
       "Price": null
@@ -68,7 +68,7 @@
       "Id": 8211107,
       "Label": "1A4030100003201000000245",
       "ItemName": "LORE 2g Vape - Lemon Berry Gelato",
-      "Quantity": 871.0,
+      "Quantity": 861.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Indica",
       "Price": 35.0
