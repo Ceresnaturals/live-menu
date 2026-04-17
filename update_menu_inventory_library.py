@@ -385,13 +385,15 @@ for label in old_packages:
     if label not in new_packages:
         changes_detected = True
 
-if not changes_detected:
-    print("NO CHANGES DETECTED — collector internal files refreshed; publisher can rebuild menu_v2.json")
 # ============================================================
-#  SAVE SNAPSHOT 
+#  SAVE SNAPSHOT
 # ============================================================
 snapshot["packages"] = new_packages
 save_snapshot(snapshot)
+
+if not changes_detected:
+    print("NO CHANGES — SKIPPING PUSH")
+    sys.exit(1)
 
 print("SUCCESS:")
 print("LOCAL WATCHED INVENTORY:", WATCHED_INVENTORY_PATH)
