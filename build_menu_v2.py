@@ -51,6 +51,37 @@ RCLONE_REMOTE = "ceres_sharepoint:METRC API Depot/Product Information.xlsx"
 LOCAL_EXCEL = Path(os.getenv("CERES_LOCAL_EXCEL_PATH", "/tmp/Product Information.xlsx")).expanduser()
 
 
+def _panel_suffix(test_type_name):
+    for marker in ["(%)", "(mg/g)"]:
+        if marker in test_type_name:
+            return test_type_name.split(marker, 1)[-1].strip()
+    return ""
+
+
+def dedupe_lab_results(results):
+    if not results:
+        return results
+
+    panels = {}
+    for r in results:
+        panel = _panel_suffix(r.get("TestTypeName") or "")
+        panels.setdefault(panel, []).append(r)
+
+    best_panel = max(
+        panels,
+        key=lambda p: sum(1 for r in panels[p] if r.get("TestResultLevel") not in (None, 0, 0.0))
+    )
+
+    seen = set()
+    deduped = []
+    for r in panels[best_panel]:
+        key = r.get("TestTypeName")
+        if key not in seen:
+            seen.add(key)
+            deduped.append(r)
+    return deduped
+
+
 def _to_money(v):
     if v is None:
         return None
@@ -217,7 +248,7 @@ def main():
     for pkg_id_str, pkg in watched_packages.items():
         item_name = str(pkg.get("ItemName") or "").strip()
         excel_row = product_map.get(item_name, {})
-        lab_results = lab_cache.get(str(pkg.get("Id")), [])
+        lab_results = dedupe_lab_results(lab_cache.get(str(pkg.get("Id")), []))
         room_name = str(pkg.get("LocationName") or "").strip()
 
         inventory_results.append({

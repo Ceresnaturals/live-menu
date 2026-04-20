@@ -131,6 +131,42 @@ def save_watched_inventory(watched_packages_map):
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
 # ============================================================
+#  LAB DEDUPLICATION
+# ============================================================
+
+def _panel_suffix(test_type_name):
+    for marker in ["(%)", "(mg/g)"]:
+        if marker in test_type_name:
+            return test_type_name.split(marker, 1)[-1].strip()
+    return ""
+
+
+def dedupe_lab_results(results):
+    """Keep only the single most-informative test panel, then one entry per analyte."""
+    if not results:
+        return results
+
+    panels = {}
+    for r in results:
+        panel = _panel_suffix(r.get("TestTypeName") or "")
+        panels.setdefault(panel, []).append(r)
+
+    best_panel = max(
+        panels,
+        key=lambda p: sum(1 for r in panels[p] if r.get("TestResultLevel") not in (None, 0, 0.0))
+    )
+
+    seen = set()
+    deduped = []
+    for r in panels[best_panel]:
+        key = r.get("TestTypeName")
+        if key not in seen:
+            seen.add(key)
+            deduped.append(r)
+    return deduped
+
+
+# ============================================================
 #  LAB HASH
 # ============================================================
 
@@ -318,7 +354,7 @@ for pid in tracked_packages_map:
     pid_str = str(pid)
 
     if pid_str in lab_cache:
-        lab_by_pkg[pid] = lab_cache[pid_str]
+        lab_by_pkg[pid] = dedupe_lab_results(lab_cache[pid_str])
         continue
 
     # only fetch if missing (new or uncached)
@@ -343,7 +379,7 @@ for pid in tracked_packages_map:
                     "TestResultLevel": rec.get("TestResultLevel")
                 })
 
-    results = sorted(results, key=lambda x: x["TestTypeName"] or "")
+    results = dedupe_lab_results(sorted(results, key=lambda x: x["TestTypeName"] or ""))
 
     lab_by_pkg[pid] = results
     lab_cache[pid_str] = results
