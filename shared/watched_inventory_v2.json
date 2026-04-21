@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-20T17:41:38.090499+00:00",
+  "generated_at": "2026-04-21T19:00:10.758626+00:00",
   "packages": {
     "8341532": {
       "Id": 8341532,
@@ -14,7 +14,7 @@
       "Id": 8230285,
       "Label": "1A4030100003201000000260",
       "ItemName": "LORE 1g Cart - Blackberry Gelato",
-      "Quantity": 677.0,
+      "Quantity": 642.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Indica",
       "Price": 17.0
@@ -23,7 +23,7 @@
       "Id": 8230286,
       "Label": "1A4030100003201000000264",
       "ItemName": "LORE 1g Cart - Grape Ape",
-      "Quantity": 706.0,
+      "Quantity": 668.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Indica",
       "Price": 17.0
@@ -32,7 +32,7 @@
       "Id": 8211126,
       "Label": "1A4030100003201000000250",
       "ItemName": "LORE 1g Vape - Watermelon Burst",
-      "Quantity": 784.0,
+      "Quantity": 761.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Hybrid",
       "Price": 18.0
@@ -41,7 +41,7 @@
       "Id": 8210469,
       "Label": "1A4030100003201000000254",
       "ItemName": "LORE 1g Vape - Super Lemon Haze",
-      "Quantity": 755.0,
+      "Quantity": 735.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Sativa",
       "Price": 18.0
@@ -68,7 +68,7 @@
       "Id": 8211107,
       "Label": "1A4030100003201000000245",
       "ItemName": "LORE 2g Vape - Lemon Berry Gelato",
-      "Quantity": 861.0,
+      "Quantity": 829.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Indica",
       "Price": 35.0
@@ -86,7 +86,7 @@
       "Id": 8120744,
       "Label": "1A4030100003201000000233",
       "ItemName": "LORE Infused PR 1g - Goji Overdrive",
-      "Quantity": 912.0,
+      "Quantity": 892.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Hybrid",
       "Price": 8.0
@@ -95,7 +95,7 @@
       "Id": 8120742,
       "Label": "1A4030100003201000000237",
       "ItemName": "LORE Infused PR 1g - Dough Drop",
-      "Quantity": 878.0,
+      "Quantity": 858.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Indica",
       "Price": 8.0
@@ -113,7 +113,7 @@
       "Id": 8023962,
       "Label": "1A4030100003201000000229",
       "ItemName": "LORE Double Diamonds 1g - Zelato",
-      "Quantity": 619.0,
+      "Quantity": 599.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Hybrid",
       "Price": 12.0
@@ -131,7 +131,7 @@
       "Id": 7729279,
       "Label": "1A4030100003201000000220",
       "ItemName": "LORE Double Diamonds 1g - Amnesia OG",
-      "Quantity": 474.0,
+      "Quantity": 434.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Sativa",
       "Price": 12.0
@@ -140,7 +140,7 @@
       "Id": 7729277,
       "Label": "1A4030100003201000000223",
       "ItemName": "LORE Double Diamonds 1g - Gelato OG",
-      "Quantity": 627.0,
+      "Quantity": 607.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Hybrid",
       "Price": 12.0
@@ -158,7 +158,7 @@
       "Id": 7603945,
       "Label": "1A4030100003201000000162",
       "ItemName": "LORE Double Diamonds 1g - Amnesia OG",
-      "Quantity": 62.0,
+      "Quantity": 54.0,
       "LocationName": "On Hold",
       "Type": "Sativa",
       "Price": 12.0
@@ -167,7 +167,7 @@
       "Id": 7603742,
       "Label": "1A4030100003201000000165",
       "ItemName": "LORE Double Diamonds 1g - Goji Dough",
-      "Quantity": 107.0,
+      "Quantity": 87.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Indica",
       "Price": 12.0
@@ -239,7 +239,7 @@
       "Id": 7139888,
       "Label": "1A4030100003201000000152",
       "ItemName": "LORE Infused PR 1g - Purple Crunch Berries",
-      "Quantity": 611.0,
+      "Quantity": 591.0,
       "LocationName": "Vault - Finished Goods",
       "Type": "Hybrid",
       "Price": 8.0
