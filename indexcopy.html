@@ -580,27 +580,18 @@ fetch(DATA_URL)
         const name = (pkg.ItemName || '').trim();
         if (!name) return;
 
-        const date = new Date(
-          pkg.DateReceived ||
-          pkg.PackageDate ||
-          pkg.CreatedAt ||
-          0
-        );
-
-        const withDate = { ...pkg, _date: date };
-
         if (!groupedMap.has(name)) {
-          groupedMap.set(name, [withDate]);
+          groupedMap.set(name, [pkg]);
         } else {
-          groupedMap.get(name).push(withDate);
+          groupedMap.get(name).push(pkg);
         }
       });
 
       const merged = [];
 
       groupedMap.forEach(group => {
-        // Sort ascending: oldest first
-        group.sort((a, b) => a._date - b._date);
+        // Sort ascending by Id: lower Id = older batch in METRC
+        group.sort((a, b) => (a.Id || 0) - (b.Id || 0));
         const [oldest] = group;
         const totalQty = group.reduce((sum, p) => sum + (parseFloat(p.Quantity) || 0), 0);
 
@@ -628,16 +619,18 @@ fetch(DATA_URL)
         !/stability/i.test(r.TestTypeName || '')
       );
 
-      let thc = 0, thca = 0, cbd = 0, terps = 0;
+      let totalTHCDirect = null, thc = 0, thca = 0, cbd = 0, terps = 0;
 
       results.forEach(r => {
         const name = String(r.TestTypeName || '').toLowerCase();
         const val = parseFloat(r.TestResultLevel) || 0;
 
-        if (name.includes('delta-9 thc')) {
-          thc = val;
+        if (/\btotal thc\b/.test(name)) {
+          if (totalTHCDirect === null || val > totalTHCDirect) totalTHCDirect = val;
+        } else if (name.includes('delta-9 thc')) {
+          if (val > thc) thc = val;
         } else if (name.includes('thca')) {
-          thca = val;
+          if (val > thca) thca = val;
         } else if (name.includes('cbd')) {
           cbd += val;
         } else if (/(pinene|myrcene|limonene|linalool|caryophyllene|humulene|terpinene|terpinolene|nerolidol|camphene|eucalyptol|fenchol|isopulegol|camphor|bisabolol|ocimene|sabinene|cymene)/.test(name)) {
@@ -645,7 +638,9 @@ fetch(DATA_URL)
         }
       });
 
-      const totalTHC = +(thc + thca * 0.877).toFixed(2);
+      const totalTHC = totalTHCDirect !== null
+        ? +totalTHCDirect.toFixed(2)
+        : +(thc + thca * 0.877).toFixed(2);
       const totalCBD = +cbd.toFixed(2);
       const totalTerpenes = +terps.toFixed(2);
 
