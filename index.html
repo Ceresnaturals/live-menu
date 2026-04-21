@@ -459,14 +459,6 @@
     // In-memory merged packages array
     let packages = [];
 
-    // Tincture potency reference (mg/15 mL bottle) – for future use
-    const tincturePotencies = {
-      'Zen Drops':   { THC: 75, CBD: 75, CBN: 75 },
-      'Lucid Drops': { THC: 75, CBD: 75, THCV: 37.5, CBC: 18.75 },
-      'Drift Drops': { CBN: 150, THC: 75, CBD: 75, CBG: 37.5 },
-      'Pure Drops':  { THC: 75 }
-    };
-
     // Group descriptions (top-level)
     const groupDescriptions = {
       'Tincture': 'Full-spectrum - water soluble tinctures formulated for specific effects and dosing precision.',
@@ -540,14 +532,10 @@
     // =====================================
     // MENU LOAD & INITIAL RENDER
     // =====================================
-
-    // =====================================
-    // Fetch menu JSON, merge packages by ItemName, then render grouped tables
-    // =====================================    
-fetch(DATA_URL)
-  .then(r => r.json())
-  .then(data => {
-    const rawPackages = Array.isArray(data.items) ? data.items : [];
+    fetch(DATA_URL)
+      .then(r => r.json())
+      .then(data => {
+        const rawPackages = Array.isArray(data.items) ? data.items : [];
         packages = mergePackagesByItemName(rawPackages);
 
         if (!packages.length) {
@@ -788,9 +776,7 @@ fetch(DATA_URL)
         <p class="group-description">${groupDescriptions['Tincture'] || ''}</p>
       `;
 
-      tinctureBlends
-        .filter(b => !["Zen Drops","Lucid Drops", "Drift Drops", "Pure Drops"].includes(b.name))
-        .forEach(blend => {
+      tinctureBlends.forEach(blend => {
           const subItems = tinctureGroups[blend.name] || [];
           const subDesc = subgroupDescriptions[blend.name] || '';
           let rowsHtml = '';
@@ -865,22 +851,18 @@ fetch(DATA_URL)
      * If withSampleToggle = true, each subgroup header gets a Sample Request checkbox.
      */
     function renderSubgroupSection(groupName, groupObj, withSampleToggle) {
-    if (!groupObj) return '';
+      if (!groupObj) return '';
 
-    // DISPLAY LABEL ONLY (presentation layer)
-    const displayName =
+      const displayName =
         groupName === 'Cart' ? 'Carts' :
         groupName === 'Vape' ? 'Vapes' :
         groupName === 'Pre-Roll' ? 'Pre-Rolls' :
         groupName;
 
-    let out = '';
-
-    out += `
+      let out = `
         <h2 class="group-title">${displayName}</h2>
         <p class="group-description">${groupDescriptions[groupName] || ''}</p>
-    `;
-
+      `;
 
       Object.entries(groupObj).forEach(([subName, items]) => {
         const subDesc = subgroupDescriptions[subName] || '';
@@ -954,17 +936,27 @@ fetch(DATA_URL)
     /**
      * Build a standard row for non-tincture items (with analytes).
      */
+    function escapeAttr(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
     function makeStandardRow(pkg) {
       const priceNum = Number(pkg.Price) || 0;
       const a = pkg.analytes || { totalTHC: 0, totalCBD: 0, totalTerpenes: 0 };
       const bulkScope = pkg.bulkRuleScope || '';
       const bulkGroup = pkg.bulkRuleGroup || '';
+      const bulkJson = escapeAttr(JSON.stringify(pkg.bulkRules || []));
 
       return `
           <tr class="menu-row"
-              data-bulk='${JSON.stringify(pkg.bulkRules || [])}'
-              data-bulk-scope="${bulkScope}"
-              data-bulk-group="${bulkGroup}">          
+              data-bulk="${bulkJson}"
+              data-bulk-scope="${escapeAttr(bulkScope)}"
+              data-bulk-group="${escapeAttr(bulkGroup)}">
           <td class="item-name">${pkg.ItemName || ''}</td>
           <td class="item-category">${pkg.Type || ''}</td>
           <td>${pkg.Quantity || 0}</td>
@@ -990,32 +982,27 @@ fetch(DATA_URL)
      * Build the standard table header row (with sortable columns and no sample column).
      */
     function buildStandardHeaderHtml() {
-    const cols = [
-    { key: 'item', label: 'Item' },
-    { key: 'category', label: 'Category' },
-    { key: 'qty', label: 'Avail. Qty' },
-    { key: 'price', label: 'Price' },
-    { key: 'thc', label: 'THC %' },
-    { key: 'cbd', label: 'CBD %' },
-    { key: 'terps', label: 'Terps %' },
-    { key: null, label: 'Amount Wanted' },
-    { key: null, label: 'Item Total' }
-    ];
+      const cols = [
+        { key: 'item',     label: 'Item' },
+        { key: 'category', label: 'Category' },
+        { key: 'qty',      label: 'Avail. Qty' },
+        { key: 'price',    label: 'Price' },
+        { key: 'thc',      label: 'THC %' },
+        { key: 'cbd',      label: 'CBD %' },
+        { key: 'terps',    label: 'Terps %' },
+        { key: null,       label: 'Amount Wanted' },
+        { key: null,       label: 'Item Total' }
+      ];
 
-
-    return cols.map(col => {
-    if (!col.key) return `<th>${col.label}</th>`;
-
-
-    return `
-    <th class="sortable"
-    data-sort-col="${col.key}"
-    data-sort-asc="">
-    <span class="sort-label">${col.label}</span>
-    <span class="sort-indicator">▲▼</span>
-    </th>
-    `;
-    }).join('');
+      return cols.map(col => {
+        if (!col.key) return `<th>${col.label}</th>`;
+        return `
+          <th class="sortable" data-sort-col="${col.key}" data-sort-asc="">
+            <span class="sort-label">${col.label}</span>
+            <span class="sort-indicator">▲▼</span>
+          </th>
+        `;
+      }).join('');
     }
 
     // =====================================
@@ -1044,171 +1031,137 @@ fetch(DATA_URL)
      * Recalculate per-row item totals and overall running total.
      */
 
-     function getBulkPrice(qty, basePrice, bulkRules) {
-  if (!bulkRules || !bulkRules.length) return basePrice;
-
-  let applied = basePrice;
-
-  bulkRules.forEach(rule => {
-    if (qty >= rule.minQty) {
-      applied = rule.price;
+    function getBulkPrice(qty, basePrice, bulkRules) {
+      if (!bulkRules || !bulkRules.length) return basePrice;
+      let applied = basePrice;
+      bulkRules.forEach(rule => {
+        if (qty >= rule.minQty) applied = rule.price;
+      });
+      return applied;
     }
-  });
 
-  return applied;
-}
+    function getBulkQuantity(row) {
+      const input = row.querySelector('.item-input');
+      if (!input) return 0;
 
-function getBulkQuantity(row) {
-  const input = row.querySelector('.item-input');
-  if (!input) return 0;
+      const scope = row.dataset.bulkScope || '';
+      if (scope !== 'group') return parseFloat(input.value) || 0;
 
-  const scope = row.dataset.bulkScope || '';
-  if (scope !== 'group') {
-    return parseFloat(input.value) || 0;
-  }
+      const bulkGroup = row.dataset.bulkGroup || '';
+      if (!bulkGroup) return parseFloat(input.value) || 0;
 
-  const bulkGroup = row.dataset.bulkGroup || '';
-  if (!bulkGroup) {
-    return parseFloat(input.value) || 0;
-  }
-
-  let totalQty = 0;
-  document.querySelectorAll(`#menu-data .menu-row[data-bulk-group="${CSS.escape(bulkGroup)}"] .item-input`).forEach(groupInput => {
-    totalQty += parseFloat(groupInput.value) || 0;
-  });
-
-  return totalQty;
-}
-
-function updateTotals() {
-  let total = 0;
-  const rows = document.querySelectorAll('#menu-data .menu-row');
-
-  rows.forEach(row => {
-    const input = row.querySelector('.item-input');
-    const priceEl = row.querySelector('.item-price');
-    const totalCell = row.querySelector('.item-total');
-
-    if (!input || !priceEl || !totalCell) return;
-
-    const qty = parseFloat(input.value) || 0;
-    const basePrice = parseFloat(priceEl.dataset.price) || 0;
-
-    // bulk rules from row
-    const bulkRules = JSON.parse(row.dataset.bulk || "[]");
-
-    const bulkQty = getBulkQuantity(row);
-    const effectivePrice = getBulkPrice(bulkQty, basePrice, bulkRules);
-    const lineTotal = qty * effectivePrice;
-
-    total += lineTotal;
-
-    totalCell.textContent = `$${lineTotal.toFixed(2)}`;
-
-    // update displayed price if bulk applied
-    if (qty > 0 && effectivePrice !== basePrice) {
-      priceEl.textContent = `$${effectivePrice.toFixed(2)}`;
-      priceEl.classList.add('discounted');
-      priceEl.style.backgroundColor = '#e7f7ea';
-      priceEl.style.color = '#0d6b2f';
-      priceEl.style.fontWeight = '700';
-      priceEl.title = `Bulk discount applied from $${basePrice.toFixed(2)}`;
-    } else {
-      priceEl.textContent = `$${basePrice.toFixed(2)}`;
-      priceEl.classList.remove('discounted');
-      priceEl.style.backgroundColor = '';
-      priceEl.style.color = '';
-      priceEl.style.fontWeight = '';
-      priceEl.title = '';
+      let totalQty = 0;
+      document.querySelectorAll(`#menu-data .menu-row[data-bulk-group="${CSS.escape(bulkGroup)}"] .item-input`).forEach(groupInput => {
+        totalQty += parseFloat(groupInput.value) || 0;
+      });
+      return totalQty;
     }
-  });
 
-  document.getElementById('running-total').textContent =
-    `Total: $${total.toFixed(2)}`;
-}
+    function getEffectiveRowPrice(row) {
+      const priceEl = row.querySelector('.item-price');
+      if (!priceEl) return 0;
+      const basePrice = parseFloat(priceEl.dataset.price) || 0;
+      const bulkRules = JSON.parse(row.dataset.bulk || '[]');
+      return getBulkPrice(getBulkQuantity(row), basePrice, bulkRules);
+    }
 
-function getEffectiveRowPrice(row) {
-  const priceEl = row.querySelector('.item-price');
-  if (!priceEl) return 0;
+    function updateTotals() {
+      let total = 0;
+      const rows = document.querySelectorAll('#menu-data .menu-row');
 
-  const basePrice = parseFloat(priceEl.dataset.price) || 0;
-  const bulkRules = JSON.parse(row.dataset.bulk || "[]");
-  const bulkQty = getBulkQuantity(row);
+      rows.forEach(row => {
+        const input = row.querySelector('.item-input');
+        const priceEl = row.querySelector('.item-price');
+        const totalCell = row.querySelector('.item-total');
 
-  return getBulkPrice(bulkQty, basePrice, bulkRules);
-}
+        if (!input || !priceEl || !totalCell) return;
 
-    // Table-local sort logic
-    //****
+        const qty = parseFloat(input.value) || 0;
+        const basePrice = parseFloat(priceEl.dataset.price) || 0;
+        const bulkRules = JSON.parse(row.dataset.bulk || '[]');
+        const effectivePrice = getBulkPrice(getBulkQuantity(row), basePrice, bulkRules);
+        const lineTotal = qty * effectivePrice;
+
+        total += lineTotal;
+        totalCell.textContent = `$${lineTotal.toFixed(2)}`;
+
+        if (qty > 0 && effectivePrice !== basePrice) {
+          priceEl.textContent = `$${effectivePrice.toFixed(2)}`;
+          priceEl.classList.add('discounted');
+          priceEl.style.backgroundColor = '#e7f7ea';
+          priceEl.style.color = '#0d6b2f';
+          priceEl.style.fontWeight = '700';
+          priceEl.title = `Bulk discount applied from $${basePrice.toFixed(2)}`;
+        } else {
+          priceEl.textContent = `$${basePrice.toFixed(2)}`;
+          priceEl.classList.remove('discounted');
+          priceEl.style.backgroundColor = '';
+          priceEl.style.color = '';
+          priceEl.style.fontWeight = '';
+          priceEl.title = '';
+        }
+      });
+
+      document.getElementById('running-total').textContent = `Total: $${total.toFixed(2)}`;
+    }
+
     function sortTableByColumn(table, columnKey, th) {
-    const tbody = table.querySelector('tbody');
-    if (!tbody) return;
+      const tbody = table.querySelector('tbody');
+      if (!tbody) return;
 
+      const rows = Array.from(tbody.querySelectorAll('tr.menu-row'));
+      if (!rows.length) return;
 
-    const rows = Array.from(tbody.querySelectorAll('tr.menu-row'));
-    if (!rows.length) return;
+      const asc = th.dataset.sortAsc !== 'true';
 
+      table.querySelectorAll('th.sortable').forEach(h => {
+        h.dataset.sortAsc = '';
+        h.querySelector('.sort-indicator').textContent = '▲▼';
+      });
 
-    const asc = th.dataset.sortAsc !== 'true';
+      th.dataset.sortAsc = asc ? 'true' : 'false';
+      th.querySelector('.sort-indicator').textContent = asc ? '▲' : '▼';
 
+      const dir = asc ? 1 : -1;
 
-    // Reset only THIS table's headers
-    table.querySelectorAll('th.sortable').forEach(h => {
-    h.dataset.sortAsc = '';
-    h.querySelector('.sort-indicator').textContent = '▲▼';
-    });
+      rows.sort((a, b) => {
+        let av, bv;
+        switch (columnKey) {
+          case 'item':
+            av = a.querySelector('.item-name')?.textContent.toLowerCase() || '';
+            bv = b.querySelector('.item-name')?.textContent.toLowerCase() || '';
+            break;
+          case 'category':
+            av = a.querySelector('.item-category')?.textContent.toLowerCase() || '';
+            bv = b.querySelector('.item-category')?.textContent.toLowerCase() || '';
+            break;
+          case 'qty':
+            av = parseFloat(a.children[2].textContent) || 0;
+            bv = parseFloat(b.children[2].textContent) || 0;
+            break;
+          case 'price':
+            av = parseFloat(a.querySelector('.item-price')?.dataset.price) || 0;
+            bv = parseFloat(b.querySelector('.item-price')?.dataset.price) || 0;
+            break;
+          case 'thc':
+            av = parseFloat(a.querySelector('.item-thc')?.textContent) || 0;
+            bv = parseFloat(b.querySelector('.item-thc')?.textContent) || 0;
+            break;
+          case 'cbd':
+            av = parseFloat(a.querySelector('.item-cbd')?.textContent) || 0;
+            bv = parseFloat(b.querySelector('.item-cbd')?.textContent) || 0;
+            break;
+          case 'terps':
+            av = parseFloat(a.querySelector('.item-terps')?.textContent) || 0;
+            bv = parseFloat(b.querySelector('.item-terps')?.textContent) || 0;
+            break;
+          default:
+            return 0;
+        }
+        return (av > bv ? 1 : av < bv ? -1 : 0) * dir;
+      });
 
-
-    th.dataset.sortAsc = asc ? 'true' : 'false';
-    th.querySelector('.sort-indicator').textContent = asc ? '▲' : '▼';
-
-
-    const dir = asc ? 1 : -1;
-
-
-    rows.sort((a, b) => {
-    let av, bv;
-
-
-    switch (columnKey) {
-    case 'item':
-    av = a.querySelector('.item-name')?.textContent.toLowerCase() || '';
-    bv = b.querySelector('.item-name')?.textContent.toLowerCase() || '';
-    break;
-    case 'category':
-    av = a.querySelector('.item-category')?.textContent.toLowerCase() || '';
-    bv = b.querySelector('.item-category')?.textContent.toLowerCase() || '';
-    break;
-    case 'qty':
-    av = parseFloat(a.children[2].textContent) || 0;
-    bv = parseFloat(b.children[2].textContent) || 0;
-    break;
-    case 'price':
-    av = parseFloat(a.querySelector('.item-price')?.dataset.price) || 0;
-    bv = parseFloat(b.querySelector('.item-price')?.dataset.price) || 0;
-    break;
-    case 'thc':
-    av = parseFloat(a.querySelector('.item-thc')?.textContent) || 0;
-    bv = parseFloat(b.querySelector('.item-thc')?.textContent) || 0;
-    break;
-    case 'cbd':
-    av = parseFloat(a.querySelector('.item-cbd')?.textContent) || 0;
-    bv = parseFloat(b.querySelector('.item-cbd')?.textContent) || 0;
-    break;
-    case 'terps':
-    av = parseFloat(a.querySelector('.item-terps')?.textContent) || 0;
-    bv = parseFloat(b.querySelector('.item-terps')?.textContent) || 0;
-    break;
-    default:
-    return 0;
-    }
-
-
-    return (av > bv ? 1 : av < bv ? -1 : 0) * dir;
-    });
-
-
-    rows.forEach(r => tbody.appendChild(r));
+      rows.forEach(r => tbody.appendChild(r));
     }
 
     // =====================================
@@ -1251,34 +1204,27 @@ function getEffectiveRowPrice(row) {
         `;
       });
 
-    // -------------------------------
-    // SAMPLE REQUEST ROWS
-    // -------------------------------
-    const sampleRequests = collectSampleRequests();
+      const sampleRequests = collectSampleRequests();
+      sampleRequests.forEach(name => {
+        rowsHtml += `
+          <tr style="background:#fff7cc;">
+            <td>${name} (Sample Request)</td>
+            <td>sample</td>
+            <td>$0.00</td>
+            <td>$0.00</td>
+          </tr>
+        `;
+      });
 
-    sampleRequests.forEach(name => {
       rowsHtml += `
-        <tr style="background:#fff7cc;">
-          <td>${name} (Sample Request)</td>
-          <td>sample</td>
-          <td>$0.00</td>
-          <td>$0.00</td>
+        <tr style="background:#f9f9f9;">
+          <td colspan="3" style="text-align:right;"><strong>Total:</strong></td>
+          <td><strong>$${total.toFixed(2)}</strong></td>
         </tr>
       `;
-    });
 
-    // -------------------------------
-    // TOTAL ROW
-    // -------------------------------
-    rowsHtml += `
-      <tr style="background:#f9f9f9;">
-        <td colspan="3" style="text-align:right;"><strong>Total:</strong></td>
-        <td><strong>$${total.toFixed(2)}</strong></td>
-      </tr>
-    `;
-
-    return { rowsHtml, total };
-  }
+      return { rowsHtml, total };
+    }
 
     /**
      * Collect which product types (subgroups) had Sample Request checked.
@@ -1375,7 +1321,9 @@ function getEffectiveRowPrice(row) {
      */
     function makeJsonAttachment(obj) {
       const json = JSON.stringify(obj, null, 2);
-      const b64 = btoa(unescape(encodeURIComponent(json)));
+      const bytes = new TextEncoder().encode(json);
+      const binary = Array.from(bytes, b => String.fromCharCode(b)).join('');
+      const b64 = btoa(binary);
       return `data:application/json;base64,${b64}`;
     }
 
@@ -1414,6 +1362,10 @@ function getEffectiveRowPrice(row) {
       const attachment = makeJsonAttachment(orderObj);
       const sampleRequestsStr = (orderObj.sampleRequests || []).join(', ');
 
+      const btn = document.getElementById('submit-button');
+      btn.disabled = true;
+      btn.textContent = 'Submitting…';
+
       emailjs.send('service_gkv3ioj', 'template_b8d47cn', {
         name: orderObj.name,
         badge: orderObj.badge,
@@ -1429,6 +1381,12 @@ function getEffectiveRowPrice(row) {
       .then(() => {
         alert('Order submitted. Thank you!');
         window.location.reload();
+      })
+      .catch(err => {
+        console.error('EmailJS send failed:', err);
+        alert('There was a problem submitting your order. Please try again or contact us directly.');
+        btn.disabled = false;
+        btn.textContent = 'Submit Order Request';
       });
     }
 
