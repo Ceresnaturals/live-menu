@@ -338,7 +338,7 @@ def sync_to_github():
 
     subprocess.run(["git", "fetch", "origin"], check=False, capture_output=True, text=True)
     subprocess.run(
-        ["git", "add", "menu_v2.json", "inventory_test_results_v2.json", "shared/watched_inventory_v2.json"],
+        ["git", "add", "menu_v2.json"],
         check=False,
         capture_output=True,
         text=True
