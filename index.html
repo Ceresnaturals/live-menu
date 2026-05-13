@@ -364,7 +364,7 @@
     <header>
       <div style=”display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:8px;”>
         <h1 style=”margin:0;”>Order Request Form</h1>
-        <button type=”button” onclick=”downloadAsExcel()” style=”flex-shrink:0; padding:8px 18px; font-size:14px; font-weight:600; cursor:pointer; border:none; border-radius:4px; background:#2e7d32; color:#fff; transition:background 0.15s ease;”>&#11015; Download as Excel</button>
+        <button type=”button” id=”download-excel-button-top” style=”flex-shrink:0; padding:8px 18px; font-size:14px; font-weight:600; cursor:pointer; border:none; border-radius:4px; background:#2e7d32; color:#fff; transition:background 0.15s ease;”>&#11015; Download as Excel</button>
       </div>
       <p class=”subtitle”>
         Please fill in your contact and license information, then enter quantities in the menu below.
@@ -1423,9 +1423,11 @@
         return;
       }
 
-      const btn = document.getElementById('download-excel-button');
-      btn.disabled = true;
-      btn.textContent = 'Generating…';
+      const btns = [
+        document.getElementById('download-excel-button'),
+        document.getElementById('download-excel-button-top')
+      ];
+      btns.forEach(b => { b.disabled = true; b.textContent = 'Generating…'; });
 
       try {
         const workbook = new ExcelJS.Workbook();
@@ -1851,8 +1853,7 @@
         console.error('Excel generation failed:', err);
         alert('Could not generate the Excel file. Please try again.');
       } finally {
-        btn.disabled = false;
-        btn.textContent = '⬇ Download as Excel';
+        btns.forEach(b => { b.disabled = false; b.textContent = '⬇ Download as Excel'; });
       }
     }
 
@@ -1892,8 +1893,9 @@
     // Hook up submit button
     document.getElementById('submit-button').addEventListener('click', submitOrder);
 
-    // Hook up Excel download button
+    // Hook up Excel download buttons (top header + bottom)
     document.getElementById('download-excel-button').addEventListener('click', downloadAsExcel);
+    document.getElementById('download-excel-button-top').addEventListener('click', downloadAsExcel);
 
     // =====================================
     // DISPENSARY & LICENSE AUTOCOMPLETE
