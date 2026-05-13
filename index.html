@@ -174,15 +174,18 @@
       transform: translateY(0);
     }
 
-    #download-excel-button {
+    #download-excel-button,
+    #download-excel-button-top {
       background: #2e7d32;
     }
 
-    #download-excel-button:hover {
+    #download-excel-button:hover,
+    #download-excel-button-top:hover {
       background: #1b5e20;
     }
 
-    #download-excel-button:active {
+    #download-excel-button:active,
+    #download-excel-button-top:active {
       background: #145218;
     }
 
@@ -1418,6 +1421,11 @@
     // =====================================
 
     async function downloadAsExcel() {
+      if (typeof ExcelJS === 'undefined') {
+        alert('Excel library not loaded. Please check your internet connection and refresh the page.');
+        return;
+      }
+
       if (!packages || !packages.length) {
         alert('Menu data not yet loaded. Please wait a moment and try again.');
         return;
@@ -1426,7 +1434,7 @@
       const btns = [
         document.getElementById('download-excel-button'),
         document.getElementById('download-excel-button-top')
-      ];
+      ].filter(Boolean);
       btns.forEach(b => { b.disabled = true; b.textContent = 'Generating…'; });
 
       try {
@@ -1451,17 +1459,15 @@
         ];
 
         // ---- Style helpers ----
-        const brandGreen  = { argb: 'FF2E7D32' };
-        const lightGreen  = { argb: 'FFE8F5E9' };
-        const headerGray  = { argb: 'FFD0D0D0' };
+        const brandGreen    = { argb: 'FF2E7D32' };
+        const lightGreen    = { argb: 'FFE8F5E9' };
+        const headerGray    = { argb: 'FFD0D0D0' };
         const sectionPurple = { argb: 'FF60497A' };
-        const lightPurple   = { argb: 'FFF3E5F5' };
-        const subgroupBg  = { argb: 'FFF3F4F6' };
-        const inputYellow = { argb: 'FFFFF9C4' };
-        const readonlyGray= { argb: 'FFF5F5F5' };
-        const whiteFill   = { argb: 'FFFFFFFF' };
-        const currencyFmt = '"$"#,##0.00';
-        const pctFmt      = '0.00"%"';
+        const subgroupBg    = { argb: 'FFF3F4F6' };
+        const inputYellow   = { argb: 'FFFFF9C4' };
+        const readonlyGray  = { argb: 'FFF5F5F5' };
+        const currencyFmt   = '"$"#,##0.00';
+        const pctFmt        = '0.00"%"';
 
         function applyBorder(cell, style = 'thin') {
           cell.border = {
@@ -1493,7 +1499,6 @@
 
         // ---- Rows 3–5: Customer info ----
         const infoLabelFont = { bold: true, size: 11 };
-        const infoInputStyle = { fgColor: inputYellow };
 
         function writeInfoRow(rowNum, label1, label2) {
           const r = ws.getRow(rowNum);
