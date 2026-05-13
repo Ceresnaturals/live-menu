@@ -367,7 +367,6 @@
     <header>
       <div style=”display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:8px;”>
         <h1 style=”margin:0;”>Order Request Form</h1>
-        <button type=”button” id=”download-excel-button-top” style=”flex-shrink:0; padding:8px 18px; font-size:14px; font-weight:600; cursor:pointer; border:none; border-radius:4px; background:#2e7d32; color:#fff; transition:background 0.15s ease;”>&#11015; Download as Excel</button>
       </div>
       <p class=”subtitle”>
         Please fill in your contact and license information, then enter quantities in the menu below.
@@ -422,6 +421,9 @@
          MENU TABLES + RUNNING TOTAL
          ================================ -->
     <section>
+      <div style="display:flex; justify-content:flex-end; margin-bottom:8px;">
+        <button type="button" id="download-excel-button-top" style="padding:8px 18px; font-size:14px; font-weight:600; cursor:pointer; border:none; border-radius:4px; background:#2e7d32; color:#fff; transition:background 0.15s ease;">&#11015; Download as Excel</button>
+      </div>
       <div id="menu-data">
         <!-- Tables are injected here by JavaScript -->
       </div>
