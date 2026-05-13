@@ -141,7 +141,9 @@
 
     /* Submit button */
     .submit-row {
-      text-align: right;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-top: 24px;
     }
 
@@ -170,6 +172,18 @@
       background: #004c86;
       box-shadow: none;
       transform: translateY(0);
+    }
+
+    #download-excel-button {
+      background: #2e7d32;
+    }
+
+    #download-excel-button:hover {
+      background: #1b5e20;
+    }
+
+    #download-excel-button:active {
+      background: #145218;
     }
 
     /* Section headings for product groups */
@@ -348,8 +362,11 @@
          HEADER
          ================================ -->
     <header>
-      <h1>Order Request Form</h1>
-      <p class="subtitle">
+      <div style=”display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:8px;”>
+        <h1 style=”margin:0;”>Order Request Form</h1>
+        <button type=”button” onclick=”downloadAsExcel()” style=”flex-shrink:0; padding:8px 18px; font-size:14px; font-weight:600; cursor:pointer; border:none; border-radius:4px; background:#2e7d32; color:#fff; transition:background 0.15s ease;”>&#11015; Download as Excel</button>
+      </div>
+      <p class=”subtitle”>
         Please fill in your contact and license information, then enter quantities in the menu below.
         Quantities are rounded to the nearest multiple of 5. Use the “Sample Request” toggle next to a product type
         (e.g., Zen Drops, Diamond Cut) if you’d like samples of that kind of product.
@@ -420,9 +437,15 @@
          SUBMIT BUTTON
          ================================ -->
     <section class="submit-row">
+      <button type="button" id="download-excel-button">&#11015; Download as Excel</button>
       <button type="button" id="submit-button">Submit Order Request</button>
     </section>
   </div>
+
+  <!-- ================================
+       EXCELJS (Excel download)
+       ================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
 
   <!-- ================================
        EMAILJS SDK
@@ -1391,6 +1414,449 @@
     }
 
     // =====================================
+    // EXCEL DOWNLOAD
+    // =====================================
+
+    async function downloadAsExcel() {
+      if (!packages || !packages.length) {
+        alert('Menu data not yet loaded. Please wait a moment and try again.');
+        return;
+      }
+
+      const btn = document.getElementById('download-excel-button');
+      btn.disabled = true;
+      btn.textContent = 'Generating…';
+
+      try {
+        const workbook = new ExcelJS.Workbook();
+        workbook.creator = 'Ceres Naturals';
+        workbook.created = new Date();
+        const ws = workbook.addWorksheet('Order Form');
+
+        // Column widths (A–K)
+        ws.columns = [
+          { width: 46 }, // A: Item
+          { width: 12 }, // B: Category
+          { width: 12 }, // C: Avail. Qty
+          { width: 13 }, // D: Base Price
+          { width: 10 }, // E: THC %
+          { width: 10 }, // F: CBD %
+          { width: 10 }, // G: Terps %
+          { width: 30 }, // H: Bulk Pricing Rule
+          { width: 16 }, // I: Amount Wanted
+          { width: 16 }, // J: Effective Price
+          { width: 16 }, // K: Item Total
+        ];
+
+        // ---- Style helpers ----
+        const brandGreen  = { argb: 'FF2E7D32' };
+        const lightGreen  = { argb: 'FFE8F5E9' };
+        const headerGray  = { argb: 'FFD0D0D0' };
+        const sectionPurple = { argb: 'FF60497A' };
+        const lightPurple   = { argb: 'FFF3E5F5' };
+        const subgroupBg  = { argb: 'FFF3F4F6' };
+        const inputYellow = { argb: 'FFFFF9C4' };
+        const readonlyGray= { argb: 'FFF5F5F5' };
+        const whiteFill   = { argb: 'FFFFFFFF' };
+        const currencyFmt = '"$"#,##0.00';
+        const pctFmt      = '0.00"%"';
+
+        function applyBorder(cell, style = 'thin') {
+          cell.border = {
+            top:    { style }, bottom: { style },
+            left:   { style }, right:  { style }
+          };
+        }
+
+        function applyFill(cell, fgColor) {
+          cell.fill = { type: 'pattern', pattern: 'solid', fgColor };
+        }
+
+        // Mark a cell as unlocked (for customer input)
+        function unlockCell(cell) {
+          cell.protection = { locked: false };
+        }
+
+        // ---- Row 1: Title ----
+        ws.mergeCells('A1:K1');
+        const titleCell = ws.getCell('A1');
+        titleCell.value = 'Ceres Naturals – Order Request Form';
+        titleCell.font = { bold: true, size: 16, color: { argb: 'FFFFFFFF' } };
+        titleCell.alignment = { horizontal: 'center', vertical: 'middle' };
+        applyFill(titleCell, sectionPurple);
+        ws.getRow(1).height = 32;
+
+        // ---- Row 2: blank ----
+        ws.getRow(2).height = 6;
+
+        // ---- Rows 3–5: Customer info ----
+        const infoLabelFont = { bold: true, size: 11 };
+        const infoInputStyle = { fgColor: inputYellow };
+
+        function writeInfoRow(rowNum, label1, label2) {
+          const r = ws.getRow(rowNum);
+          r.height = 22;
+
+          // Left side: label in A, input box B–D
+          ws.getCell(`A${rowNum}`).value = label1;
+          ws.getCell(`A${rowNum}`).font = infoLabelFont;
+          ws.mergeCells(`B${rowNum}:D${rowNum}`);
+          const c1 = ws.getCell(`B${rowNum}`);
+          applyFill(c1, inputYellow);
+          applyBorder(c1);
+          unlockCell(c1);
+
+          if (label2) {
+            // Right side: label in E–F (merged, right-aligned), input box G–I
+            ws.mergeCells(`E${rowNum}:F${rowNum}`);
+            const lbl2 = ws.getCell(`E${rowNum}`);
+            lbl2.value = label2;
+            lbl2.font  = infoLabelFont;
+            lbl2.alignment = { horizontal: 'right', vertical: 'middle' };
+            ws.mergeCells(`G${rowNum}:I${rowNum}`);
+            const c2 = ws.getCell(`G${rowNum}`);
+            applyFill(c2, inputYellow);
+            applyBorder(c2);
+            unlockCell(c2);
+          }
+        }
+
+        writeInfoRow(3, 'Dispensary Name:', 'Contact Name:');
+        writeInfoRow(4, 'Delivery License #:', 'Badge Number:');
+
+        ws.getRow(5).height = 22;
+        ws.getCell('A5').value = 'Contact Email:';
+        ws.getCell('A5').font = infoLabelFont;
+        ws.mergeCells('B5:D5');
+        const emailCell = ws.getCell('B5');
+        applyFill(emailCell, inputYellow);
+        applyBorder(emailCell);
+        unlockCell(emailCell);
+
+        // ---- Row 6: Instructions ----
+        ws.mergeCells('A6:K6');
+        const instrCell = ws.getCell('A6');
+        instrCell.value =
+          'Instructions: Enter quantities in the "Amount Wanted" column (highlighted yellow). ' +
+          'Effective Price and Item Total calculate automatically. Quantities should be multiples of 5.';
+        instrCell.font  = { italic: true, size: 10, color: { argb: 'FF555555' } };
+        instrCell.alignment = { wrapText: true };
+        applyFill(instrCell, { argb: 'FFF9FBE7' });
+        ws.getRow(6).height = 28;
+
+        // ---- Row 7: Column headers ----
+        const hdrRow = ws.getRow(7);
+        hdrRow.height = 22;
+        const headers = [
+          'Item', 'Category', 'Avail. Qty', 'Base Price',
+          'THC %', 'CBD %', 'Terps %', 'Bulk Pricing Rule',
+          'Amount Wanted', 'Effective Price', 'Item Total'
+        ];
+        headers.forEach((h, i) => {
+          const cell = hdrRow.getCell(i + 1);
+          cell.value = h;
+          cell.font  = { bold: true, size: 11 };
+          cell.alignment = { horizontal: 'center', vertical: 'middle', wrapText: true };
+          applyFill(cell, headerGray);
+          applyBorder(cell);
+        });
+
+        // Freeze top 7 rows
+        ws.views = [{ state: 'frozen', ySplit: 7 }];
+
+        // ---- Build product rows ----
+        const grouped = groupPackagesForDisplay(packages.slice());
+        let currentRow = 8;
+        const productRowNums = []; // for grand total
+
+        function addSectionHeader(label) {
+          ws.mergeCells(`A${currentRow}:K${currentRow}`);
+          const c = ws.getCell(`A${currentRow}`);
+          c.value = label;
+          c.font  = { bold: true, size: 13, color: { argb: 'FFFFFFFF' } };
+          c.alignment = { horizontal: 'left', vertical: 'middle' };
+          applyFill(c, sectionPurple);
+          ws.getRow(currentRow).height = 24;
+          currentRow++;
+        }
+
+        function addSubgroupHeader(label) {
+          ws.mergeCells(`A${currentRow}:K${currentRow}`);
+          const c = ws.getCell(`A${currentRow}`);
+          c.value = label;
+          c.font  = { bold: true, size: 11, color: { argb: 'FF333333' } };
+          c.alignment = { horizontal: 'left', vertical: 'middle' };
+          applyFill(c, subgroupBg);
+          ws.getRow(currentRow).height = 20;
+          currentRow++;
+        }
+
+        // Build bulk rule text e.g. "150+ units = $16.00/unit"
+        function bulkRuleText(rules) {
+          if (!rules || !rules.length) return 'No bulk discount';
+          return rules.map(r => `${r.minQty}+ units = $${Number(r.price).toFixed(2)}/unit`).join('  |  ');
+        }
+
+        // Build nested IF formula for multi-tier bulk rules
+        // sorted ascending by minQty so innermost IF is highest tier
+        function buildEffectivePriceFormula(groupStart, groupEnd, basePrice, bulkRules) {
+          if (!bulkRules || !bulkRules.length) {
+            return null; // write static value
+          }
+          const sumPart = `SUM($I$${groupStart}:$I$${groupEnd})`;
+          // Sort descending so the first matching threshold wins (outer IF wins)
+          const sorted = [...bulkRules].sort((a, b) => b.minQty - a.minQty);
+          // Build nested IF: IF(sum>=max, maxPrice, IF(sum>=next, nextPrice, basePrice))
+          let formula = String(basePrice);
+          for (const rule of sorted) {
+            formula = `IF(${sumPart}>=${rule.minQty},${rule.price},${formula})`;
+          }
+          return formula;
+        }
+
+        function writeProductRow(pkg, groupStart, groupEnd) {
+          const row = ws.getRow(currentRow);
+          row.height = 18;
+          const r = currentRow;
+          const basePrice = Number(pkg.Price) || 0;
+          const bulkRules = pkg.bulkRules || [];
+          const analytes = pkg.analytes || {};
+
+          const formulaStr = buildEffectivePriceFormula(groupStart, groupEnd, basePrice, bulkRules);
+
+          // Col A: Item name
+          const cA = row.getCell(1);
+          cA.value = pkg.ItemName || '';
+          cA.alignment = { vertical: 'middle' };
+          applyBorder(cA);
+
+          // Col B: Category
+          const cB = row.getCell(2);
+          cB.value = pkg.Type || '';
+          cB.alignment = { horizontal: 'center', vertical: 'middle' };
+          applyBorder(cB);
+
+          // Col C: Available qty
+          const cC = row.getCell(3);
+          cC.value = pkg.Quantity != null ? Number(pkg.Quantity) : '';
+          cC.alignment = { horizontal: 'center', vertical: 'middle' };
+          applyFill(cC, readonlyGray);
+          applyBorder(cC);
+
+          // Col D: Base price
+          const cD = row.getCell(4);
+          cD.value = basePrice;
+          cD.numFmt = currencyFmt;
+          cD.alignment = { horizontal: 'center', vertical: 'middle' };
+          applyFill(cD, readonlyGray);
+          applyBorder(cD);
+
+          // Col E: THC %
+          const cE = row.getCell(5);
+          cE.value = analytes.totalTHC != null ? analytes.totalTHC : '';
+          if (analytes.totalTHC != null) cE.numFmt = pctFmt;
+          cE.alignment = { horizontal: 'center', vertical: 'middle' };
+          applyFill(cE, readonlyGray);
+          applyBorder(cE);
+
+          // Col F: CBD %
+          const cF = row.getCell(6);
+          cF.value = analytes.totalCBD != null ? analytes.totalCBD : '';
+          if (analytes.totalCBD != null) cF.numFmt = pctFmt;
+          cF.alignment = { horizontal: 'center', vertical: 'middle' };
+          applyFill(cF, readonlyGray);
+          applyBorder(cF);
+
+          // Col G: Terps %
+          const cG = row.getCell(7);
+          cG.value = analytes.totalTerpenes != null ? analytes.totalTerpenes : '';
+          if (analytes.totalTerpenes != null) cG.numFmt = pctFmt;
+          cG.alignment = { horizontal: 'center', vertical: 'middle' };
+          applyFill(cG, readonlyGray);
+          applyBorder(cG);
+
+          // Col H: Bulk rule text
+          const cH = row.getCell(8);
+          cH.value = bulkRuleText(bulkRules);
+          cH.font  = { italic: true, size: 10, color: { argb: 'FF444444' } };
+          cH.alignment = { vertical: 'middle', wrapText: true };
+          applyFill(cH, readonlyGray);
+          applyBorder(cH);
+
+          // Col I: Amount wanted (customer input — unlocked, yellow)
+          const cI = row.getCell(9);
+          cI.value = null;
+          applyFill(cI, inputYellow);
+          applyBorder(cI);
+          unlockCell(cI);
+          cI.alignment = { horizontal: 'center', vertical: 'middle' };
+          cI.dataValidation = {
+            type: 'whole',
+            operator: 'greaterThanOrEqual',
+            formulae: [0],
+            showErrorMessage: true,
+            errorTitle: 'Invalid Quantity',
+            error: 'Please enter a whole number (0 or greater, multiples of 5 preferred).'
+          };
+
+          // Col J: Effective price (formula)
+          const cJ = row.getCell(10);
+          if (formulaStr) {
+            cJ.value = { formula: formulaStr, result: basePrice };
+          } else {
+            cJ.value = basePrice;
+          }
+          cJ.numFmt = currencyFmt;
+          cJ.alignment = { horizontal: 'center', vertical: 'middle' };
+          applyFill(cJ, readonlyGray);
+          applyBorder(cJ);
+
+          // Conditional format: green highlight on J when bulk discount is active (J < D)
+          if (formulaStr) {
+            ws.addConditionalFormatting({
+              ref: `J${r}`,
+              rules: [{
+                type: 'expression',
+                formulae: [`J${r}<D${r}`],
+                style: {
+                  fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE7F7EA' } },
+                  font: { bold: true, color: { argb: 'FF0D6B2F' } }
+                }
+              }]
+            });
+          }
+
+          // Col K: Item total (formula)
+          const cK = row.getCell(11);
+          cK.value = { formula: `I${r}*J${r}`, result: 0 };
+          cK.numFmt = currencyFmt;
+          cK.alignment = { horizontal: 'center', vertical: 'middle' };
+          applyFill(cK, lightGreen);
+          applyBorder(cK);
+
+          productRowNums.push(r);
+          currentRow++;
+        }
+
+        // Write a subgroup (skips empty subgroups)
+        function writeSubgroup(sectionLabel, subgroupName, items) {
+          if (!items || !items.length) return;
+
+          const bulkLabel = bulkRuleText(items[0].bulkRules || []);
+          addSubgroupHeader(`${subgroupName}  |  ${bulkLabel}`);
+
+          const groupStart = currentRow;
+          const groupEnd   = currentRow + items.length - 1;
+          items.forEach(pkg => writeProductRow(pkg, groupStart, groupEnd));
+        }
+
+        // Write a section with named subgroups
+        function writeSubgroupSection(sectionLabel, subgroupMap) {
+          const keys = Object.keys(subgroupMap).filter(k => subgroupMap[k].length > 0);
+          if (!keys.length) return;
+          addSectionHeader(sectionLabel);
+          keys.forEach(k => writeSubgroup(sectionLabel, k, subgroupMap[k]));
+        }
+
+        // Write a flat section (Pre-Roll, Other)
+        function writeFlatSection(sectionLabel, items) {
+          if (!items || !items.length) return;
+          addSectionHeader(sectionLabel);
+          const groupStart = currentRow;
+          const groupEnd   = currentRow + items.length - 1;
+          items.forEach(pkg => writeProductRow(pkg, groupStart, groupEnd));
+        }
+
+        // ---- Render all sections (same order as HTML) ----
+        writeSubgroupSection('Infused Pre-Rolls', grouped['Infused Pre-Rolls']);
+        writeSubgroupSection('Carts',             grouped.Cart);
+        writeSubgroupSection('Vapes',             grouped.Vape);
+        writeFlatSection('Pre-Rolls',             grouped['Pre-Roll']);
+        writeFlatSection('Other',                 grouped.Other);
+
+        // Tinctures — only if any items exist (currently disabled on site)
+        const tinctureSubs = grouped.Tincture;
+        const hasT = tinctureSubs && Object.values(tinctureSubs).some(a => a.length > 0);
+        if (hasT) {
+          writeSubgroupSection('Tinctures', tinctureSubs);
+        }
+
+        // ---- Grand total row ----
+        currentRow++; // blank spacer
+        const totalRow = currentRow;
+
+        // Build SUM formula over all product K cells, compressing consecutive rows into ranges
+        function buildGrandTotalFormula(rowNums) {
+          if (!rowNums.length) return '0';
+          const sorted = [...rowNums].sort((a, b) => a - b);
+          const ranges = [];
+          let start = sorted[0], end = sorted[0];
+          for (let i = 1; i < sorted.length; i++) {
+            if (sorted[i] === end + 1) {
+              end = sorted[i];
+            } else {
+              ranges.push(start === end ? `K${start}` : `K${start}:K${end}`);
+              start = end = sorted[i];
+            }
+          }
+          ranges.push(start === end ? `K${start}` : `K${start}:K${end}`);
+          return `SUM(${ranges.join(',')})`;
+        }
+
+        const gtLabel = ws.getCell(`J${totalRow}`);
+        gtLabel.value = 'GRAND TOTAL';
+        gtLabel.font  = { bold: true, size: 13, color: { argb: 'FFFFFFFF' } };
+        gtLabel.alignment = { horizontal: 'right', vertical: 'middle' };
+        applyFill(gtLabel, brandGreen);
+
+        const gtCell = ws.getCell(`K${totalRow}`);
+        gtCell.value = { formula: buildGrandTotalFormula(productRowNums), result: 0 };
+        gtCell.numFmt = currencyFmt;
+        gtCell.font   = { bold: true, size: 13, color: { argb: 'FFFFFFFF' } };
+        gtCell.alignment = { horizontal: 'center', vertical: 'middle' };
+        applyFill(gtCell, brandGreen);
+        applyBorder(gtCell, 'medium');
+        ws.getRow(totalRow).height = 24;
+
+        // ---- Sheet protection: lock everything except col I input cells and info cells ----
+        // (unlockCell() was called on input cells above; protect() locks the rest)
+        await ws.protect('smokeweed', {
+          selectLockedCells:   true,
+          selectUnlockedCells: true,
+          formatCells:         false,
+          formatColumns:       false,
+          formatRows:          false,
+          insertColumns:       false,
+          insertRows:          false,
+          deleteColumns:       false,
+          deleteRows:          false,
+          sort:                false,
+          autoFilter:          false
+        });
+
+        // ---- Trigger download ----
+        const buffer = await workbook.xlsx.writeBuffer();
+        const blob   = new Blob([buffer], {
+          type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        });
+        const url = URL.createObjectURL(blob);
+        const a   = document.createElement('a');
+        a.href     = url;
+        a.download = `Ceres-Naturals-Order-Form-${new Date().toISOString().slice(0, 10)}.xlsx`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      } catch (err) {
+        console.error('Excel generation failed:', err);
+        alert('Could not generate the Excel file. Please try again.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '⬇ Download as Excel';
+      }
+    }
+
+    // =====================================
     // EVENT WIRING (DELEGATED LISTENERS)
     // =====================================
 
@@ -1425,6 +1891,9 @@
 
     // Hook up submit button
     document.getElementById('submit-button').addEventListener('click', submitOrder);
+
+    // Hook up Excel download button
+    document.getElementById('download-excel-button').addEventListener('click', downloadAsExcel);
 
     // =====================================
     // DISPENSARY & LICENSE AUTOCOMPLETE
