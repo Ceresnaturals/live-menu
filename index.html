@@ -914,6 +914,10 @@
                    data-subgroup="${subName}">
             Request Sample
           </label>
+          <span class="sample-qty-wrapper" style="display:none;">
+            <input type="number" class="sample-qty-input" min="1" value="1"
+                   placeholder="qty" style="width:55px; margin-left:6px; padding:3px 5px; font-size:13px; border:1px solid #ccc; border-radius:4px;">
+          </span>
         ` : '';
 
         out += `
@@ -1233,11 +1237,11 @@
       });
 
       const sampleRequests = collectSampleRequests();
-      sampleRequests.forEach(name => {
+      sampleRequests.forEach(({ name, qty }) => {
         rowsHtml += `
           <tr style="background:#fff7cc;">
             <td>${name} (Sample Request)</td>
-            <td>sample</td>
+            <td>${qty}</td>
             <td>$0.00</td>
             <td>$0.00</td>
           </tr>
@@ -1286,7 +1290,10 @@
         // Tincture & Infused Pre-Rolls keep clean subgroup names:
         // "Zen Drops", "Diamond Cut", "Double Diamonds"
 
-        samples.push(name);
+        const qtyInput = cb.closest('.subgroup-title').querySelector('.sample-qty-input');
+        const qty = qtyInput ? (parseInt(qtyInput.value, 10) || 1) : 1;
+
+        samples.push({ name, qty });
       });
 
       return samples;
@@ -1323,11 +1330,11 @@
 
       // SAMPLE REQUESTS → add virtual rows
       const sampleRequests = collectSampleRequests();
-      sampleRequests.forEach(name => {
+      sampleRequests.forEach(({ name, qty }) => {
         items.push({
           product: name,
           category: "Sample Request",
-          quantity: "sample request",
+          quantity: qty,
           price: 0
         });
       });
@@ -1389,7 +1396,7 @@
 
       const orderObj = buildOrderObject();
       const attachment = makeJsonAttachment(orderObj);
-      const sampleRequestsStr = (orderObj.sampleRequests || []).join(', ');
+      const sampleRequestsStr = (orderObj.sampleRequests || []).map(s => `${s.name} x${s.qty}`).join(', ');
 
       const btn = document.getElementById('submit-button');
       btn.disabled = true;
@@ -1887,6 +1894,14 @@
     document.getElementById('menu-data').addEventListener('input', function (e) {
       if (e.target.classList.contains('item-input')) {
         updateTotals();
+      }
+    });
+
+    // Show/hide sample qty input when sample checkbox is toggled
+    document.getElementById('menu-data').addEventListener('change', function (e) {
+      if (e.target.classList.contains('subgroup-sample-checkbox')) {
+        const wrapper = e.target.closest('.subgroup-title').querySelector('.sample-qty-wrapper');
+        if (wrapper) wrapper.style.display = e.target.checked ? 'inline-flex' : 'none';
       }
     });
 
