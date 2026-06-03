@@ -1381,8 +1381,9 @@
       }
 
       const { rowsHtml, total } = buildOrderRowsAndTotalForEmail();
-      if (total <= 0) {
-        alert('Please enter at least one quantity before submitting.');
+      const sampleOnlyCheck = collectSampleRequests();
+      if (total <= 0 && sampleOnlyCheck.length === 0) {
+        alert('Please enter at least one quantity or select a sample request before submitting.');
         return;
       }
 
