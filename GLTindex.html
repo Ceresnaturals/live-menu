@@ -466,7 +466,7 @@ body.nolabs .lab-filter h3::after{content:' · needs lab pull';color:var(--sativ
   <div class="loadcard">
     <h2>Loading inventory…</h2>
     <p id="loadMsg">Reading the latest terp data.</p>
-    <label class="filebtn">Load data file (menu_data.json)
+    <label class="filebtn">Load data file (GLTmenu_data.json)
       <input type="file" id="fileInput" accept="application/json,.json">
     </label>
     <div class="err" id="loadErr" style="display:none"></div>
@@ -585,7 +585,7 @@ async function boot(){
   }catch(e){
     // file:// or offline — show picker, don't hard fail
     document.getElementById('loadMsg').textContent =
-      'Open menu_data.json to view inventory (browsers block auto-loading local files).';
+      'Open GLTmenu_data.json to view inventory (browsers block auto-loading local files).';
   }
 }
 document.getElementById('fileInput').addEventListener('change', ev=>{
