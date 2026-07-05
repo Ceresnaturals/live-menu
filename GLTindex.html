@@ -477,9 +477,9 @@ body.nolabs .lab-filter h3::after{content:' · needs lab pull';color:var(--sativ
 /* ============================================================
    CONFIG
    ============================================================ */
-// When deployed to GitHub, point this at the raw JSON URL, e.g.
-//   https://raw.githubusercontent.com/<org>/<repo>/main/data/menu_data.json
-const DATA_URL = 'data/menu_data.json';
+// Deployed on GitHub (Ceresnaturals/live-menu) → read the raw JSON so it works
+// wherever the page is embedded (Squarespace). Auto-update pushes over this file.
+const DATA_URL = 'https://raw.githubusercontent.com/Ceresnaturals/live-menu/main/GLTmenu_data.json';
 
 /* ============================================================
    TERPENE COLOR SYSTEM  (matches CSS vars)
