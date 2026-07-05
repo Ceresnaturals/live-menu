@@ -351,6 +351,33 @@ footer{padding:20px clamp(14px,3vw,32px);color:var(--ink-faint);font-size:12px;b
 /* when there are no lab results, dim the terpene/cannabinoid filters */
 body.nolabs .lab-filter{opacity:.4;pointer-events:none}
 body.nolabs .lab-filter h3::after{content:' · needs lab pull';color:var(--sativa);letter-spacing:0;text-transform:none}
+
+/* ---------- help button + how-to modal ---------- */
+.helpbtn{display:inline-flex;align-items:center;justify-content:center;flex:none;
+  width:40px;height:40px;border-radius:50%;
+  border:1.5px solid var(--line);background:var(--paper-2);color:var(--ink-soft);
+  font-family:'Fraunces',serif;font-weight:600;font-size:19px;cursor:pointer;transition:.15s}
+.helpbtn:hover{border-color:var(--green);color:var(--green)}
+body.present .helpbtn{width:48px;height:48px;font-size:23px}
+
+.helpmodal{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;
+  padding:20px;background:rgba(20,23,15,.55);backdrop-filter:blur(3px)}
+.helpmodal[hidden]{display:none}
+.helpcard{position:relative;background:var(--paper-2);color:var(--ink);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow);max-width:640px;width:100%;
+  max-height:88vh;overflow-y:auto;padding:26px clamp(20px,4vw,34px) 30px}
+.helpcard h2{font-family:'Fraunces',serif;font-weight:600;font-size:24px;margin-bottom:4px}
+.helpcard .lead{color:var(--ink-soft);font-size:14px;margin-bottom:16px}
+.helpcard h3{font-family:'Fraunces',serif;font-weight:600;font-size:16px;color:var(--green-deep);margin:20px 0 8px}
+.helpcard p{font-size:14px;color:var(--ink-soft);margin-bottom:8px}
+.helpcard ol,.helpcard ul{margin:0 0 10px 20px;font-size:14px;color:var(--ink-soft)}
+.helpcard li{margin-bottom:6px}
+.helpcard b{color:var(--ink)}
+.helpcard .sym{font-family:var(--font-num);font-weight:700;color:var(--green)}
+.helpcard .hx{position:absolute;top:10px;right:14px;background:none;border:none;font-size:30px;
+  line-height:1;cursor:pointer;color:var(--ink-faint)}
+.helpcard .hx:hover{color:var(--green)}
+@media (prefers-color-scheme: dark){ .helpmodal{background:rgba(0,0,0,.62)} }
 </style>
 </head>
 <body>
@@ -361,6 +388,7 @@ body.nolabs .lab-filter h3::after{content:' · needs lab pull';color:var(--sativ
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
     <span id="presentLbl">Customer&nbsp;View</span>
   </button>
+  <button class="helpbtn" id="helpBtn" type="button" title="How to use this guide" aria-label="How to use this guide">?</button>
   <div class="meta" id="meta"></div>
 </header>
 
@@ -461,6 +489,57 @@ body.nolabs .lab-filter h3::after{content:' · needs lab pull';color:var(--sativ
     <button class="x" id="drawerClose">&times;</button>
   </div>
   <div class="db" id="drawerBody"></div>
+</div>
+
+<div class="helpmodal" id="helpModal" hidden>
+  <div class="helpcard">
+    <button class="hx" id="helpClose" type="button" aria-label="Close">&times;</button>
+    <h2>How to use the Product Guide</h2>
+    <p class="lead">A live view of what's sellable right now. Match a customer by aroma (terpenes), strength (THC), and effect. It updates from inventory on its own — nothing here can be changed by browsing.</p>
+
+    <h3>Help a customer fast</h3>
+    <ol>
+      <li>Ask what they want — sleepy, energized, a strain, high THC.</li>
+      <li>Tap <b>Indica</b>, <b>Sativa</b>, or <b>Hybrid</b> up top to set the vibe.</li>
+      <li><b>Search</b> a strain or brand if they have one in mind.</li>
+      <li>Tap <b>THC</b> or <b>Total terps</b> to sort strongest to the top.</li>
+      <li>Tap any product for its full breakdown and similar items in stock.</li>
+    </ol>
+
+    <h3>Reading a product</h3>
+    <ul>
+      <li><b>Product</b> — name, brand, and form (e.g. <i>1g Live Resin Vape</i>).</li>
+      <li><b>Type</b> — Indica / Sativa / Hybrid. A <span class="sym">≈</span> means it's our aroma-based estimate, not the maker's label.</li>
+      <li><b>THC</b> — total THC %.</li>
+      <li><b>Other cannabinoids</b> — CBD, CBG, CBN, etc. (letters on top, number below).</li>
+      <li><b>Top terpenes</b> — the 3 biggest aromas and each one's share.</li>
+      <li><b>Terps</b> — total terpene % (how loud the aroma is overall).</li>
+      <li><b>Qty</b> — how much is in stock.</li>
+    </ul>
+
+    <h3>Filters (left side)</h3>
+    <ul>
+      <li><b>Location / Category</b> — narrow by where it is or product type.</li>
+      <li><b>Terpene</b> — pick one to show only products with it (then it sorts by most of it).</li>
+      <li><b>Group by dominant terpene</b> — clusters products by their leading aroma.</li>
+      <li><b>THC slider</b> — hide anything under a minimum %.</li>
+      <li><b>Cannabinoids present</b> — show only items containing CBD, CBG, CBN, etc.</li>
+      <li><b>Clear all filters</b> — reset everything.</li>
+    </ul>
+
+    <h3>Views</h3>
+    <ul>
+      <li><b>Customer View</b> — makes everything big and high-contrast; turn the screen toward the customer with this on.</li>
+      <li><b>Table / Cards</b> — Table suits a full screen; Cards suits a tablet or phone (it switches automatically on small screens).</li>
+    </ul>
+
+    <h3>Good to know</h3>
+    <ul>
+      <li><b><span class="sym">≈</span> means estimate.</b> When there's no lab terpene data, the effect type is our best aroma-based guess — say "similar profile," not a guarantee.</li>
+      <li><b>It's live.</b> Low Qty means it's actually low.</li>
+      <li><b>It's read-only.</b> Browse freely — you can't change anything.</li>
+    </ul>
+  </div>
 </div>
 
 <footer id="footer"></footer>
@@ -1019,6 +1098,14 @@ document.getElementById('clearAll').onclick=()=>{
   document.querySelectorAll('.chip.on,.typebtn.on').forEach(c=>c.classList.remove('on'));
   render();
 };
+
+// Help / how-to modal
+const helpModal=document.getElementById('helpModal');
+function setHelp(on){ helpModal.hidden=!on; }
+document.getElementById('helpBtn').onclick=()=>setHelp(true);
+document.getElementById('helpClose').onclick=()=>setHelp(false);
+helpModal.onclick=e=>{ if(e.target===helpModal) setHelp(false); };
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') setHelp(false); });
 
 // hide our own logo when embedded (the host page already shows the Greenlight logo)
 if(window.self !== window.top) document.body.classList.add('embed');
