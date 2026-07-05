@@ -91,6 +91,9 @@ header{
 .brand .guide{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(14px,1.9vw,21px);
   letter-spacing:-.01em;color:var(--ink-soft);padding-left:14px;border-left:1px solid var(--line)}
 @media (prefers-color-scheme: dark){ .brand .logo{filter:brightness(1.4) saturate(1.05)} }
+/* embedded in an iframe (Squarespace already shows the site logo) — drop our logo */
+body.embed .brand .logo{display:none}
+body.embed .brand .guide{border-left:none;padding-left:0}
 .meta{text-align:right;font-size:12px;color:var(--ink-faint)}
 .meta b{color:var(--ink-soft)}
 .presentbtn{margin-left:auto;display:inline-flex;align-items:center;gap:8px;
@@ -1017,6 +1020,8 @@ document.getElementById('clearAll').onclick=()=>{
   render();
 };
 
+// hide our own logo when embedded (the host page already shows the Greenlight logo)
+if(window.self !== window.top) document.body.classList.add('embed');
 boot();
 </script>
 </body>
