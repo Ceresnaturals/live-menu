@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.env
+*.env
+.gitignore
+build_menu_v2.py
+update_menu_inventory_library.py
+LLM_SYSTEM_MAP.md
+run_logged.sh
+cache/
+shared/
+shared/watched_inventory_v2.json
+inventory_test_results_v2.json
+access token github license sync.txt
+indexcopy.html
+Roadmap.xlsx
+menu.json
