@@ -605,7 +605,7 @@
 
     // Product lines temporarily hidden from the public menu (case-insensitive
     // ItemName substring match). Remove an entry here to make it visible again.
-    const HIDDEN_PRODUCT_KEYWORDS = ['ritual'];
+    const HIDDEN_PRODUCT_KEYWORDS = [];
 
     fetch(DATA_URL)
       .then(r => r.json())
@@ -732,7 +732,7 @@
     function groupPackagesForDisplay(pkgArray) {
       const groups = {
         Tincture: { 'Zen Drops': [], 'Drift Drops': [], 'Lucid Drops': [], 'Pure Drops': [] },
-        'Infused Pre-Rolls': { 'Diamond Cut': [], 'Double Diamonds': [], 'Relic': [] },
+        'Infused Pre-Rolls': { 'Diamond Cut': [], 'Double Diamonds': [], 'Relic': [], 'Ritual': [] },
         'Pre-Roll': [],
         Cart: { '1 gram': [], '2 gram': [] },
         Vape: { '1 gram': [], '2 gram': [] },
@@ -759,9 +759,6 @@
         }
 
         // Pre-rolls / infused pre-rolls
-        // Note: "Ritual" packages are filtered out entirely above (HIDDEN_PRODUCT_KEYWORDS)
-        // and never reach this function while hidden. When un-hiding Ritual, add a
-        // 'Ritual': [] entry to the Infused Pre-Rolls group above and a matching branch here.
         if (
           name.includes('pre-roll') ||
           name.includes('preroll') ||
@@ -774,6 +771,8 @@
             groups['Infused Pre-Rolls']['Double Diamonds'].push(pkg);
           } else if (name.includes('relic')) {
             groups['Infused Pre-Rolls']['Relic'].push(pkg);
+          } else if (name.includes('ritual')) {
+            groups['Infused Pre-Rolls']['Ritual'].push(pkg);
           } else if (name.includes('lore infused pr')) {
             groups['Infused Pre-Rolls']['Diamond Cut'].push(pkg);
           } else {
