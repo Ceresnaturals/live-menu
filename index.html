@@ -883,11 +883,13 @@
                   <td>
                     <input type="number"
                            min="0"
+                           max="${Number(pkg.Quantity) || 0}"
                            step="5"
                            inputmode="numeric"
                            pattern="\\d*"
                            class="item-input"
-                           data-step="5">
+                           data-step="5"
+                           data-available="${Number(pkg.Quantity) || 0}">
                   </td>
                   <td class="item-total">$0.00</td>
                 </tr>
@@ -1055,11 +1057,13 @@
           <td>
             <input type="number"
                    min="0"
+                   max="${Number(pkg.Quantity) || 0}"
                    step="5"
                    inputmode="numeric"
                    pattern="\\d*"
                    class="item-input"
-                   data-step="5">
+                   data-step="5"
+                   data-available="${Number(pkg.Quantity) || 0}">
           </td>
           <td class="item-total">$0.00</td>
         </tr>
@@ -1111,7 +1115,13 @@
         return;
       }
 
-      const rounded = Math.round(n / step) * step;
+      let rounded = Math.round(n / step) * step;
+
+      const available = parseInt(input.dataset.available || '', 10);
+      if (!Number.isNaN(available) && rounded > available) {
+        rounded = Math.floor(available / step) * step;
+      }
+
       input.value = rounded;
     }
 
@@ -1447,6 +1457,23 @@
       const sampleOnlyCheck = collectSampleRequests();
       if (total <= 0 && sampleOnlyCheck.length === 0) {
         alert('Please enter at least one quantity or select a sample request before submitting.');
+        return;
+      }
+
+      let overQtyItem = null;
+      document.querySelectorAll('#menu-data .menu-row').forEach(row => {
+        if (overQtyItem) return;
+        const input = row.querySelector('.item-input');
+        if (!input) return;
+        const qty = parseFloat(input.value) || 0;
+        const available = parseFloat(input.dataset.available || '');
+        if (!Number.isNaN(available) && qty > available) {
+          const nameEl = row.querySelector('.item-name');
+          overQtyItem = nameEl ? nameEl.textContent.trim() : 'an item';
+        }
+      });
+      if (overQtyItem) {
+        alert(`Requested quantity for "${overQtyItem}" exceeds available stock. Please adjust before submitting.`);
         return;
       }
 
