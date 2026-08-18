@@ -325,11 +325,9 @@
 
     /* Low-stock notice */
     .low-stock-note {
-      display: block;
       font-size: 11px;
       font-weight: 700;
       color: #b3541e;
-      white-space: nowrap;
     }
 
     /* Sold-out row */
@@ -884,14 +882,14 @@
             rowsHtml = subItems.map(pkg => {
               const priceNum = Number(pkg.Price) || 0;
               const qtyNum = Number(pkg.Quantity) || 0;
-              const lowStockNote = qtyNum > 0 && qtyNum <= 50
+              const qtyCell = qtyNum > 0 && qtyNum <= 50
                 ? '<span class="low-stock-note">Low Inventory &mdash; First Come, First Served</span>'
-                : '';
+                : String(pkg.Quantity || 0);
               return `
                 <tr class="menu-row">
                   <td class="item-name">${pkg.ItemName || blend.name}</td>
                   <td class="item-category">${pkg.Type || 'Hybrid'}</td>
-                  <td>${pkg.Quantity || 0}${lowStockNote}</td>
+                  <td>${qtyCell}</td>
                   <td class="item-price" data-price="${priceNum.toFixed(2)}">$${priceNum.toFixed(2)}</td>
                   <td>
                     <input type="number"
@@ -1055,9 +1053,9 @@
       const bulkGroup = pkg.bulkRuleGroup || '';
       const bulkJson = escapeAttr(JSON.stringify(pkg.bulkRules || []));
       const qtyNum = Number(pkg.Quantity) || 0;
-      const lowStockNote = qtyNum > 0 && qtyNum <= 50
+      const qtyCell = qtyNum > 0 && qtyNum <= 50
         ? '<span class="low-stock-note">Low Inventory &mdash; First Come, First Served</span>'
-        : '';
+        : String(pkg.Quantity || 0);
 
       return `
           <tr class="menu-row"
@@ -1066,7 +1064,7 @@
               data-bulk-group="${escapeAttr(bulkGroup)}">
           <td class="item-name">${pkg.ItemName || ''}</td>
           <td class="item-category">${pkg.Type || ''}</td>
-          <td>${pkg.Quantity || 0}${lowStockNote}</td>
+          <td>${qtyCell}</td>
           <td class="item-price" data-price="${priceNum.toFixed(2)}">$${priceNum.toFixed(2)}</td>
           <td class="item-thc">${a.totalTHC}</td>
           <td class="item-cbd">${a.totalCBD}</td>
