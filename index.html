@@ -887,7 +887,7 @@
                 : String(pkg.Quantity || 0);
               return `
                 <tr class="menu-row">
-                  <td class="item-name">${pkg.ItemName || blend.name}</td>
+                  <td class="item-name">${pkg.DisplayName || pkg.ItemName || blend.name}</td>
                   <td class="item-category">${pkg.Type || 'Hybrid'}</td>
                   <td>${qtyCell}</td>
                   <td class="item-price" data-price="${priceNum.toFixed(2)}">$${priceNum.toFixed(2)}</td>
@@ -1062,7 +1062,7 @@
               data-bulk="${bulkJson}"
               data-bulk-scope="${escapeAttr(bulkScope)}"
               data-bulk-group="${escapeAttr(bulkGroup)}">
-          <td class="item-name">${pkg.ItemName || ''}</td>
+          <td class="item-name">${pkg.DisplayName || pkg.ItemName || ''}</td>
           <td class="item-category">${pkg.Type || ''}</td>
           <td>${qtyCell}</td>
           <td class="item-price" data-price="${priceNum.toFixed(2)}">$${priceNum.toFixed(2)}</td>
