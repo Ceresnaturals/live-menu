@@ -770,8 +770,11 @@
           name.includes('pre-roll') ||
           name.includes('preroll') ||
           name.includes('pr ') ||
+          name.includes('infused joint') ||
           name.includes('double diamonds') ||
+          name.includes('diamond cut') ||
           name.includes('relic') ||
+          name.includes('ritual') ||
           name.includes('blunt')
         ) {
           if (name.includes('double diamonds')) {
@@ -780,7 +783,7 @@
             groups['Infused Pre-Rolls']['Relic'].push(pkg);
           } else if (name.includes('ritual')) {
             groups['Infused Pre-Rolls']['Ritual'].push(pkg);
-          } else if (name.includes('lore infused pr')) {
+          } else if (name.includes('lore infused pr') || name.includes('diamond cut')) {
             groups['Infused Pre-Rolls']['Diamond Cut'].push(pkg);
           } else {
             groups['Pre-Roll'].push(pkg);
@@ -788,23 +791,32 @@
           return;
         }
 
+        // Carts / vapes: decide on DisplayName (MCA category segment removed),
+        // since every vape is "-Vape Cart-" under the 2026-09-14 convention.
+        const core = String(pkg.DisplayName || pkg.ItemName || '').toLowerCase();
+        const size = /(^|[^\d.])2\s*g(rams?)?\b/.test(core) ? '2 gram' : '1 gram';
+
+        // AIO disposables belong under Vape
+        if (/\b(aio|all[\s-]*in[\s-]*one)\b/.test(core)) {
+          groups.Vape[size].push(pkg);
+          return;
+        }
+
         // Carts
-        if (name.includes('cart')) {
-          if (name.includes('2g') || name.includes('2 g')) {
-            groups.Cart['2 gram'].push(pkg);
-          } else {
-            groups.Cart['1 gram'].push(pkg);
-          }
+        if (core.includes('cart')) {
+          groups.Cart[size].push(pkg);
           return;
         }
 
         // Vapes
-        if (name.includes('vape')) {
-          if (name.includes('2g') || name.includes('2 g')) {
-            groups.Vape['2 gram'].push(pkg);
-          } else {
-            groups.Vape['1 gram'].push(pkg);
-          }
+        if (core.includes('vape')) {
+          groups.Vape[size].push(pkg);
+          return;
+        }
+
+        // Only the MCA label says what it is -- keep it under Cart
+        if (name.includes('vape cart')) {
+          groups.Cart[size].push(pkg);
           return;
         }
 
